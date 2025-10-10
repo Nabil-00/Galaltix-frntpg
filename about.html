@@ -112,27 +112,64 @@
     }
     
     /* Core Values cards consistency */
+    #values .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    
+    #values .col-xl-4 {
+      display: flex !important;
+    }
+    
     #values .service-item {
-      height: 100%;
       display: flex;
       flex-direction: column;
-      min-height: 200px;
+      width: 100%;
+      background-color: var(--surface-color) !important;
+    }
+    
+    #values .service-item::before {
+      inset: 100% 0 0 0 !important;
     }
     
     #values .service-item .icon {
-      margin-bottom: 20px;
+      flex-shrink: 0;
     }
     
     #values .service-item h4 {
-      margin-bottom: 15px;
       flex-shrink: 0;
     }
     
     #values .service-item p {
-      flex-grow: 1;
-      margin-bottom: 0;
+      flex: 1;
       display: flex;
       align-items: center;
+    }
+    
+    /* Completely disable hover effects for consistency */
+    #values .service-item:hover::before {
+      inset: 100% 0 0 0 !important;
+      background: transparent !important;
+    }
+    
+    #values .service-item:hover h4 a {
+      color: var(--heading-color) !important;
+    }
+    
+    #values .service-item:hover .icon i {
+      color: var(--accent-color) !important;
+    }
+    
+    #values .service-item:hover p {
+      color: var(--default-color) !important;
+    }
+    
+    /* Force consistent background */
+    #values .service-item,
+    #values .service-item:hover {
+      background-color: var(--surface-color) !important;
+      transform: none !important;
     }
   </style>
 </head>
