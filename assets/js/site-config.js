@@ -13,8 +13,6 @@
     apiBase,
     endpoints: {
       products: '/products',
-      portfolio: '/portfolio',
-      posts: '/posts',
       contact: '/contact',
       newsletter: '/newsletter'
     }

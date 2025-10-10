@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Products - Galaltix Nig Ltd</title>
+  <meta name="description" content="Discover our wide range of premium agricultural products sourced from trusted Nigerian farms">
+  <meta name="keywords" content="Galaltix, Products, Agriculture, Nigeria, Grains, Tubers, Fresh Produce">
+  <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="products-page">
+
+  <!-- Price Ticker Bar -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <span class="price-ticker-item">Soya beans (NON-GMO) – ₦650,000 per metric ton</span>
+      <span class="price-ticker-item">Hibiscus Flowers – ₦1,600,000 per metric ton</span>
+      <span class="price-ticker-item">Natural Sesame Seeds – ₦2,050,000 per metric ton</span>
+      <span class="price-ticker-item">Raw Cashew Nuts – ₦1,850,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Ginger – ₦2,200,000 per metric ton</span>
+      <span class="price-ticker-item">Shea Butter (Raw) – ₦950,000 per metric ton</span>
+      <span class="price-ticker-item">Tiger Nuts – ₦1,200,000 per metric ton</span>
+      <span class="price-ticker-item">Palm Kernel Oil – ₦780,000 per metric ton</span>
+      <span class="price-ticker-item">Moringa Seeds – ₦3,500,000 per metric ton</span>
+      <span class="price-ticker-item">White Maize – ₦420,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Cocoa Beans – ₦2,800,000 per metric ton</span>
+      <span class="price-ticker-item">Black Pepper – ₦4,200,000 per metric ton</span>
+    </div>
+  </div>
+  <!-- End Price Ticker Bar -->
+
+  <header id="header" class="header sticky-top">
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown"><a href="about.html"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Our Products</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Products</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Products Section -->
+    <section id="products" class="products section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Products</h2>
+        <p><span>Discover Our</span> <span class="description-title">Premium Agricultural Products</span></p>
+      </div>
+
+      <div class="container">
+        <div class="row mb-4" data-aos="fade-up">
+          <div class="col-12">
+            <p class="text-center">We supply a wide range of premium agricultural products sourced directly from trusted Nigerian farms. Our products include grains, tubers, and fresh produce, all meeting the highest quality standards for both local and international markets.</p>
+          </div>
+        </div>
+
+        <div id="products-grid" class="row gy-4" data-aos="fade-up" data-aos-delay="200"></div>
+        <div class="text-center" id="products-empty" hidden>
+          <div class="row">
+            <div class="col-12">
+              <div class="alert alert-info">
+                <h4>Products Coming Soon</h4>
+                <p>We are currently updating our product catalog. Please check back soon or contact us directly for information about our available products.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Products Section -->
+
+    <!-- Featured Products Section -->
+    <section id="featured-products" class="featured-services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Product Categories</h2>
+        <p><span>Explore Our</span> <span class="description-title">Main Product Categories</span></p>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-flower1 icon"></i></div>
+              <h4><a href="contact.html" class="stretched-link">Grains</a></h4>
+              <p>Premium quality grains including sorghum, maize, soybeans, and millet sourced from the best farms across Nigeria.</p>
+            </div>
+          </div><!-- End Product Category -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-tree icon"></i></div>
+              <h4><a href="contact.html" class="stretched-link">Tubers</a></h4>
+              <p>Fresh tubers including yam, cassava, sweet potatoes, and cocoyam, carefully harvested and processed for quality.</p>
+            </div>
+          </div><!-- End Product Category -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-basket icon"></i></div>
+              <h4><a href="contact.html" class="stretched-link">Fresh Produce</a></h4>
+              <p>High-quality fresh produce including tomatoes, onions, peppers, and vegetables, delivered at peak freshness.</p>
+            </div>
+          </div><!-- End Product Category -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-gift icon"></i></div>
+              <h4><a href="contact.html" class="stretched-link">Processed Goods</a></h4>
+              <p>Value-added processed agricultural products including flours, oils, and dried fruits with extended shelf life.</p>
+            </div>
+          </div><!-- End Product Category -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Products Section -->
+
+    <!-- Why Choose Our Products Section -->
+    <section id="why-products" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-3">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/about.jpg" alt="Quality Agricultural Products" class="img-fluid">
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-content ps-0 ps-lg-3">
+              <h3>Why Choose Our Agricultural Products?</h3>
+              <p class="fst-italic">
+                Our commitment to quality, sustainability, and customer satisfaction sets our products apart in the agricultural market.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-shield-check"></i>
+                  <div>
+                    <h4>Quality Assurance</h4>
+                    <p>Rigorous quality control processes ensure every product meets international standards and customer expectations.</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-geo-alt"></i>
+                  <div>
+                    <h4>Direct from Farm</h4>
+                    <p>Products sourced directly from our network of trusted Nigerian farms, ensuring freshness and traceability.</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-truck"></i>
+                  <div>
+                    <h4>Reliable Supply Chain</h4>
+                    <p>Efficient logistics and storage facilities ensure timely delivery and product integrity throughout the supply chain.</p>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                Whether you're looking for bulk orders for export or smaller quantities for local distribution, we provide consistent quality and reliable service for all your agricultural product needs.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Why Choose Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form id="newsletter-form" action="#" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galatix Nigeria Limited" style="max-height: 40px;">
+          </a>
+          <p class="mt-3">A leading supplier of premium agricultural goods in Nigeria, committed to quality, sustainability, and customer satisfaction.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Export & Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Logistics</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Custom Packaging</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>123 Agricultural Avenue</p>
+          <p>Ikeja, Lagos, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 801 234 5678</span></p>
+          <p><strong>Email:</strong> <span>contact@galaltixnig.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/supabase-integration.js"></script>
+
+</body>
+
+</html>

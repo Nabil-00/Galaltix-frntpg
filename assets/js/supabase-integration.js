@@ -163,106 +163,7 @@
     }
   }
 
-  async function loadPortfolio() {
-    const grid = document.getElementById('portfolio-grid');
-    const emptyState = document.getElementById('portfolio-empty');
 
-    if (!grid) return;
-
-    try {
-      const items = await fetchJson(endpoints.portfolio);
-      grid.innerHTML = '';
-
-      if (!items || !items.length) {
-        if (emptyState) emptyState.hidden = false;
-        return;
-      }
-
-      if (emptyState) emptyState.hidden = true;
-
-      items.forEach((item) => {
-        const col = createColElement('col-lg-4 col-md-6');
-        const card = document.createElement('div');
-        card.className = 'portfolio-item shadow-sm border-0 rounded overflow-hidden';
-
-        const figure = document.createElement('figure');
-        figure.className = 'position-relative mb-0';
-
-        const img = document.createElement('img');
-        img.className = 'img-fluid w-100';
-        img.src = item.image_url || placeholderImage;
-        img.alt = item.title || 'Portfolio image';
-        figure.appendChild(img);
-
-        const overlay = document.createElement('div');
-        overlay.className = 'portfolio-info p-3';
-
-        const heading = document.createElement('h4');
-        heading.textContent = item.title || 'Project';
-        overlay.appendChild(heading);
-
-        const lightboxLink = document.createElement('a');
-        lightboxLink.href = item.image_url || placeholderImage;
-        lightboxLink.className = 'glightbox preview-link';
-        lightboxLink.dataset.gallery = 'portfolio-gallery';
-        lightboxLink.title = heading.textContent;
-        lightboxLink.innerHTML = '<i class="bi bi-zoom-in"></i>';
-        overlay.appendChild(lightboxLink);
-
-        figure.appendChild(overlay);
-        card.appendChild(figure);
-        col.appendChild(card);
-        grid.appendChild(col);
-      });
-
-      if (typeof GLightbox === 'function') {
-        GLightbox({ selector: '.portfolio .glightbox' });
-      }
-    } catch (error) {
-      console.error('Failed to load portfolio:', error);
-      if (emptyState) {
-        emptyState.hidden = false;
-        emptyState.textContent = 'Unable to load portfolio items right now.';
-      }
-    }
-  }
-
-  async function loadPosts() {
-    const grid = document.getElementById('blog-posts');
-    const emptyState = document.getElementById('blog-empty');
-
-    if (!grid) return;
-
-    try {
-      const posts = await fetchJson(endpoints.posts);
-      grid.innerHTML = '';
-
-      if (!posts || !posts.length) {
-        if (emptyState) emptyState.hidden = false;
-        return;
-      }
-
-      if (emptyState) emptyState.hidden = true;
-
-      posts.forEach((post) => {
-        const col = createColElement('col-lg-4 col-md-6');
-        const card = createCard({
-          imageUrl: post.image_url || placeholderImage,
-          title: post.title,
-          content: post.content ? post.content.slice(0, 160) + (post.content.length > 160 ? '…' : '') : '',
-          meta: formatDate(post.created_at)
-        });
-        col.appendChild(card);
-        grid.appendChild(col);
-      });
-    } catch (error) {
-      console.error('Failed to load posts:', error);
-      if (emptyState) {
-        emptyState.hidden = false;
-        emptyState.textContent = 'Unable to load blog posts right now.';
-      }
-    }
-  }
 
   function bindContactForm() {
     const form = document.getElementById('contact-form');
@@ -370,8 +271,6 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     loadProducts();
-    loadPortfolio();
-    loadPosts();
     bindContactForm();
     bindNewsletterForm();
   });
