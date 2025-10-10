@@ -27,6 +27,9 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="contact-page">
@@ -162,6 +165,11 @@
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">Message</label>
                   <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <!-- reCAPTCHA -->
+                <div class="col-md-12 d-flex justify-content-center mb-3">
+                  <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -360,6 +368,9 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/site-config.js"></script>
   <script src="assets/js/supabase-integration.js"></script>
+  
+  <!-- reCAPTCHA Configuration -->
+  <script src="assets/js/recaptcha-config.js"></script>
   
   <!-- EmailJS SDK and Integration -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>

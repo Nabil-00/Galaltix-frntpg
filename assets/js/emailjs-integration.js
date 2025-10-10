@@ -36,7 +36,7 @@
     }
   }
 
-  // Validate form fields
+  // Validate form fields including reCAPTCHA
   function validateFormData(formData) {
     const errors = [];
     
@@ -54,6 +54,18 @@
     
     if (!formData.message || formData.message.length < 10) {
       errors.push('Message must be at least 10 characters long');
+    }
+    
+    // Validate reCAPTCHA if available
+    if (window.RecaptchaConfig && window.RecaptchaConfig.isConfigured()) {
+      try {
+        const recaptchaResponse = window.RecaptchaConfig.getResponse();
+        if (!recaptchaResponse) {
+          errors.push('Please complete the reCAPTCHA verification');
+        }
+      } catch (error) {
+        errors.push('reCAPTCHA verification required');
+      }
     }
     
     return errors;
@@ -152,6 +164,12 @@
       }
 
       try {
+        // Verify reCAPTCHA if configured
+        if (window.RecaptchaConfig && window.RecaptchaConfig.isConfigured()) {
+          const recaptchaResponse = window.RecaptchaConfig.getResponse();
+          await window.RecaptchaConfig.verify(recaptchaResponse);
+        }
+        
         // Prepare template parameters for EmailJS
         const templateParams = {
           from_name: formData.name,
@@ -182,6 +200,12 @@
 
         // Success! Reset form and show success message
         form.reset();
+        
+        // Reset reCAPTCHA if available
+        if (window.RecaptchaConfig) {
+          window.RecaptchaConfig.reset();
+        }
+        
         setElementVisibility(elements, { loading: false, error: false, success: true });
 
         // Hide success message after 5 seconds
@@ -191,6 +215,11 @@
 
       } catch (error) {
         console.error('Form submission error:', error);
+        
+        // Reset reCAPTCHA on error
+        if (window.RecaptchaConfig) {
+          window.RecaptchaConfig.reset();
+        }
         
         // Show error message
         if (elements.error) {
