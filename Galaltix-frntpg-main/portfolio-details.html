@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details - Galaltix Nig Ltd</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .back-button-container {
+      padding: 30px 0;
+      background: transparent;
+    }
+
+    .portfolio-image-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+      background: white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-image-container:hover {
+      transform: scale(1.02);
+    }
+
+    .portfolio-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .portfolio-content {
+      padding: 60px 0;
+    }
+
+    .portfolio-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      line-height: 1.2;
+      color: #1a1a1a;
+    }
+
+    .portfolio-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-info-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 16px;
+      padding: 35px;
+      margin-bottom: 30px;
+      border: 1px solid #dee2e6;
+    }
+
+    .portfolio-info-card h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #6f42c1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .portfolio-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .portfolio-info-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid #dee2e6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .portfolio-info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .portfolio-info-list strong {
+      color: #333;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .portfolio-info-list strong i {
+      color: #6f42c1;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #c87935 0%, #b86a2d 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.3);
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+
+    .back-button:hover {
+      background: linear-gradient(135deg, #b86a2d 0%, #a55f28 100%);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200, 121, 53, 0.4);
+    }
+
+    .back-button i {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .back-button:hover i {
+      transform: translateX(-3px);
+    }
+
+    .lightbox-trigger {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: rgba(111, 66, 193, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .lightbox-trigger:hover {
+      background: rgba(111, 66, 193, 1);
+      transform: scale(1.1);
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .loading-state .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .error-state {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .error-state i {
+      font-size: 4rem;
+      color: #dc3545;
+      margin-bottom: 20px;
+    }
+
+    .portfolio-cta-btn:hover {
+      background: #c87935 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-title {
+        font-size: 2rem;
+      }
+
+      .back-button-container {
+        padding: 20px 0;
+      }
+
+      .back-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@galaltixnig.com">contact@galaltixnig.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>(234) 801 234 5678</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="Galaltix Nigeria Limited">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-3 text-muted">Loading portfolio item...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="error-state" style="display: none;">
+      <i class="bi bi-exclamation-triangle"></i>
+      <h2>Portfolio Item Not Found</h2>
+      <p class="text-muted">The portfolio item you're looking for doesn't exist or has been removed.</p>
+      <a href="index.html#portfolio" class="btn btn-primary">Back to Portfolio</a>
+    </div>
+
+    <!-- Portfolio Content -->
+    <div id="portfolio-content" style="display: none;">
+      <!-- Back Button -->
+      <div class="back-button-container">
+        <div class="container">
+          <a href="index.html#portfolio" class="back-button">
+            <i class="bi bi-arrow-left"></i>
+            Back to Portfolio
+          </a>
+        </div>
+      </div>
+
+      <!-- Portfolio Details -->
+      <section class="portfolio-content">
+        <div class="container">
+          <div class="row gy-5">
+            <!-- Portfolio Image -->
+            <div class="col-lg-7" data-aos="fade-right">
+              <div class="portfolio-image-container">
+                <a href="#" id="lightbox-link" class="glightbox">
+                  <div class="lightbox-trigger">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <img id="portfolio-image" src="" alt="">
+                </a>
+              </div>
+            </div>
+
+            <!-- Portfolio Info -->
+            <div class="col-lg-5" data-aos="fade-left">
+              <h1 id="portfolio-title" class="portfolio-title"></h1>
+              
+              <div id="portfolio-description" class="portfolio-description"></div>
+
+              <!-- Portfolio Information Card -->
+              <div class="portfolio-info-card">
+                <h4>
+                  <i class="bi bi-info-circle"></i>
+                  Project Information
+                </h4>
+                <ul class="portfolio-info-list">
+                  <li>
+                    <strong>
+                      <i class="bi bi-calendar3"></i>
+                      Created
+                    </strong>
+                    <span id="info-created"></span>
+                  </li>
+                  <li>
+                    <strong>
+                      <i class="bi bi-clock-history"></i>
+                      Last Updated
+                    </strong>
+                    <span id="info-updated"></span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact CTA -->
+              <div class="text-center mt-4">
+                <a href="index.html#contact" class="btn btn-lg portfolio-cta-btn" style="background: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-weight: 600; transition: all 0.3s ease;">
+                  <i class="bi bi-envelope me-2"></i>
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galaltix Nigeria Limited" style="max-height: 40px;">
+          </a>
+          <p class="mt-3">A leading supplier of premium agricultural goods in Nigeria, committed to quality, sustainability, and customer satisfaction.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Export &amp; Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Logistics</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>123 Agricultural Avenue</p>
+          <p>Ikeja, Lagos, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 801 234 5678</span></p>
+          <p><strong>Email:</strong> <span>contact@galaltixnig.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-config.js"></script>
+
+  <!-- Portfolio Details Script -->
+  <script>
+    (function() {
+      const config = window.SiteConfig;
+      if (!config || !config.apiBase) {
+        console.error('Missing API configuration');
+        showError();
+        return;
+      }
+
+      const API_BASE = config.apiBase.replace(/\/$/, '');
+      const urlParams = new URLSearchParams(window.location.search);
+      const portfolioId = urlParams.get('id');
+
+      if (!portfolioId) {
+        showError();
+        return;
+      }
+
+      async function loadPortfolio() {
+        try {
+          const response = await fetch(`${API_BASE}/portfolio/${portfolioId}`);
+          
+          if (!response.ok) {
+            throw new Error('Portfolio item not found');
+          }
+
+          const item = await response.json();
+          displayPortfolio(item);
+        } catch (error) {
+          console.error('Failed to load portfolio:', error);
+          showError();
+        }
+      }
+
+      function displayPortfolio(item) {
+        // Update page title
+        document.title = `${item.title} - Galaltix Nig Ltd`;
+        
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && item.title) {
+          metaDesc.content = `View ${item.title} in our portfolio - Galaltix Nigeria Limited`;
+        }
+
+        // Update portfolio image
+        const portfolioImage = document.getElementById('portfolio-image');
+        const imageUrl = item.image_url || 'assets/img/placeholder.svg';
+        portfolioImage.src = imageUrl;
+        portfolioImage.alt = item.title;
+
+        // Update lightbox link
+        document.getElementById('lightbox-link').href = imageUrl;
+
+        // Update title
+        document.getElementById('portfolio-title').textContent = item.title || 'Portfolio Item';
+
+        // Update description (if available, otherwise hide)
+        const descEl = document.getElementById('portfolio-description');
+        if (item.description) {
+          descEl.textContent = item.description;
+        } else {
+          descEl.style.display = 'none';
+        }
+
+        // Format dates
+        if (item.created_at) {
+          const date = new Date(item.created_at);
+          document.getElementById('info-created').textContent = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+        }
+
+        if (item.updated_at) {
+          const date = new Date(item.updated_at);
+          document.getElementById('info-updated').textContent = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+        }
+
+        // Show content and hide loading
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('portfolio-content').style.display = 'block';
+
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+          });
+        }
+
+        // Initialize GLightbox
+        if (typeof GLightbox !== 'undefined') {
+          GLightbox({
+            selector: '.glightbox'
+          });
+        }
+      }
+
+      function showError() {
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('error-state').style.display = 'block';
+      }
+
+      // Load portfolio on page load
+      loadPortfolio();
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Product Details - Galaltix Nig Ltd</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .back-button-container {
+      padding: 30px 0;
+      background: transparent;
+    }
+
+    .product-image-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+
+    .product-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .product-content {
+      padding: 60px 0;
+    }
+
+    .product-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(13, 110, 253, 0.1);
+      border-radius: 50px;
+      color: #0d6efd;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .product-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .product-info-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .product-info-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #0d6efd;
+    }
+
+    .product-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .product-info-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #dee2e6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .product-info-list strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #c87935 0%, #b86a2d 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.3);
+      transition: all 0.3s ease;
+      font-size: 15px;
+    }
+
+    .back-button:hover {
+      background: linear-gradient(135deg, #b86a2d 0%, #a55f28 100%);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200, 121, 53, 0.4);
+    }
+
+    .back-button i {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .back-button:hover i {
+      transform: translateX(-3px);
+    }
+
+    .contact-cta {
+      background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-cta h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .contact-cta .btn {
+      background: white;
+      color: #0d6efd;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .contact-cta .btn:hover {
+      background: #c87935;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .loading-state .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .error-state {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .error-state i {
+      font-size: 4rem;
+      color: #dc3545;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .product-title {
+        font-size: 2rem;
+      }
+
+      .back-button-container {
+        padding: 20px 0;
+      }
+
+      .back-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="product-details-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@galaltixnig.com">contact@galaltixnig.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>(234) 801 234 5678</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="Galaltix Nigeria Limited">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#products" class="active">Products</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-3 text-muted">Loading product details...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="error-state" style="display: none;">
+      <i class="bi bi-exclamation-triangle"></i>
+      <h2>Product Not Found</h2>
+      <p class="text-muted">The product you're looking for doesn't exist or has been removed.</p>
+      <a href="index.html#products" class="btn btn-primary">Back to Products</a>
+    </div>
+
+    <!-- Product Content -->
+    <div id="product-content" style="display: none;">
+      <!-- Back Button -->
+      <div class="back-button-container">
+        <div class="container">
+          <a href="index.html#products" class="back-button">
+            <i class="bi bi-arrow-left"></i>
+            Back to Products
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <section class="product-content">
+        <div class="container">
+          <div class="row gy-5">
+            <!-- Product Image -->
+            <div class="col-lg-6" data-aos="fade-right">
+              <div class="product-image-container">
+                <img id="product-image" src="" alt="">
+              </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="col-lg-6" data-aos="fade-left">
+              <div id="product-category" class="product-meta">
+                <i class="bi bi-tag"></i>
+                <span></span>
+              </div>
+              
+              <h1 id="product-title" class="product-title"></h1>
+              
+              <div id="product-description" class="product-description"></div>
+
+              <!-- Product Information Card -->
+              <div class="product-info-card">
+                <h4><i class="bi bi-info-circle me-2"></i>Product Information</h4>
+                <ul class="product-info-list">
+                  <li>
+                    <strong>Category</strong>
+                    <span id="info-category"></span>
+                  </li>
+                  <li>
+                    <strong>Availability</strong>
+                    <span>In Stock</span>
+                  </li>
+                  <li>
+                    <strong>Last Updated</strong>
+                    <span id="info-updated"></span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact CTA -->
+              <div class="contact-cta">
+                <h3>Interested in this product?</h3>
+                <p>Contact us for pricing, availability, and bulk orders</p>
+                <a href="index.html#contact" class="btn">
+                  <i class="bi bi-envelope me-2"></i>
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galaltix Nigeria Limited" style="max-height: 40px;">
+          </a>
+          <p class="mt-3">A leading supplier of premium agricultural goods in Nigeria, committed to quality, sustainability, and customer satisfaction.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#products">Products</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Export &amp; Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Logistics</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>123 Agricultural Avenue</p>
+          <p>Ikeja, Lagos, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 801 234 5678</span></p>
+          <p><strong>Email:</strong> <span>contact@galaltixnig.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-config.js"></script>
+
+  <!-- Product Details Script -->
+  <script>
+    (function() {
+      const config = window.SiteConfig;
+      if (!config || !config.apiBase) {
+        console.error('Missing API configuration');
+        showError();
+        return;
+      }
+
+      const API_BASE = config.apiBase.replace(/\/$/, '');
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+
+      if (!productId) {
+        showError();
+        return;
+      }
+
+      async function loadProduct() {
+        try {
+          const response = await fetch(`${API_BASE}/products/${productId}`);
+          
+          if (!response.ok) {
+            throw new Error('Product not found');
+          }
+
+          const product = await response.json();
+          displayProduct(product);
+        } catch (error) {
+          console.error('Failed to load product:', error);
+          showError();
+        }
+      }
+
+      function displayProduct(product) {
+        // Update page title
+        document.title = `${product.title} - Galaltix Nig Ltd`;
+        
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.content = product.content.slice(0, 160);
+        }
+
+        // Update product image
+        const productImage = document.getElementById('product-image');
+        productImage.src = product.image_url || 'assets/img/placeholder.svg';
+        productImage.alt = product.title;
+
+        // Update category badge
+        if (product.category) {
+          document.querySelector('#product-category span').textContent = product.category;
+        } else {
+          document.getElementById('product-category').style.display = 'none';
+        }
+
+        // Update title and description
+        document.getElementById('product-title').textContent = product.title;
+        document.getElementById('product-description').textContent = product.content;
+
+        // Update info card
+        document.getElementById('info-category').textContent = product.category || 'General';
+        
+        // Format date
+        if (product.updated_at) {
+          const date = new Date(product.updated_at);
+          document.getElementById('info-updated').textContent = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+        }
+
+        // Show content and hide loading
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('product-content').style.display = 'block';
+
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+          });
+        }
+      }
+
+      function showError() {
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('error-state').style.display = 'block';
+      }
+
+      // Load product on page load
+      loadProduct();
+    })();
+  </script>
+</body>
+
+</html>
