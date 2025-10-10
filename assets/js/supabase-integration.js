@@ -134,32 +134,33 @@
 
     try {
       const products = await fetchJson(endpoints.products);
-      grid.innerHTML = '';
+      
+      // Only replace content if we get valid products from API
+      if (products && products.length > 0) {
+        grid.innerHTML = '';
+        if (emptyState) emptyState.hidden = true;
 
-      if (!products || !products.length) {
-        if (emptyState) emptyState.hidden = false;
-        return;
-      }
-
-      if (emptyState) emptyState.hidden = true;
-
-      products.forEach((product) => {
-        const col = createColElement();
-        const card = createCard({
-          imageUrl: product.image_url || placeholderImage,
-          title: product.title,
-          content: product.content,
-          meta: product.category ? `Category: ${product.category}` : null
+        products.forEach((product) => {
+          const col = createColElement();
+          const card = createCard({
+            imageUrl: product.image_url || placeholderImage,
+            title: product.title,
+            content: product.content,
+            meta: product.category ? `Category: ${product.category}` : null
+          });
+          col.appendChild(card);
+          grid.appendChild(col);
         });
-        col.appendChild(card);
-        grid.appendChild(col);
-      });
+      } else {
+        // Keep existing static content if no API products
+        console.log('No API products found, keeping static content');
+        if (emptyState) emptyState.hidden = true;
+      }
     } catch (error) {
       console.error('Failed to load products:', error);
-      if (emptyState) {
-        emptyState.hidden = false;
-        emptyState.textContent = 'Unable to load products right now. Please try again later.';
-      }
+      // Keep existing static content on error
+      console.log('API failed, keeping static content');
+      if (emptyState) emptyState.hidden = true;
     }
   }
 
