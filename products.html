@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Products - Galaltix Nig Ltd</title>
-  <meta name="description" content="Discover our wide range of premium agricultural products sourced from trusted Nigerian farms">
-  <meta name="keywords" content="Galaltix, Products, Agriculture, Nigeria, Grains, Tubers, Fresh Produce">
+  <title>Premium Agricultural Products | Galaltix Nigeria Limited</title>
+  <meta name="description" content="Discover premium agricultural products from Galaltix Nigeria Limited. From grains to fresh produce, we deliver quality agricultural commodities worldwide.">
+  <meta name="keywords" content="Galaltix, Agricultural Products, Nigeria, Premium Grains, Tubers, Fresh Produce, Export Quality, Cashew Nuts, Sesame Seeds">
   <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
 
   <!-- Favicons -->
@@ -27,6 +27,1297 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Modern Products Page Styling -->
+  <style>
+    /* Ultra-Modern Hero Section */
+    .products-hero-modern {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .products-hero-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(200, 121, 53, 0.05) 0%, rgba(184, 104, 41, 0.02) 100%);
+      z-index: 1;
+    }
+    
+    .min-vh-75 {
+      min-height: 75vh;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-right: 2rem;
+    }
+    
+    .badge-modern {
+      display: inline-block;
+      background: linear-gradient(135deg, #c87935, #e09450);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.2);
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    
+    .hero-description {
+      font-size: 1.2rem;
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 90%;
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 40px;
+    }
+    
+    .hero-stats .stat-item {
+      text-align: center;
+    }
+    
+    .hero-stats .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #c87935;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .hero-stats .stat-label {
+      font-size: 14px;
+      color: #6c757d;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+    
+    .btn-modern.btn-primary {
+      background: linear-gradient(135deg, #c87935, #b86829);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.3);
+    }
+    
+    .btn-modern.btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(200, 121, 53, 0.4);
+      color: white;
+    }
+    
+    .btn-modern.btn-outline {
+      background: transparent;
+      color: #c87935;
+      border: 2px solid #c87935;
+    }
+    
+    .btn-modern.btn-outline:hover {
+      background: #c87935;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.2);
+    }
+    
+    /* Hero Image Stack */
+    .hero-image {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .image-stack {
+      position: relative;
+      height: 500px;
+    }
+    
+    .image-stack > div {
+      position: absolute;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    
+    .image-stack > div:hover {
+      transform: translateY(-10px);
+    }
+    
+    .image-1 {
+      width: 280px;
+      height: 200px;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
+    
+    .image-2 {
+      width: 240px;
+      height: 180px;
+      top: 120px;
+      right: 40px;
+      z-index: 2;
+    }
+    
+    .image-3 {
+      width: 200px;
+      height: 160px;
+      top: 260px;
+      left: 60px;
+      z-index: 1;
+    }
+    
+    .image-stack img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .product-label {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Featured Products Showcase */
+    .featured-products-showcase {
+      padding: 100px 0;
+      background: #f8f9fa;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #c87935, #e09450);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .section-description {
+      font-size: 1.1rem;
+      color: #6c757d;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .featured-product {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+    
+    .featured-product:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(200, 121, 53, 0.25);
+    }
+    
+    .product-media {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .featured-product:hover .product-media img {
+      transform: scale(1.1);
+    }
+    
+    .product-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(200, 121, 53, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .featured-product:hover .product-overlay {
+      opacity: 1;
+    }
+    
+    .overlay-content {
+      text-align: center;
+      color: white;
+    }
+    
+    .overlay-content h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: white;
+    }
+    
+    .overlay-content p {
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .btn-overlay {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-overlay:hover {
+      background: white;
+      color: #c87935;
+      transform: scale(1.05);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    
+    .product-badge.featured {
+      background: linear-gradient(135deg, #c87935, #e09450);
+      color: white;
+    }
+    
+    .product-badge.popular {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+    }
+    
+    .product-badge.best-seller {
+      background: linear-gradient(135deg, #17a2b8, #007bff);
+      color: white;
+    }
+    
+    .product-details {
+      padding: 30px;
+    }
+    
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .category {
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .category.grains {
+      background: rgba(200, 121, 53, 0.1);
+      color: #c87935;
+    }
+    
+    .category.legumes {
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+    }
+    
+    .category.tubers {
+      background: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+    
+    .rating {
+      color: #ffc107;
+      font-size: 14px;
+    }
+    
+    .product-details h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+    
+    .product-details p {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    
+    .product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: #495057;
+      gap: 5px;
+    }
+    
+    .feature i {
+      color: #28a745;
+      font-size: 10px;
+    }
+    
+    .btn-lg {
+      padding: 18px 40px;
+      font-size: 18px;
+    }
+    
+    /* Modern Product Cards */
+      color: #222;
+      font-size: 3.2rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    
+    .products-hero p {
+      color: #666;
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .btn-hero {
+      padding: 16px 40px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      font-size: 1rem;
+    }
+    
+    .btn-hero-primary {
+      background: #c87935;
+      color: white;
+      border-color: #c87935;
+    }
+    
+    .btn-hero-primary:hover {
+      background: #b86829;
+      border-color: #b86829;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.25);
+    }
+    
+    .btn-hero-outline {
+      background: transparent;
+      color: #c87935;
+      border-color: #c87935;
+    }
+    
+    .btn-hero-outline:hover {
+      background: #c87935;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.2);
+    }
+    
+    /* Modern Product Cards */
+    .modern-products {
+      padding: 100px 0;
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid #f0f0f0;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: transparent;
+    }
+    
+    .product-image {
+      height: 240px;
+      background: #f8f9fa;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #c87935;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .product-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-category {
+      color: #c87935;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    
+    .product-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+    
+    .product-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    
+    .product-link {
+      color: #c87935;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .product-link:hover {
+      color: #b86829;
+      transform: translateX(3px);
+    }
+    
+    /* Modern Category Cards */
+    .category-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 25px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid #f0f0f0;
+      position: relative;
+      height: 100%;
+    }
+    
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #c87935, #b86829);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: transparent;
+    }
+    
+    .category-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #c87935, #b86829);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .category-icon i {
+      font-size: 1.8rem;
+      color: white;
+    }
+    
+    .category-card:hover .category-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+    
+    .category-card h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    
+    .category-card p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    
+    /* Modern Stats Section */
+    .modern-stats {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 80px 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #c87935;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: #666;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Search and Filter Section */
+    .search-filter {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+    }
+    
+    .search-input {
+      border: 2px solid #f0f0f0;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      width: 100%;
+      transition: border-color 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #c87935;
+      box-shadow: 0 0 0 3px rgba(200, 121, 53, 0.1);
+    }
+    
+    .filter-btn {
+      background: #f8f9fa;
+      border: 2px solid #f0f0f0;
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #c87935;
+      border-color: #c87935;
+      color: white;
+    }
+    
+    /* Featured Product Cards - Large horizontal layout */
+    .featured-product-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      min-height: 400px;
+    }
+    
+    .featured-product-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 60px rgba(200, 121, 53, 0.25);
+    }
+    
+    .featured-product-card .product-image-container {
+      position: relative;
+      flex: 0 0 50%;
+      overflow: hidden;
+    }
+    
+    .featured-product-card .product-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .featured-product-card:hover .product-image-container img {
+      transform: scale(1.1);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #c87935, #e09450);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    
+    .product-badge.popular {
+      background: linear-gradient(135deg, #28a745, #20c997);
+    }
+    
+    .featured-content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .category-badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .category-badge.grains {
+      background: rgba(200, 121, 53, 0.1);
+      color: #c87935;
+    }
+    
+    .category-badge.legumes {
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+    }
+    
+    .category-badge.tubers {
+      background: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+    
+    .category-badge.spices {
+      background: rgba(220, 53, 69, 0.1);
+      color: #dc3545;
+    }
+    
+    .category-badge.vegetables {
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+    }
+    
+    .product-rating {
+      color: #ffc107;
+      font-size: 14px;
+    }
+    
+    .featured-content h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .featured-content p {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .product-highlights {
+      margin-bottom: 20px;
+    }
+    
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      color: #495057;
+    }
+    
+    .highlight-item i {
+      color: #c87935;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    
+    .product-info {
+      margin-bottom: 20px;
+    }
+    
+    .info-item {
+      margin-bottom: 8px;
+      color: #6c757d;
+      font-size: 14px;
+    }
+    
+    .info-item strong {
+      color: #495057;
+    }
+    
+    /* Overlay Actions for Featured Cards */
+    .featured-product-card .product-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(200, 121, 53, 0.9), rgba(44, 62, 80, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .featured-product-card:hover .product-overlay {
+      opacity: 1;
+    }
+    
+    .overlay-content {
+      text-align: center;
+      color: white;
+    }
+    
+    .overlay-content h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: white;
+    }
+    
+    .overlay-content p {
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      margin: 0 5px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn-action:hover {
+      background: white;
+      color: #c87935;
+      transform: scale(1.05);
+    }
+    
+    .btn-action i {
+      margin-right: 8px;
+    }
+    
+    /* Compact Product Cards */
+    .compact-product-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .compact-product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .product-image-wrapper {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .product-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .compact-product-card:hover .product-image-wrapper img {
+      transform: scale(1.05);
+    }
+    
+    .quick-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .compact-product-card:hover .quick-actions {
+      opacity: 1;
+    }
+    
+    .quick-preview, .quick-quote {
+      width: 35px;
+      height: 35px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .quick-preview:hover, .quick-quote:hover {
+      background: #c87935;
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .category-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .category-tag.tubers {
+      background: rgba(255, 193, 7, 0.9);
+      color: #000;
+    }
+    
+    .category-tag.spices {
+      background: rgba(220, 53, 69, 0.9);
+      color: white;
+    }
+    
+    .category-tag.grains {
+      background: rgba(200, 121, 53, 0.9);
+      color: white;
+    }
+    
+    .category-tag.vegetables {
+      background: rgba(40, 167, 69, 0.9);
+      color: white;
+    }
+    
+    .compact-content {
+      padding: 20px;
+    }
+    
+    .compact-content h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    
+    .compact-content p {
+      color: #6c757d;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    
+    .product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .spec-item {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: #495057;
+    }
+    
+    .spec-item i {
+      color: #28a745;
+      margin-right: 5px;
+      font-size: 10px;
+    }
+    
+    /* Standard Product Cards */
+    .standard-product-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+    
+    .standard-product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(200, 121, 53, 0.25);
+    }
+    
+    .product-image-area {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .product-image-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .standard-product-card:hover .product-image-area img {
+      transform: scale(1.1);
+    }
+    
+    .product-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(200, 121, 53, 0.8));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .standard-product-card:hover .product-hover {
+      opacity: 1;
+    }
+    
+    .hover-actions {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .action-btn {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .action-btn:hover {
+      background: white;
+      color: #c87935;
+      transform: scale(1.2);
+    }
+    
+    .standard-content {
+      padding: 25px;
+    }
+    
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .category-label {
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .category-label.grains {
+      background: rgba(200, 121, 53, 0.1);
+      color: #c87935;
+    }
+    
+    .category-label.legumes {
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+    }
+    
+    .category-label.tubers {
+      background: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+    
+    .quality-rating {
+      color: #ffc107;
+      font-size: 12px;
+    }
+    
+    .standard-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 12px;
+    }
+    
+    .standard-content p {
+      color: #6c757d;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .feature-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .feature-tags .tag {
+      padding: 4px 10px;
+      background: #f8f9fa;
+      color: #495057;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .featured-product-card {
+        flex-direction: column;
+        min-height: auto;
+      }
+      
+      .featured-product-card .product-image-container {
+        flex: none;
+        height: 250px;
+      }
+      
+      .featured-content {
+        padding: 30px;
+      }
+      
+      .featured-content h3 {
+        font-size: 24px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .products-hero {
+        padding: 80px 0;
+      }
+      
+      .products-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+      }
+      
+      .products-hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .btn-hero {
+        width: 280px;
+        text-align: center;
+      }
+      
+      .product-card {
+        margin-bottom: 30px;
+      }
+      
+      .category-card {
+        padding: 30px 20px;
+      }
+      
+      .stat-number {
+        font-size: 2.2rem;
+      }
+    }
+    
+    /* Animation for loading states */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
 </head>
 
 <body class="products-page">
@@ -83,151 +1374,770 @@
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Our Products</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Products</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- Products Section -->
-    <section id="products" class="products section light-background">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Products</h2>
-        <p><span>Discover Our</span> <span class="description-title">Premium Agricultural Products</span></p>
-      </div>
-
+    <!-- Ultra-Modern Hero Section -->
+    <section class="products-hero-modern">
       <div class="container">
-        <div class="row mb-4" data-aos="fade-up">
-          <div class="col-12">
-            <p class="text-center">We supply a wide range of premium agricultural products sourced directly from trusted Nigerian farms. Our products include grains, tubers, and fresh produce, all meeting the highest quality standards for both local and international markets.</p>
+        <div class="row align-items-center min-vh-75">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="hero-content">
+              <span class="badge-modern">🌾 Premium Quality</span>
+              <h1 class="hero-title">World-Class Agricultural Products</h1>
+              <p class="hero-description">From Nigeria's most fertile farmlands to global markets. We source, process, and deliver premium agricultural commodities that meet international quality standards.</p>
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <div class="stat-number">500+</div>
+                  <div class="stat-label">Products</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">25+</div>
+                  <div class="stat-label">Partner Farms</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">15+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+              </div>
+              <div class="hero-actions">
+                <a href="#featured-products" class="btn-modern btn-primary">
+                  <i class="bi bi-grid-3x3-gap"></i> Explore Products
+                </a>
+                <a href="contact.html" class="btn-modern btn-outline">
+                  <i class="bi bi-chat-dots"></i> Get Quote
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div id="products-grid" class="row gy-4" data-aos="fade-up" data-aos-delay="200"></div>
-        <div class="text-center" id="products-empty" hidden>
-          <div class="row">
-            <div class="col-12">
-              <div class="alert alert-info">
-                <h4>Products Coming Soon</h4>
-                <p>We are currently updating our product catalog. Please check back soon or contact us directly for information about our available products.</p>
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="hero-image">
+              <div class="image-stack">
+                <div class="image-1">
+                  <img src="assets/img/portfolio/app-1.jpg" alt="Premium Rice" class="img-fluid">
+                  <div class="product-label">Premium Rice</div>
+                </div>
+                <div class="image-2">
+                  <img src="assets/img/portfolio/product-1.jpg" alt="Black-Eyed Peas" class="img-fluid">
+                  <div class="product-label">Fresh Legumes</div>
+                </div>
+                <div class="image-3">
+                  <img src="assets/img/portfolio/branding-1.jpg" alt="Fresh Produce" class="img-fluid">
+                  <div class="product-label">Farm Fresh</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section><!-- /Ultra-Modern Hero Section -->
 
-    </section><!-- /Products Section -->
-
-    <!-- Featured Products Section -->
-    <section id="featured-products" class="featured-services section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Product Categories</h2>
-        <p><span>Explore Our</span> <span class="description-title">Main Product Categories</span></p>
-      </div>
-
+    <!-- Featured Products Showcase -->
+    <section id="featured-products" class="featured-products-showcase">
       <div class="container">
-
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center" data-aos="fade-up">
+            <span class="section-badge">Our Products</span>
+            <h2 class="section-title">Featured Premium Products</h2>
+            <p class="section-description">Experience the finest agricultural commodities Nigeria has to offer, carefully selected and processed to international standards.</p>
+          </div>
+        </div>
+        
         <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-flower1 icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Grains</a></h4>
-              <p>Premium quality grains including sorghum, maize, soybeans, and millet sourced from the best farms across Nigeria.</p>
+          <!-- Featured Product 1: Premium Rice -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="featured-product">
+              <div class="product-media">
+                <img src="assets/img/portfolio/app-1.jpg" alt="Premium Nigerian Rice" class="img-fluid">
+                <div class="product-overlay">
+                  <div class="overlay-content">
+                    <h4>Premium Nigerian Rice</h4>
+                    <p>Locally grown, internationally recognized</p>
+                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="product-badge featured">Featured</div>
+              </div>
+              <div class="product-details">
+                <div class="product-meta">
+                  <span class="category grains">Grains</span>
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <h3>Premium Nigerian Rice</h3>
+                <p>High-quality parboiled rice varieties sourced from Nigeria's best rice-producing regions. Available in 25kg, 50kg bags.</p>
+                <div class="product-features">
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Locally Sourced</span>
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Premium Grade</span>
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Export Quality</span>
+                </div>
+              </div>
             </div>
-          </div><!-- End Product Category -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-tree icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Tubers</a></h4>
-              <p>Fresh tubers including yam, cassava, sweet potatoes, and cocoyam, carefully harvested and processed for quality.</p>
+          </div>
+          
+          <!-- Featured Product 2: Black-Eyed Peas -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="featured-product">
+              <div class="product-media">
+                <img src="assets/img/portfolio/product-1.jpg" alt="Fresh Black-Eyed Peas" class="img-fluid">
+                <div class="product-overlay">
+                  <div class="overlay-content">
+                    <h4>Fresh Black-Eyed Peas</h4>
+                    <p>Protein-rich Nigerian legumes</p>
+                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="product-badge popular">Popular</div>
+              </div>
+              <div class="product-details">
+                <div class="product-meta">
+                  <span class="category legumes">Legumes</span>
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                </div>
+                <h3>Fresh Black-Eyed Peas</h3>
+                <p>Nutritious cowpeas packed with protein and fiber. Perfect for traditional dishes and modern recipes. Available year-round.</p>
+                <div class="product-features">
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> High Protein</span>
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Farm Fresh</span>
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Nutritious</span>
+                </div>
+              </div>
             </div>
-          </div><!-- End Product Category -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-basket icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Fresh Produce</a></h4>
-              <p>High-quality fresh produce including tomatoes, onions, peppers, and vegetables, delivered at peak freshness.</p>
+          </div>
+          
+          <!-- Featured Product 3: Premium Yam -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="featured-product">
+              <div class="product-media">
+                <img src="assets/img/portfolio/app-3.jpg" alt="Premium Yam" class="img-fluid">
+                <div class="product-overlay">
+                  <div class="overlay-content">
+                    <h4>Premium Yam</h4>
+                    <p>Nigeria's finest tuber crop</p>
+                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="product-badge best-seller">Best Seller</div>
+              </div>
+              <div class="product-details">
+                <div class="product-meta">
+                  <span class="category tubers">Tubers</span>
+                  <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <h3>Premium Yam</h3>
+                <p>Traditional Nigerian staple tuber providing essential carbohydrates. Fresh from our partner farms with excellent shelf life.</p>
+                <div class="product-features">
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Traditional Staple</span>
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Fresh Harvest</span>
+                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Long Shelf Life</span>
+                </div>
+              </div>
             </div>
-          </div><!-- End Product Category -->
+          </div>
+        </div>
+        
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="#modern-products" class="btn-modern btn-primary btn-lg">
+            <i class="bi bi-grid-3x3-gap"></i> View All Products
+          </a>
+        </div>
+      </div>
+    </section><!-- /Featured Products Showcase -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-gift icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Processed Goods</a></h4>
-              <p>Value-added processed agricultural products including flours, oils, and dried fruits with extended shelf life.</p>
-            </div>
-          </div><!-- End Product Category -->
-
+    <!-- Modern Products Showcase Section -->
+    <section id="modern-products" class="modern-products-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2>Our Product Range</h2>
+          <p>Premium agricultural commodities sourced directly from Nigerian farms</p>
         </div>
 
-      </div>
+        <!-- Product Categories Filter -->
+        <div class="product-filters" data-aos="fade-up" data-aos-delay="100">
+          <div class="filter-buttons text-center mb-5">
+            <button class="filter-btn active" data-filter="*">All Products</button>
+            <button class="filter-btn" data-filter=".filter-grains">Grains</button>
+            <button class="filter-btn" data-filter=".filter-legumes">Legumes</button>
+            <button class="filter-btn" data-filter=".filter-tubers">Tubers</button>
+            <button class="filter-btn" data-filter=".filter-spices">Spices</button>
+            <button class="filter-btn" data-filter=".filter-vegetables">Vegetables</button>
+          </div>
+        </div>
 
-    </section><!-- /Featured Products Section -->
-
-    <!-- Why Choose Our Products Section -->
-    <section id="why-products" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-3">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" alt="Quality Agricultural Products" class="img-fluid">
+        <!-- Enhanced Product Grid -->
+        <div class="row gy-5 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          
+          <!-- Featured Product - Premium Rice -->
+          <div class="col-lg-6 portfolio-item isotope-item filter-grains">
+            <div class="featured-product-card">
+              <div class="product-image-container">
+                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Premium Rice">
+                <div class="product-badge">Featured</div>
+                <div class="product-overlay">
+                  <div class="overlay-content">
+                    <h3>Premium Rice</h3>
+                    <p>Nigeria's finest rice varieties</p>
+                    <div class="product-actions">
+                      <a href="assets/img/portfolio/app-1.jpg" class="btn-action btn-preview glightbox" title="Premium Rice">
+                        <i class="bi bi-eye"></i> View
+                      </a>
+                      <a href="contact.html" class="btn-action btn-quote">
+                        <i class="bi bi-chat-quote"></i> Quote
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="featured-content">
+                <div class="product-meta">
+                  <span class="category-badge grains">Grains</span>
+                  <div class="product-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <h3>Premium Rice</h3>
+                <p>High-quality Nigerian rice varieties perfect for households and commercial use. Our rice is carefully selected from the finest farms and processed using modern techniques.</p>
+                <div class="product-highlights">
+                  <div class="highlight-item">
+                    <i class="bi bi-check-circle"></i>
+                    <span>Locally Sourced</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="bi bi-award"></i>
+                    <span>Premium Grade</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Quality Assured</span>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <div class="info-item">
+                    <strong>Origin:</strong> Nigerian Farms
+                  </div>
+                  <div class="info-item">
+                    <strong>Processing:</strong> Modern Mills
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-content ps-0 ps-lg-3">
-              <h3>Why Choose Our Agricultural Products?</h3>
-              <p class="fst-italic">
+          <!-- Black-Eyed Peas -->
+          <div class="col-lg-6 portfolio-item isotope-item filter-legumes">
+            <div class="featured-product-card">
+              <div class="product-image-container">
+                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="Black-Eyed Peas">
+                <div class="product-badge popular">Popular</div>
+                <div class="product-overlay">
+                  <div class="overlay-content">
+                    <h3>Black-Eyed Peas</h3>
+                    <p>Protein-rich nutritious legumes</p>
+                    <div class="product-actions">
+                      <a href="assets/img/portfolio/product-1.jpg" class="btn-action btn-preview glightbox" title="Black-Eyed Peas">
+                        <i class="bi bi-eye"></i> View
+                      </a>
+                      <a href="contact.html" class="btn-action btn-quote">
+                        <i class="bi bi-chat-quote"></i> Quote
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="featured-content">
+                <div class="product-meta">
+                  <span class="category-badge legumes">Legumes</span>
+                  <div class="product-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                </div>
+                <h3>Black-Eyed Peas</h3>
+                <p>Fresh and nutritious legumes packed with protein and fiber. Excellent for traditional and modern recipes, these cowpeas are carefully harvested and processed.</p>
+                <div class="product-highlights">
+                  <div class="highlight-item">
+                    <i class="bi bi-heart-fill"></i>
+                    <span>High Protein</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="bi bi-leaf"></i>
+                    <span>Farm Fresh</span>
+                  </div>
+                  <div class="highlight-item">
+                    <i class="bi bi-nutrition"></i>
+                    <span>Nutritious</span>
+                  </div>
+                </div>
+                <div class="product-info">
+                  <div class="info-item">
+                    <strong>Protein:</strong> 24g per 100g
+                  </div>
+                  <div class="info-item">
+                    <strong>Harvest:</strong> Year-round
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sweet Potatoes -->
+          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-tubers">
+            <div class="compact-product-card">
+              <div class="product-image-wrapper">
+                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="Sweet Potatoes">
+                <div class="quick-actions">
+                  <a href="assets/img/portfolio/branding-1.jpg" class="quick-preview glightbox" title="Sweet Potatoes">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="contact.html" class="quick-quote">
+                    <i class="bi bi-chat-quote"></i>
+                  </a>
+                </div>
+                <div class="category-tag tubers">Tubers</div>
+              </div>
+              <div class="compact-content">
+                <h4>Sweet Potatoes</h4>
+                <p>Fresh farm-sourced sweet potatoes rich in vitamins and minerals.</p>
+                <div class="product-specs">
+                  <span class="spec-item"><i class="bi bi-check2"></i> Vitamin Rich</span>
+                  <span class="spec-item"><i class="bi bi-check2"></i> Fresh Harvest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ginger & Turmeric -->
+          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-spices">
+            <div class="compact-product-card">
+              <div class="product-image-wrapper">
+                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="Ginger & Turmeric">
+                <div class="quick-actions">
+                  <a href="assets/img/portfolio/books-1.jpg" class="quick-preview glightbox" title="Ginger & Turmeric">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="contact.html" class="quick-quote">
+                    <i class="bi bi-chat-quote"></i>
+                  </a>
+                </div>
+                <div class="category-tag spices">Spices</div>
+              </div>
+              <div class="compact-content">
+                <h4>Ginger & Turmeric</h4>
+                <p>Premium spices and medicinal herbs with exceptional flavor.</p>
+                <div class="product-specs">
+                  <span class="spec-item"><i class="bi bi-check2"></i> Organic</span>
+                  <span class="spec-item"><i class="bi bi-check2"></i> Medicinal Grade</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Millet & Sorghum -->
+          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-grains">
+            <div class="compact-product-card">
+              <div class="product-image-wrapper">
+                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="Millet & Sorghum">
+                <div class="quick-actions">
+                  <a href="assets/img/portfolio/app-2.jpg" class="quick-preview glightbox" title="Millet & Sorghum">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="contact.html" class="quick-quote">
+                    <i class="bi bi-chat-quote"></i>
+                  </a>
+                </div>
+                <div class="category-tag grains">Grains</div>
+              </div>
+              <div class="compact-content">
+                <h4>Millet & Sorghum</h4>
+                <p>Ancient grains with modern nutrition benefits. Gluten-free.</p>
+                <div class="product-specs">
+                  <span class="spec-item"><i class="bi bi-check2"></i> Gluten-Free</span>
+                  <span class="spec-item"><i class="bi bi-check2"></i> Ancient Grains</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fresh Vegetables -->
+          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-vegetables">
+            <div class="compact-product-card">
+              <div class="product-image-wrapper">
+                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="Fresh Vegetables">
+                <div class="quick-actions">
+                  <a href="assets/img/portfolio/product-2.jpg" class="quick-preview glightbox" title="Fresh Vegetables">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="contact.html" class="quick-quote">
+                    <i class="bi bi-chat-quote"></i>
+                  </a>
+                </div>
+                <div class="category-tag vegetables">Vegetables</div>
+              </div>
+              <div class="compact-content">
+                <h4>Fresh Vegetables</h4>
+                <p>Farm-fresh seasonal vegetables harvested at peak ripeness.</p>
+                <div class="product-specs">
+                  <span class="spec-item"><i class="bi bi-check2"></i> Seasonal Fresh</span>
+                  <span class="spec-item"><i class="bi bi-check2"></i> Pesticide-Free</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Groundnuts -->
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-legumes">
+            <div class="standard-product-card">
+              <div class="product-image-area">
+                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="Groundnuts">
+                <div class="product-hover">
+                  <div class="hover-actions">
+                    <a href="assets/img/portfolio/branding-2.jpg" class="action-btn preview glightbox" title="Groundnuts">
+                      <i class="bi bi-eye"></i>
+                    </a>
+                    <a href="contact.html" class="action-btn quote">
+                      <i class="bi bi-chat-quote"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="standard-content">
+                <div class="product-header">
+                  <span class="category-label legumes">Legumes</span>
+                  <div class="quality-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                  </div>
+                </div>
+                <h4>Groundnuts</h4>
+                <p>High-quality peanuts and groundnut oil production. Rich in healthy fats and protein.</p>
+                <div class="feature-tags">
+                  <span class="tag">Healthy Fats</span>
+                  <span class="tag">Multi-Purpose</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Maize -->
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-grains">
+            <div class="standard-product-card">
+              <div class="product-image-area">
+                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="Maize">
+                <div class="product-hover">
+                  <div class="hover-actions">
+                    <a href="assets/img/portfolio/books-2.jpg" class="action-btn preview glightbox" title="Maize">
+                      <i class="bi bi-eye"></i>
+                    </a>
+                    <a href="contact.html" class="action-btn quote">
+                      <i class="bi bi-chat-quote"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="standard-content">
+                <div class="product-header">
+                  <span class="category-label grains">Grains</span>
+                  <div class="quality-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <h4>Maize</h4>
+                <p>Premium corn varieties for all needs - from human consumption to animal feed.</p>
+                <div class="feature-tags">
+                  <span class="tag">Multi-Grade</span>
+                  <span class="tag">Versatile Use</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Product - Yam -->
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-tubers">
+            <div class="standard-product-card">
+              <div class="product-image-area">
+                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="Premium Yam">
+                <div class="product-hover">
+                  <div class="hover-actions">
+                    <a href="assets/img/portfolio/app-3.jpg" class="action-btn preview glightbox" title="Premium Yam">
+                      <i class="bi bi-eye"></i>
+                    </a>
+                    <a href="contact.html" class="action-btn quote">
+                      <i class="bi bi-chat-quote"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="standard-content">
+                <div class="product-header">
+                  <span class="category-label tubers">Tubers</span>
+                  <div class="quality-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                </div>
+                <h4>Premium Yam</h4>
+                <p>Traditional Nigerian staple providing essential carbohydrates and nutrients.</p>
+                <div class="feature-tags">
+                  <span class="tag">Traditional Staple</span>
+                  <span class="tag">High Quality</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Modern Products Showcase Section -->
+
+    <!-- Modern Product Categories Section -->
+    <section id="modern-categories" class="modern-categories-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+          <h2>Product Categories</h2>
+          <p>Explore our diverse range of agricultural product categories</p>
+        </div>
+
+        <div class="row gy-4">
+          <!-- Grains Category -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="modern-category-card">
+              <div class="category-icon">
+                <i class="bi bi-flower1"></i>
+              </div>
+              <div class="category-content">
+                <h4>Grains</h4>
+                <p>Premium quality grains including sorghum, maize, soybeans, and millet from Nigeria's finest farms.</p>
+                <div class="category-products">
+                  <span class="product-tag">Rice</span>
+                  <span class="product-tag">Maize</span>
+                  <span class="product-tag">Millet</span>
+                  <span class="product-tag">Sorghum</span>
+                </div>
+              </div>
+              <div class="category-action">
+                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tubers Category -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="modern-category-card">
+              <div class="category-icon">
+                <i class="bi bi-tree"></i>
+              </div>
+              <div class="category-content">
+                <h4>Tubers</h4>
+                <p>Fresh tubers including yam, cassava, sweet potatoes, and cocoyam, harvested and processed for quality.</p>
+                <div class="category-products">
+                  <span class="product-tag">Yam</span>
+                  <span class="product-tag">Cassava</span>
+                  <span class="product-tag">Sweet Potato</span>
+                  <span class="product-tag">Cocoyam</span>
+                </div>
+              </div>
+              <div class="category-action">
+                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legumes Category -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="modern-category-card">
+              <div class="category-icon">
+                <i class="bi bi-basket"></i>
+              </div>
+              <div class="category-content">
+                <h4>Legumes</h4>
+                <p>Protein-rich legumes including beans, groundnuts, and cowpeas, perfect for nutritious meals.</p>
+                <div class="category-products">
+                  <span class="product-tag">Black-Eyed Peas</span>
+                  <span class="product-tag">Groundnuts</span>
+                  <span class="product-tag">Soybeans</span>
+                  <span class="product-tag">Cowpeas</span>
+                </div>
+              </div>
+              <div class="category-action">
+                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spices & Vegetables Category -->
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="modern-category-card">
+              <div class="category-icon">
+                <i class="bi bi-flower3"></i>
+              </div>
+              <div class="category-content">
+                <h4>Spices & Vegetables</h4>
+                <p>Fresh spices, herbs, and vegetables including ginger, turmeric, and seasonal produce.</p>
+                <div class="category-products">
+                  <span class="product-tag">Ginger</span>
+                  <span class="product-tag">Turmeric</span>
+                  <span class="product-tag">Vegetables</span>
+                  <span class="product-tag">Herbs</span>
+                </div>
+              </div>
+              <div class="category-action">
+                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Modern Product Categories Section -->
+
+    <!-- Product Statistics Section -->
+    <section id="product-stats" class="product-stats-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-box-seam"></i>
+              </div>
+              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="2">0</div>
+              <div class="stat-label">Products Available</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="1200" data-purecounter-duration="2">0</div>
+              <div class="stat-label">Satisfied Customers</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="2">0</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2">0</div>
+              <div class="stat-label">Partner Farms</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Product Statistics Section -->
+
+    <!-- Modern Why Choose Section -->
+    <section id="why-choose-modern" class="why-choose-modern-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="why-choose-image">
+              <img src="assets/img/about.jpg" alt="Quality Agricultural Products" class="img-fluid">
+              <div class="why-choose-badge">
+                <div class="badge-content">
+                  <span class="badge-number">15+</span>
+                  <span class="badge-text">Years Experience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="why-choose-content">
+              <div class="section-badge">Why Choose Us</div>
+              <h2>Premium Quality Agricultural Products</h2>
+              <p class="section-description">
                 Our commitment to quality, sustainability, and customer satisfaction sets our products apart in the agricultural market.
               </p>
-              <ul>
-                <li>
-                  <i class="bi bi-shield-check"></i>
-                  <div>
+
+              <div class="why-choose-features">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="feature-icon">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                  <div class="feature-content">
                     <h4>Quality Assurance</h4>
                     <p>Rigorous quality control processes ensure every product meets international standards and customer expectations.</p>
                   </div>
-                </li>
-                <li>
-                  <i class="bi bi-geo-alt"></i>
-                  <div>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                  <div class="feature-icon">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <div class="feature-content">
                     <h4>Direct from Farm</h4>
                     <p>Products sourced directly from our network of trusted Nigerian farms, ensuring freshness and traceability.</p>
                   </div>
-                </li>
-                <li>
-                  <i class="bi bi-truck"></i>
-                  <div>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                  <div class="feature-icon">
+                    <i class="bi bi-truck"></i>
+                  </div>
+                  <div class="feature-content">
                     <h4>Reliable Supply Chain</h4>
                     <p>Efficient logistics and storage facilities ensure timely delivery and product integrity throughout the supply chain.</p>
                   </div>
-                </li>
-              </ul>
-              <p>
-                Whether you're looking for bulk orders for export or smaller quantities for local distribution, we provide consistent quality and reliable service for all your agricultural product needs.
-              </p>
-            </div>
+                </div>
+              </div>
 
+              <div class="why-choose-cta" data-aos="fade-up" data-aos-delay="600">
+                <p class="cta-text">
+                  Whether you're looking for bulk orders for export or smaller quantities for local distribution, we provide consistent quality and reliable service.
+                </p>
+                <a href="contact.html" class="btn-modern btn-primary">Get Quote Today <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
-
-    </section><!-- /Why Choose Section -->
+    </section><!-- /Modern Why Choose Section -->
 
   </main>
 
@@ -331,7 +2241,120 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/site-config.js"></script>
-  <script src="assets/js/supabase-integration.js"></script>
+  <!-- supabase-integration.js removed to prevent conflicts with modern products design -->
+
+  <!-- Modern Products Filter & Category Navigation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Isotope for product filtering
+      const grid = document.querySelector('.isotope-container');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const categoryLinks = document.querySelectorAll('.category-link');
+      
+      // Initialize isotope if available
+      if (typeof Isotope !== 'undefined' && grid) {
+        const iso = new Isotope(grid, {
+          itemSelector: '.portfolio-item',
+          layoutMode: 'fitRows'
+        });
+        
+        // Filter functionality
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            // Filter items
+            iso.arrange({ filter: filterValue });
+          });
+        });
+        
+        // Category navigation with filter integration
+        categoryLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get category based on link text
+            const categoryText = this.closest('.modern-category-card').querySelector('h4').textContent;
+            let filterValue = '*';
+            
+            switch(categoryText.toLowerCase()) {
+              case 'grains':
+                filterValue = '.filter-grains';
+                break;
+              case 'tubers':
+                filterValue = '.filter-tubers';
+                break;
+              case 'legumes':
+                filterValue = '.filter-legumes';
+                break;
+              case 'spices & vegetables':
+                filterValue = '.filter-spices';
+                break;
+            }
+            
+            // Smooth scroll to products section
+            document.querySelector('#modern-products').scrollIntoView({
+              behavior: 'smooth'
+            });
+            
+            // Apply filter after a short delay
+            setTimeout(() => {
+              filterButtons.forEach(btn => btn.classList.remove('active'));
+              const targetButton = document.querySelector(`[data-filter="${filterValue}"]`);
+              if (targetButton) {
+                targetButton.classList.add('active');
+                iso.arrange({ filter: filterValue });
+              }
+            }, 500);
+          });
+        });
+        
+      } else {
+        // Fallback filtering without Isotope
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            const items = document.querySelectorAll('.portfolio-item');
+            
+            items.forEach(item => {
+              if (filterValue === '*') {
+                item.style.display = 'block';
+              } else {
+                if (item.classList.contains(filterValue.replace('.', ''))) {
+                  item.style.display = 'block';
+                } else {
+                  item.style.display = 'none';
+                }
+              }
+            });
+          });
+        });
+        
+        // Category navigation without isotope
+        categoryLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Smooth scroll to products section
+            document.querySelector('#modern-products').scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
+      }
+    });
+  </script>
 
 </body>
 
