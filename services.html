@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Services - Galaltix Nig Ltd</title>
-  <meta name="description" content="Explore our comprehensive agricultural services including sourcing, export, warehousing, and supply chain management">
-  <meta name="keywords" content="Galaltix, Services, Agriculture, Nigeria, Export, Sourcing, Warehousing, Quality Inspection">
+  <title>Our Services - Agricultural Excellence | Galaltix Nigeria Limited</title>
+  <meta name="description" content="Discover world-class agricultural services from Galaltix Nigeria Limited. From sourcing to export, we deliver comprehensive solutions for your agricultural needs.">
+  <meta name="keywords" content="Galaltix, Agricultural Services, Nigeria, Export Services, Sourcing, Warehousing, Quality Inspection, Supply Chain">
   <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
 
   <!-- Favicons -->
@@ -27,6 +27,308 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Modern Services Page Styling -->
+  <style>
+    /* Modern Hero Section */
+    .services-hero {
+      background: linear-gradient(135deg, #c87935 0%, #b86829 50%, #a85a1d 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="25" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    }
+    
+    .services-hero h1 {
+      color: white;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .services-hero p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+    }
+    
+    .btn-hero {
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .btn-hero-primary {
+      background: white;
+      color: #c87935;
+    }
+    
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      color: #c87935;
+    }
+    
+    .btn-hero-outline {
+      background: transparent;
+      color: white;
+      border-color: white;
+    }
+    
+    .btn-hero-outline:hover {
+      background: white;
+      color: #c87935;
+      transform: translateY(-2px);
+    }
+    
+    /* Modern Service Cards */
+    .modern-services {
+      padding: 100px 0;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid #f0f0f0;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #c87935, #b86829);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: transparent;
+    }
+    
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #c87935, #b86829);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+    
+    .service-card:hover .service-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+    
+    .service-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .service-link {
+      color: #c87935;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-link:hover {
+      color: #b86829;
+      transform: translateX(5px);
+    }
+    
+    /* Modern Stats Section */
+    .modern-stats {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #c87935;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Modern Process Timeline */
+    .modern-process {
+      padding: 100px 0;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .process-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #c87935, #b86829);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto 25px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .process-step h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    
+    .process-step p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Modern CTA Section */
+    .modern-cta {
+      background: linear-gradient(135deg, #222 0%, #333 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .modern-cta h2 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .modern-cta p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .services-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .services-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .service-card {
+        padding: 30px 20px;
+      }
+      
+      .stat-number {
+        font-size: 2.2rem;
+      }
+    }
+    
+    /* Enhanced Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+  </style>
 </head>
 
 <body class="services-page">
@@ -83,164 +385,156 @@
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Our Services</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Services</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p><span>Comprehensive</span> <span class="description-title">Agricultural Services</span></p>
-      </div><!-- End Section Title -->
-
+    <!-- Modern Hero Section -->
+    <section class="services-hero">
       <div class="container">
-        <div class="row mb-4" data-aos="fade-up">
-          <div class="col-12">
-            <p class="text-center">We provide end-to-end agricultural services designed to meet the diverse needs of our clients, from local distribution to international export. Our services ensure quality, efficiency, and reliability at every step of the supply chain.</p>
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10">
+            <h1 data-aos="fade-up">World-Class Agricultural Services</h1>
+            <p data-aos="fade-up" data-aos-delay="200">From sourcing to export, we deliver comprehensive solutions that drive success in Nigeria's agricultural sector. Experience excellence at every step of your agricultural journey.</p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+              <a href="#modern-services" class="btn-hero btn-hero-primary">Explore Services</a>
+              <a href="contact.html" class="btn-hero btn-hero-outline">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Modern Hero Section -->
+
+    <!-- Modern Services Section -->
+    <section id="modern-services" class="modern-services">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <h2 data-aos="fade-up" style="font-size: 2.5rem; font-weight: 700; color: #222; margin-bottom: 1rem;">Our Comprehensive Services</h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.2rem; color: #666; line-height: 1.6;">We provide end-to-end agricultural solutions designed to meet the diverse needs of our clients, from local distribution to international export.</p>
           </div>
         </div>
 
         <div class="row gy-4">
-
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="bi bi-tree"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Agricultural Sourcing</h3>
+              <h3>Agricultural Sourcing</h3>
+              <p>Partner with our vast network of local farms to source the highest quality agricultural products, ensuring freshness and sustainability.</p>
+              <a href="contact.html" class="service-link">
+                Learn More <i class="bi bi-arrow-right"></i>
               </a>
-              <p>We partner with a vast network of local farms to source the highest quality agricultural products, ensuring freshness and sustainability through direct farm partnerships.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="bi bi-globe2"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Export & International Trade</h3>
+              <h3>Export & International Trade</h3>
+              <p>Seamless export processes with complete logistics and documentation to connect Nigerian produce with global markets.</p>
+              <a href="contact.html" class="service-link">
+                Learn More <i class="bi bi-arrow-right"></i>
               </a>
-              <p>We facilitate seamless export processes, handling all logistics and documentation to connect Nigerian produce with global markets, ensuring compliance with international standards.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="bi bi-archive"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Warehousing & Storage</h3>
+              <h3>Warehousing & Storage</h3>
+              <p>State-of-the-art climate-controlled facilities that maintain optimal conditions for product quality and shelf life.</p>
+              <a href="contact.html" class="service-link">
+                Learn More <i class="bi bi-arrow-right"></i>
               </a>
-              <p>Our state-of-the-art warehousing facilities ensure that products are stored in optimal conditions to maintain their quality and shelf life with climate-controlled environments.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="bi bi-clipboard-check"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Quality Inspection & Grading</h3>
+              <h3>Quality Inspection & Grading</h3>
+              <p>Rigorous inspection and grading processes to meet local and international quality standards with certified procedures.</p>
+              <a href="contact.html" class="service-link">
+                Learn More <i class="bi bi-arrow-right"></i>
               </a>
-              <p>Every batch of products undergoes rigorous inspection and grading to meet both local and international quality standards with certified quality control processes.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="bi bi-briefcase"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Supply Chain Consulting</h3>
+              <h3>Supply Chain Consulting</h3>
+              <p>Expert advice to optimize your agricultural supply chain from farm to market, enhancing efficiency and profitability.</p>
+              <a href="contact.html" class="service-link">
+                Learn More <i class="bi bi-arrow-right"></i>
               </a>
-              <p>We offer expert advice to optimize your agricultural supply chain, from farm to market, enhancing efficiency and profitability through data-driven insights.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
+            <div class="service-card">
+              <div class="service-icon">
                 <i class="bi bi-gear"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Custom Packaging & Processing</h3>
+              <h3>Custom Packaging & Processing</h3>
+              <p>Tailored packaging and primary processing services to meet specific requirements and preserve product integrity.</p>
+              <a href="contact.html" class="service-link">
+                Learn More <i class="bi bi-arrow-right"></i>
               </a>
-              <p>We provide tailored packaging and primary processing services to meet specific client requirements and preserve product integrity throughout the distribution chain.</p>
             </div>
-          </div><!-- End Service Item -->
-
+          </div>
         </div>
-
       </div>
+    </section><!-- /Modern Services Section -->
 
-    </section><!-- /Services Section -->
-
-    <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Why Choose Our Services</h2>
-        <p><span>Excellence in</span> <span class="description-title">Agricultural Solutions</span></p>
-      </div>
-
+    <!-- Modern Statistics Section -->
+    <section class="modern-stats">
       <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-truck icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Reliable Logistics</a></h4>
-              <p>Advanced logistics network ensuring timely delivery and efficient distribution across Nigeria and internationally.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-patch-check icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Quality Assurance</a></h4>
-              <p>Rigorous quality control processes guarantee that every product meets international standards.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-people icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">Expert Team</a></h4>
-              <p>Experienced professionals with deep knowledge of Nigerian agriculture and international trade requirements.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-clock icon"></i></div>
-              <h4><a href="contact.html" class="stretched-link">24/7 Support</a></h4>
-              <p>Round-the-clock customer support ensuring your agricultural supply chain operates smoothly at all times.</p>
-            </div>
-          </div><!-- End Service Item -->
-
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <h2 data-aos="fade-up" style="font-size: 2.5rem; font-weight: 700; color: #222; margin-bottom: 1rem;">Proven Excellence</h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.2rem; color: #666;">Our track record speaks for itself. These numbers represent our commitment to agricultural excellence.</p>
+          </div>
         </div>
-
+        
+        <div class="row">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="2" class="purecounter">500</span>
+              <div class="stat-label">Partner Farms</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="15000" data-purecounter-duration="2" class="purecounter">15000</span>
+              <div class="stat-label">Tons Exported</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="2" class="purecounter">98</span>
+              <div class="stat-label">% Quality Rate</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2" class="purecounter">25</span>
+              <div class="stat-label">Countries Served</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </section><!-- /Featured Services Section -->
+    </section><!-- /Modern Statistics Section -->
 
     <!-- Process Section -->
     <section id="process" class="about section light-background">
@@ -297,6 +591,22 @@
       </div>
 
     </section><!-- /Process Section -->
+
+    <!-- Modern CTA Section -->
+    <section class="modern-cta">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 data-aos="fade-up">Ready to Transform Your Agricultural Business?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Partner with Galaltix Nigeria Limited today and experience the difference that world-class agricultural services can make for your business success.</p>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <a href="contact.html" class="btn-hero btn-hero-primary" style="margin-right: 1rem;">Start Your Journey</a>
+              <a href="tel:+2348012345678" class="btn-hero btn-hero-outline">Call Us Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Modern CTA Section -->
 
   </main>
 
