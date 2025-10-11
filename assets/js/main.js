@@ -138,9 +138,18 @@
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      let configElement = swiperElement.querySelector(".swiper-config");
+      if (!configElement) {
+        console.warn('Swiper config element not found');
+        return;
+      }
+      let config;
+      try {
+        config = JSON.parse(configElement.textContent.trim());
+      } catch (e) {
+        console.error('Invalid Swiper config JSON:', e);
+        return;
+      }
 
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);

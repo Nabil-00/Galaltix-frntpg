@@ -137,7 +137,10 @@
       
       // Only replace content if we get valid products from API
       if (products && products.length > 0) {
-        grid.innerHTML = '';
+        // Safely clear grid content
+        while (grid.firstChild) {
+          grid.removeChild(grid.firstChild);
+        }
         if (emptyState) emptyState.hidden = true;
 
         products.forEach((product) => {
@@ -185,12 +188,42 @@
       setVisibility(elements, { loading: true, error: false, success: false });
       if (elements.submit) elements.submit.disabled = true;
 
-      const payload = {
-        name: form.querySelector('[name="name"]').value.trim(),
-        email: form.querySelector('[name="email"]').value.trim(),
-        subject: form.querySelector('[name="subject"]').value.trim(),
-        message: form.querySelector('[name="message"]').value.trim()
-      };
+      // Validate form inputs
+      const nameInput = form.querySelector('[name="name"]');
+      const emailInput = form.querySelector('[name="email"]');
+      const subjectInput = form.querySelector('[name="subject"]');
+      const messageInput = form.querySelector('[name="message"]');
+      
+      if (!nameInput || !emailInput || !subjectInput || !messageInput) {
+        console.error('Required form fields not found');
+        return;
+      }
+      
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const subject = subjectInput.value.trim();
+      const message = messageInput.value.trim();
+      
+      // Basic validation
+      if (!name || !email || !subject || !message) {
+        if (elements.error) {
+          elements.error.textContent = 'Please fill in all required fields.';
+        }
+        setVisibility(elements, { loading: false, error: true, success: false });
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        if (elements.error) {
+          elements.error.textContent = 'Please enter a valid email address.';
+        }
+        setVisibility(elements, { loading: false, error: true, success: false });
+        return;
+      }
+      
+      const payload = { name, email, subject, message };
 
       try {
         await fetchJson(endpoints.contact, {
@@ -207,7 +240,11 @@
       } catch (error) {
         console.error('Contact form submission failed:', error);
         if (elements.error) {
-          elements.error.textContent = error.message || 'An error occurred. Please try again later.';
+          // Sanitize error message to prevent information disclosure
+          const safeErrorMessage = error.name === 'AbortError' 
+            ? 'Request timed out. Please try again.'
+            : 'An error occurred. Please try again later.';
+          elements.error.textContent = safeErrorMessage;
         }
         setVisibility(elements, { loading: false, error: true, success: false });
       } finally {
@@ -236,9 +273,16 @@
       if (elements.submit) elements.submit.disabled = true;
 
       const emailInput = form.querySelector('[name="email"]');
+      if (!emailInput) {
+        console.error('Email input field not found');
+        return;
+      }
+      
       const email = emailInput.value.trim().toLowerCase();
-
-      if (!email) {
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
         if (elements.error) {
           elements.error.textContent = 'Please enter a valid email address.';
         }
@@ -261,7 +305,11 @@
       } catch (error) {
         console.error('Newsletter subscription failed:', error);
         if (elements.error) {
-          elements.error.textContent = error.message || 'Unable to subscribe right now. Please try again later.';
+          // Sanitize error message to prevent information disclosure
+          const safeErrorMessage = error.name === 'AbortError' 
+            ? 'Request timed out. Please try again.'
+            : 'Unable to subscribe right now. Please try again later.';
+          elements.error.textContent = safeErrorMessage;
         }
         setVisibility(elements, { loading: false, error: true, success: false });
       } finally {
