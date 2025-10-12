@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Why Choose Us - Galaltix Nigeria Limited | Agricultural Excellence</title>
+  <meta name="description" content="Discover why Galaltix Nigeria Limited is your trusted partner for premium agricultural products. Experience quality, reliability, and excellence in every transaction.">
+  <meta name="keywords" content="Galaltix, Why Choose Us, Agricultural Excellence, Quality Assurance, Nigerian Agriculture, Export Services">
+  <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Custom Why Us Page Styles -->
+  <style>
+    .why-us-hero {
+      background: linear-gradient(135deg, rgba(200, 121, 53, 0.08) 0%, rgba(184, 104, 41, 0.05) 100%);
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .why-us-hero h1 {
+      color: #222;
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    .why-us-hero p {
+      color: #666;
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    
+    .advantage-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 1px solid #f0f0f0;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .advantage-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #c87935, #b86829);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .advantage-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .advantage-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: transparent;
+    }
+    
+    .advantage-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #c87935, #b86829);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .advantage-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+    
+    .advantage-card:hover .advantage-icon {
+      transform: rotate(10deg) scale(1.1);
+    }
+    
+    .advantage-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    
+    .advantage-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 80px 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #c87935;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #666;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #222 0%, #333 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn-cta {
+      background: #c87935;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid #c87935;
+      display: inline-block;
+      margin: 0 10px;
+    }
+    
+    .btn-cta:hover {
+      background: #b86829;
+      border-color: #b86829;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(200, 121, 53, 0.4);
+    }
+    
+    .btn-cta-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .btn-cta-outline:hover {
+      background: white;
+      color: #222;
+    }
+  </style>
+</head>
+
+<body class="why-us-page">
+
+  <!-- Price Ticker Bar -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <span class="price-ticker-item">Soya beans (NON-GMO) – ₦650,000 per metric ton</span>
+      <span class="price-ticker-item">Hibiscus Flowers – ₦1,600,000 per metric ton</span>
+      <span class="price-ticker-item">Natural Sesame Seeds – ₦2,050,000 per metric ton</span>
+      <span class="price-ticker-item">Raw Cashew Nuts – ₦1,850,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Ginger – ₦2,200,000 per metric ton</span>
+      <span class="price-ticker-item">Shea Butter (Raw) – ₦950,000 per metric ton</span>
+      <span class="price-ticker-item">Tiger Nuts – ₦1,200,000 per metric ton</span>
+      <span class="price-ticker-item">Palm Kernel Oil – ₦780,000 per metric ton</span>
+      <span class="price-ticker-item">Moringa Seeds – ₦3,500,000 per metric ton</span>
+      <span class="price-ticker-item">White Maize – ₦420,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Cocoa Beans – ₦2,800,000 per metric ton</span>
+      <span class="price-ticker-item">Black Pepper – ₦4,200,000 per metric ton</span>
+    </div>
+  </div>
+  <!-- End Price Ticker Bar -->
+
+  <header id="header" class="header sticky-top">
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown"><a href="about.html"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="why-us.html" class="active">Why Us</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section class="why-us-hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 data-aos="fade-up">Why Choose Galaltix?</h1>
+            <p data-aos="fade-up" data-aos-delay="200">We are Nigeria's trusted partner in agricultural excellence, delivering quality, reliability, and innovation in every aspect of our services.</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Advantages Section -->
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <h2 data-aos="fade-up" style="font-size: 2.5rem; font-weight: 600; color: #222; margin-bottom: 1rem;">Our Competitive Advantages</h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.2rem; color: #666;">What sets us apart in the agricultural industry</p>
+          </div>
+        </div>
+        
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3>Quality Assurance</h3>
+              <p>Rigorous quality control processes ensure every product meets international standards. Our certified procedures guarantee consistency and excellence in every delivery.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <h3>Direct Farm Sourcing</h3>
+              <p>We work directly with over 500 partner farms across Nigeria, ensuring freshness, traceability, and supporting local agricultural communities.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h3>Reliable Supply Chain</h3>
+              <p>Advanced logistics network with temperature-controlled storage and efficient distribution systems ensure timely delivery and product integrity.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <h3>15+ Years Experience</h3>
+              <p>Over a decade and a half of experience in the agricultural sector, building trust and expertise that our clients rely on for their success.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="bi bi-globe"></i>
+              </div>
+              <h3>Global Export Network</h3>
+              <p>Established relationships with international buyers across 25+ countries, providing seamless access to global markets for premium Nigerian agricultural products.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <h3>Expert Team</h3>
+              <p>Our experienced team of agricultural specialists, logistics experts, and quality controllers work together to deliver exceptional service at every step.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Advantages Section -->
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <h2 data-aos="fade-up" style="font-size: 2.5rem; font-weight: 600; color: #222; margin-bottom: 1rem;">Numbers That Speak</h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="font-size: 1.2rem; color: #666;">Our track record demonstrates our commitment to excellence</p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="2" class="purecounter">500</span>
+              <div class="stat-label">Partner Farms</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="15000" data-purecounter-duration="2" class="purecounter">15000</span>
+              <div class="stat-label">Tons Exported</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="2" class="purecounter">98</span>
+              <div class="stat-label">% Quality Rate</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-item">
+              <span class="stat-number" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2" class="purecounter">25</span>
+              <div class="stat-label">Countries Served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Statistics Section -->
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 data-aos="fade-up">Ready to Experience the Galaltix Advantage?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Join hundreds of satisfied clients who trust us for their agricultural needs. Let's discuss how we can serve you better.</p>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <a href="contact.html" class="btn-cta">Start Partnership</a>
+              <a href="products.html" class="btn-cta btn-cta-outline">View Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /CTA Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form id="newsletter-form" action="#" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galatix Nigeria Limited" style="max-height: 40px;">
+          </a>
+          <p class="mt-3">A leading supplier of premium agricultural goods in Nigeria, committed to quality, sustainability, and customer satisfaction.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Export & Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Logistics</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Custom Packaging</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>NO 19 Fandriana close</p>
+          <p>wuse 2, Abuja, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 813 536 4759</span></p>
+          <p><strong>Email:</strong> <span>info@galaltixnig.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
