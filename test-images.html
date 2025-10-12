@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        img { width: 200px; height: 150px; object-fit: cover; margin: 10px; border: 2px solid #ddd; }
+        .error { background-color: #ffeeee; padding: 10px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Product Images Test</h1>
+    
+    <h2>Mixed Beans</h2>
+    <img src="assets/img/portfolio/mixed-beans.jpg" alt="Mixed Beans" onerror="this.parentNode.innerHTML+='<div class=error>ERROR: mixed-beans.jpg not found</div>'">
+    
+    <h2>Cocoa Beans</h2>
+    <img src="assets/img/portfolio/cocoa-beans.jpg" alt="Cocoa Beans" onerror="this.parentNode.innerHTML+='<div class=error>ERROR: cocoa-beans.jpg not found</div>'">
+    
+    <h2>Dried Hibiscus</h2>
+    <img src="assets/img/portfolio/dried-hibiscus.jpg" alt="Dried Hibiscus" onerror="this.parentNode.innerHTML+='<div class=error>ERROR: dried-hibiscus.jpg not found</div>'">
+    
+    <h2>Dried Mushrooms</h2>
+    <img src="assets/img/portfolio/dried-mushrooms.jpg" alt="Dried Mushrooms" onerror="this.parentNode.innerHTML+='<div class=error>ERROR: dried-mushrooms.jpg not found</div>'">
+    
+    <h2>Cashew Nuts</h2>
+    <img src="assets/img/portfolio/cashew-nuts.jpg" alt="Cashew Nuts" onerror="this.parentNode.innerHTML+='<div class=error>ERROR: cashew-nuts.jpg not found</div>'">
+    
+    <h2>File Check</h2>
+    <p>Open browser console and check for any 404 errors on image requests.</p>
+</body>
+</html>
