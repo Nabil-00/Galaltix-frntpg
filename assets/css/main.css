@@ -402,10 +402,10 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 50px;
   margin-right: 8px;
-  width: 150px;
-  height: 100px;
+  width: auto;
+  height: auto;
 }
 
 .header .logo h1 {
