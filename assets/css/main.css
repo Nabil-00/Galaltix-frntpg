@@ -23,7 +23,7 @@
 
 .price-ticker-content {
   display: inline-block;
-  animation: scroll-left 70s linear infinite;
+  animation: scroll-left 100s linear infinite;
   padding-left: 100%;
   white-space: nowrap;
 }
@@ -129,7 +129,7 @@
   }
   
   .price-ticker-content {
-    animation: scroll-left 65s linear infinite;
+    animation: scroll-left 90s linear infinite;
   }
   
   .header {
@@ -152,7 +152,7 @@
   }
   
   .price-ticker-content {
-    animation: scroll-left 60s linear infinite;
+    animation: scroll-left 80s linear infinite;
   }
   
   .price-ticker-item {

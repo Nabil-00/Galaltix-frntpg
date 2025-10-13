@@ -28,266 +28,202 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   
-  <!-- Modern Products Page Styling -->
+  <!-- Clean Products Page Styling -->
   <style>
-    /* Ultra-Modern Hero Section */
-    .products-hero-modern {
+    /* Clean Hero Section */
+    .products-hero {
       background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      padding: 120px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .products-hero-modern::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(200, 121, 53, 0.05) 0%, rgba(184, 104, 41, 0.02) 100%);
-      z-index: 1;
-    }
-    
-    .min-vh-75 {
-      min-height: 75vh;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding-right: 2rem;
-    }
-    
-    .badge-modern {
-      display: inline-block;
-      background: linear-gradient(135deg, #c87935, #e09450);
-      color: white;
-      padding: 8px 20px;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.2);
-    }
-    
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #2c3e50;
-      line-height: 1.2;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-    
-    .hero-description {
-      font-size: 1.2rem;
-      color: #6c757d;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      max-width: 90%;
-    }
-    
-    .hero-stats {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 40px;
-    }
-    
-    .hero-stats .stat-item {
+      padding: 100px 0 80px 0;
       text-align: center;
     }
     
-    .hero-stats .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #c87935;
-      display: block;
-      margin-bottom: 5px;
-    }
-    
-    .hero-stats .stat-label {
-      font-size: 14px;
-      color: #6c757d;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .hero-actions {
-      display: flex;
-      gap: 1.5rem;
-    }
-    
-    .btn-modern {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 16px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 16px;
-    }
-    
-    .btn-modern.btn-primary {
-      background: linear-gradient(135deg, #c87935, #b86829);
-      color: white;
-      border: none;
-      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.3);
-    }
-    
-    .btn-modern.btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(200, 121, 53, 0.4);
-      color: white;
-    }
-    
-    .btn-modern.btn-outline {
-      background: transparent;
-      color: #c87935;
-      border: 2px solid #c87935;
-    }
-    
-    .btn-modern.btn-outline:hover {
-      background: #c87935;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.2);
-    }
-    
-    /* Hero Image Stack */
-    .hero-image {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .image-stack {
-      position: relative;
-      height: 500px;
-    }
-    
-    .image-stack > div {
-      position: absolute;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-    
-    .image-stack > div:hover {
-      transform: translateY(-10px);
-    }
-    
-    .image-1 {
-      width: 280px;
-      height: 200px;
-      top: 0;
-      left: 0;
-      z-index: 3;
-    }
-    
-    .image-2 {
-      width: 240px;
-      height: 180px;
-      top: 120px;
-      right: 40px;
-      z-index: 2;
-    }
-    
-    .image-3 {
-      width: 200px;
-      height: 160px;
-      top: 260px;
-      left: 60px;
-      z-index: 1;
-    }
-    
-    .image-stack img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .product-label {
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
-      background: rgba(255, 255, 255, 0.95);
-      color: #333;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      backdrop-filter: blur(10px);
-    }
-    
-    /* Featured Products Showcase */
-    .featured-products-showcase {
-      padding: 100px 0;
-      background: #f8f9fa;
-    }
-    
-    .section-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #c87935, #e09450);
-      color: white;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 16px;
-    }
-    
-    .section-title {
-      font-size: 2.8rem;
+    .hero-title {
+      font-size: 3rem;
       font-weight: 700;
       color: #2c3e50;
       margin-bottom: 20px;
-      line-height: 1.2;
     }
     
-    .section-description {
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Clean Product Cards */
+    .products-section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .section-subtitle {
       font-size: 1.1rem;
       color: #6c757d;
-      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 60px;
       max-width: 600px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    .featured-product {
+    .product-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s ease;
-      height: 100%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
     }
     
-    .featured-product:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 50px rgba(200, 121, 53, 0.25);
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
     }
     
-    .product-media {
+    .product-image {
+      height: 250px;
+      overflow: hidden;
       position: relative;
-      height: 280px;
-      overflow: hidden;
     }
     
-    .product-media img {
+    .product-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
     
-    .featured-product:hover .product-media img {
-      transform: scale(1.1);
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
     }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #c87935;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .product-content {
+      padding: 25px;
+    }
+    
+    .product-category {
+      color: #c87935;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    
+    .product-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .product-description {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .btn-primary-custom {
+      background: #c87935;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary-custom:hover {
+      background: #b86829;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Categories Section */
+    .categories-section {
+      background: #f8f9fa;
+      padding: 60px 0;
+    }
+    
+    .category-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .category-icon {
+      width: 60px;
+      height: 60px;
+      background: #c87935;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .category-icon i {
+      font-size: 24px;
+      color: white;
+    }
+    
+    .category-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .category-description {
+      color: #6c757d;
+      font-size: 14px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .product-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
     
     .product-overlay {
       position: absolute;
@@ -1374,1021 +1310,164 @@
 
   <main class="main">
 
-    <!-- Ultra-Modern Hero Section -->
-    <section class="products-hero-modern">
+    <!-- Clean Hero Section -->
+    <section class="products-hero">
       <div class="container">
-        <div class="row align-items-center min-vh-75">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="hero-content">
-              <span class="badge-modern">🌾 Premium Quality</span>
-              <h1 class="hero-title">World-Class Agricultural Products</h1>
-              <p class="hero-description">From Nigeria's most fertile farmlands to global markets. We source, process, and deliver premium agricultural commodities that meet international quality standards.</p>
-              <div class="hero-stats">
-                <div class="stat-item">
-                  <div class="stat-number">500+</div>
-                  <div class="stat-label">Products</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">25+</div>
-                  <div class="stat-label">Partner Farms</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">15+</div>
-                  <div class="stat-label">Years Experience</div>
-                </div>
-              </div>
-              <div class="hero-actions">
-                <a href="#featured-products" class="btn-modern btn-primary">
-                  <i class="bi bi-grid-3x3-gap"></i> Explore Products
-                </a>
-                <a href="contact.html" class="btn-modern btn-outline">
-                  <i class="bi bi-chat-dots"></i> Get Quote
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="hero-image">
-              <div class="image-stack">
-                <div class="image-1">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="Premium Rice" class="img-fluid">
-                  <div class="product-label">Premium Rice</div>
-                </div>
-                <div class="image-2">
-                  <img src="assets/img/hibiscus.jpeg" alt="Black-Eyed Peas" class="img-fluid">
-                  <div class="product-label">Fresh Legumes</div>
-                </div>
-                <div class="image-3">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="Fresh Produce" class="img-fluid">
-                  <div class="product-label">Farm Fresh</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h1 class="hero-title">Premium Agricultural Products</h1>
+        <p class="hero-subtitle">Quality Nigerian agricultural commodities sourced directly from trusted farms and processed to international standards.</p>
+        <div class="text-center">
+          <a href="#products" class="btn-primary-custom">Explore Our Products</a>
         </div>
       </div>
-    </section><!-- /Ultra-Modern Hero Section -->
+    </section><!-- /Clean Hero Section -->
 
-    <!-- Featured Products Showcase -->
-    <section id="featured-products" class="featured-products-showcase">
+    <!-- Clean Products Section -->
+    <section id="products" class="products-section">
       <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-lg-8 text-center" data-aos="fade-up">
-            <span class="section-badge">Our Products</span>
-            <h2 class="section-title">Featured Premium Products</h2>
-            <p class="section-description">Experience the finest agricultural commodities Nigeria has to offer, carefully selected and processed to international standards.</p>
-          </div>
-        </div>
+        <h2 class="section-title">Our Premium Products</h2>
+        <p class="section-subtitle">Quality agricultural commodities sourced from trusted Nigerian farms</p>
         
         <div class="row gy-4">
-          <!-- Featured Product 1: Mixed Beans -->
+          <!-- Product 1: Pigeon Peas -->
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="featured-product">
-              <div class="product-media">
-                <img src="assets/img/portfolio/PIGEON PEAS.jpeg" alt="Premium Mixed Beans" class="img-fluid">
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h4>Premium Mixed Beans</h4>
-                    <p>Variety of nutritious legume beans</p>
-                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="product-badge featured">Featured</div>
-              </div>
-              <div class="product-details">
-                <div class="product-meta">
-                  <span class="category legumes">Legumes</span>
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Premium Mixed Beans</h3>
-                <p>High-quality mixed bean varieties including brown and yellow beans. Rich in protein and fiber, perfect for traditional and modern dishes.</p>
-                <div class="product-features">
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> High Protein</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Premium Grade</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Export Quality</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Featured Product 2: Cocoa Beans -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="featured-product">
-              <div class="product-media">
-                <img src="assets/img/portfolio/DRIED FERMENTED COCOA BEANS.jpeg" alt="Premium Dried Cocoa Beans" class="img-fluid">
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h4>Premium Cocoa Beans</h4>
-                    <p>Finest Nigerian cocoa for export</p>
-                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="product-badge popular">Popular</div>
-              </div>
-              <div class="product-details">
-                <div class="product-meta">
-                  <span class="category grains">Cash Crops</span>
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Premium Dried Cocoa Beans</h3>
-                <p>High-grade dried cocoa beans from Nigeria's finest cocoa farms. Properly fermented and dried for international chocolate production.</p>
-                <div class="product-features">
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Export Grade</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Properly Fermented</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Premium Quality</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Featured Product 3: Dried Hibiscus -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="featured-product">
-              <div class="product-media">
-                <img src="assets/img/portfolio/DRIED HIBISCUS FLOWER.jpeg" alt="Dried Hibiscus Petals" class="img-fluid">
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h4>Dried Hibiscus Petals</h4>
-                    <p>Premium dried hibiscus for beverages</p>
-                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="product-badge best-seller">Best Seller</div>
-              </div>
-              <div class="product-details">
-                <div class="product-meta">
-                  <span class="category spices">Herbs & Spices</span>
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                  </div>
-                </div>
-                <h3>Dried Hibiscus Petals</h3>
-                <p>Premium quality dried hibiscus flowers, perfect for making healthy beverages and herbal teas. Rich in antioxidants and vitamin C.</p>
-                <div class="product-features">
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Antioxidant Rich</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Natural Dried</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Health Benefits</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Additional Featured Product 4: Dried Mushrooms -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="featured-product">
-              <div class="product-media">
-                <img src="assets/img/portfolio/dried-mushrooms.jpg" alt="Premium Dried Mushrooms" class="img-fluid">
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h4>Dried Mushrooms</h4>
-                    <p>Premium quality dried mushrooms</p>
-                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/PIGEON PEAS.jpeg" alt="Premium Pigeon Peas" class="img-fluid">
                 <div class="product-badge">Premium</div>
               </div>
-              <div class="product-details">
-                <div class="product-meta">
-                  <span class="category vegetables">Vegetables</span>
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Premium Dried Mushrooms</h3>
-                <p>High-quality dried mushrooms, naturally processed for enhanced flavor and extended shelf life. Perfect for soups and traditional dishes.</p>
-                <div class="product-features">
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Natural Process</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Extended Shelf Life</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Rich Flavor</span>
-                </div>
+              <div class="product-content">
+                <div class="product-category">Legumes</div>
+                <h3 class="product-title">Premium Pigeon Peas</h3>
+                <p class="product-description">High-quality pigeon peas rich in protein and fiber, perfect for traditional Nigerian dishes and international cuisine.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
               </div>
             </div>
           </div>
           
-          <!-- Additional Featured Product 5: Cashew Nuts -->
+          <!-- Product 2: Dried Cocoa Beans -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/DRIED FERMENTED COCOA BEANS.jpeg" alt="Dried Fermented Cocoa Beans" class="img-fluid">
+                <div class="product-badge">Export Grade</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Cash Crops</div>
+                <h3 class="product-title">Dried Fermented Cocoa Beans</h3>
+                <p class="product-description">Premium quality cocoa beans, properly fermented and dried to international standards for chocolate production.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 3: Dried Hibiscus -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/DRIED HIBISCUS FLOWER.jpeg" alt="Dried Hibiscus Flowers" class="img-fluid">
+                <div class="product-badge">Best Seller</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Herbs & Spices</div>
+                <h3 class="product-title">Dried Hibiscus Flowers</h3>
+                <p class="product-description">Premium dried hibiscus petals perfect for herbal teas and beverages, rich in antioxidants and natural flavor.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 4: Raw Cashew Nuts -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/RAW CASHEW NUTS.jpeg" alt="Raw Cashew Nuts" class="img-fluid">
+                <div class="product-badge">Popular</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Nuts</div>
+                <h3 class="product-title">Raw Cashew Nuts</h3>
+                <p class="product-description">Premium raw cashew nuts from Nigerian farms, perfect for processing or direct consumption, rich in healthy fats.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 5: Dried Split Ginger -->
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="featured-product">
-              <div class="product-media">
-                <img src="assets/img/portfolio/cashew-nuts.jpg" alt="Raw Cashew Nuts" class="img-fluid">
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h4>Raw Cashew Nuts</h4>
-                    <p>Premium Nigerian cashew nuts</p>
-                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="product-badge">Export Grade</div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/DRIED SPLIT GINGER.jpeg" alt="Dried Split Ginger" class="img-fluid">
+                <div class="product-badge">Medicinal</div>
               </div>
-              <div class="product-details">
-                <div class="product-meta">
-                  <span class="category legumes">Nuts</span>
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Raw Cashew Nuts</h3>
-                <p>Premium raw cashew nuts from Nigerian farms, carefully selected and processed for export quality. Rich in healthy fats and minerals.</p>
-                <div class="product-features">
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Healthy Fats</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Export Quality</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Mineral Rich</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Keep original Premium Yam for variety -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="featured-product">
-              <div class="product-media">
-                <img src="assets/img/portfolio/app-3.jpg" alt="Premium Yam" class="img-fluid">
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h4>Premium Yam</h4>
-                    <p>Nigeria's finest tuber crop</p>
-                    <a href="contact.html" class="btn-overlay">Get Quote <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="product-badge">Traditional</div>
-              </div>
-              <div class="product-details">
-                <div class="product-meta">
-                  <span class="category tubers">Tubers</span>
-                  <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Premium Yam</h3>
-                <p>Traditional Nigerian staple tuber providing essential carbohydrates. Fresh from our partner farms with excellent shelf life.</p>
-                <div class="product-features">
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Traditional Staple</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Fresh Harvest</span>
-                  <span class="feature"><i class="bi bi-check-circle-fill"></i> Long Shelf Life</span>
-                </div>
+              <div class="product-content">
+                <div class="product-category">Spices</div>
+                <h3 class="product-title">Dried Split Ginger</h3>
+                <p class="product-description">Premium dried split ginger with exceptional flavor and medicinal properties, perfect for culinary and therapeutic use.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section><!-- /Clean Products Section -->
+    
+    <!-- Simple Categories Section -->
+    <section class="categories-section">
+      <div class="container">
+        <h2 class="section-title">Product Categories</h2>
+        <p class="section-subtitle">Our diverse range of agricultural product categories</p>
         
-        <div class="text-center mt-5" data-aos="fade-up">
-          <a href="#modern-products" class="btn-modern btn-primary btn-lg">
-            <i class="bi bi-grid-3x3-gap"></i> View All Products
-          </a>
-        </div>
-      </div>
-    </section><!-- /Featured Products Showcase -->
-
-    <!-- Modern Products Showcase Section -->
-    <section id="modern-products" class="modern-products-section">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header text-center mb-5" data-aos="fade-up">
-          <h2>Our Product Range</h2>
-          <p>Premium agricultural commodities sourced directly from Nigerian farms</p>
-        </div>
-
-        <!-- Product Categories Filter -->
-        <div class="product-filters" data-aos="fade-up" data-aos-delay="100">
-          <div class="filter-buttons text-center mb-5">
-            <button class="filter-btn active" data-filter="*">All Products</button>
-            <button class="filter-btn" data-filter=".filter-grains">Grains</button>
-            <button class="filter-btn" data-filter=".filter-legumes">Legumes</button>
-            <button class="filter-btn" data-filter=".filter-tubers">Tubers</button>
-            <button class="filter-btn" data-filter=".filter-spices">Spices</button>
-            <button class="filter-btn" data-filter=".filter-vegetables">Vegetables</button>
-          </div>
-        </div>
-
-        <!-- Enhanced Product Grid -->
-        <div class="row gy-5 isotope-container" data-aos="fade-up" data-aos-delay="200">
-          
-          <!-- Featured Product - Mixed Beans -->
-          <div class="col-lg-6 portfolio-item isotope-item filter-legumes">
-            <div class="featured-product-card">
-              <div class="product-image-container">
-                <img src="assets/img/portfolio/PIGEON PEAS.jpeg" class="img-fluid" alt="Premium Mixed Beans">
-                <div class="product-badge">Featured</div>
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h3>Premium Mixed Beans</h3>
-                    <p>High-quality Nigerian bean varieties</p>
-                    <div class="product-actions">
-                      <a href="assets/img/portfolio/PIGEON PEAS.jpeg" class="btn-action btn-preview glightbox" title="Premium Mixed Beans">
-                        <i class="bi bi-eye"></i> View
-                      </a>
-                      <a href="contact.html" class="btn-action btn-quote">
-                        <i class="bi bi-chat-quote"></i> Quote
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="featured-content">
-                <div class="product-meta">
-                  <span class="category-badge legumes">Legumes</span>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Premium Mixed Beans</h3>
-                <p>High-quality mixed bean varieties including brown and yellow beans. Rich in protein and fiber, perfect for traditional and modern dishes.</p>
-                <div class="product-highlights">
-                  <div class="highlight-item">
-                    <i class="bi bi-heart-fill"></i>
-                    <span>High Protein</span>
-                  </div>
-                  <div class="highlight-item">
-                    <i class="bi bi-leaf"></i>
-                    <span>Farm Fresh</span>
-                  </div>
-                  <div class="highlight-item">
-                    <i class="bi bi-nutrition"></i>
-                    <span>Nutritious</span>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-item">
-                    <strong>Protein:</strong> 20g per 100g
-                  </div>
-                  <div class="info-item">
-                    <strong>Origin:</strong> Nigerian Farms
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Featured Product - Cocoa Beans -->
-          <div class="col-lg-6 portfolio-item isotope-item filter-grains">
-            <div class="featured-product-card">
-              <div class="product-image-container">
-                <img src="assets/img/portfolio/DRIED FERMENTED COCOA BEANS.jpeg" class="img-fluid" alt="Premium Dried Cocoa Beans">
-                <div class="product-badge">Export Grade</div>
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h3>Premium Cocoa Beans</h3>
-                    <p>Finest Nigerian cocoa for export</p>
-                    <div class="product-actions">
-                      <a href="assets/img/portfolio/DRIED FERMENTED COCOA BEANS.jpeg" class="btn-action btn-preview glightbox" title="Premium Cocoa Beans">
-                        <i class="bi bi-eye"></i> View
-                      </a>
-                      <a href="contact.html" class="btn-action btn-quote">
-                        <i class="bi bi-chat-quote"></i> Quote
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="featured-content">
-                <div class="product-meta">
-                  <span class="category-badge grains">Cash Crops</span>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h3>Premium Dried Cocoa Beans</h3>
-                <p>High-grade dried cocoa beans from Nigeria's finest cocoa farms. Properly fermented and dried for international chocolate production.</p>
-                <div class="product-highlights">
-                  <div class="highlight-item">
-                    <i class="bi bi-award"></i>
-                    <span>Export Grade</span>
-                  </div>
-                  <div class="highlight-item">
-                    <i class="bi bi-check-circle"></i>
-                    <span>Properly Fermented</span>
-                  </div>
-                  <div class="highlight-item">
-                    <i class="bi bi-shield-check"></i>
-                    <span>Premium Quality</span>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-item">
-                    <strong>Grade:</strong> Export Quality
-                  </div>
-                  <div class="info-item">
-                    <strong>Processing:</strong> Fermented & Dried
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Black-Eyed Peas -->
-          <div class="col-lg-6 portfolio-item isotope-item filter-legumes">
-            <div class="featured-product-card">
-              <div class="product-image-container">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="Black-Eyed Peas">
-                <div class="product-badge popular">Popular</div>
-                <div class="product-overlay">
-                  <div class="overlay-content">
-                    <h3>Black-Eyed Peas</h3>
-                    <p>Protein-rich nutritious legumes</p>
-                    <div class="product-actions">
-                      <a href="assets/img/portfolio/product-1.jpg" class="btn-action btn-preview glightbox" title="Black-Eyed Peas">
-                        <i class="bi bi-eye"></i> View
-                      </a>
-                      <a href="contact.html" class="btn-action btn-quote">
-                        <i class="bi bi-chat-quote"></i> Quote
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="featured-content">
-                <div class="product-meta">
-                  <span class="category-badge legumes">Legumes</span>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                  </div>
-                </div>
-                <h3>Black-Eyed Peas</h3>
-                <p>Fresh and nutritious legumes packed with protein and fiber. Excellent for traditional and modern recipes, these cowpeas are carefully harvested and processed.</p>
-                <div class="product-highlights">
-                  <div class="highlight-item">
-                    <i class="bi bi-heart-fill"></i>
-                    <span>High Protein</span>
-                  </div>
-                  <div class="highlight-item">
-                    <i class="bi bi-leaf"></i>
-                    <span>Farm Fresh</span>
-                  </div>
-                  <div class="highlight-item">
-                    <i class="bi bi-nutrition"></i>
-                    <span>Nutritious</span>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <div class="info-item">
-                    <strong>Protein:</strong> 24g per 100g
-                  </div>
-                  <div class="info-item">
-                    <strong>Harvest:</strong> Year-round
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dried Hibiscus -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-spices">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/DRIED HIBISCUS FLOWER.jpeg" class="img-fluid" alt="Dried Hibiscus Petals">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/DRIED HIBISCUS FLOWER.jpeg" class="quick-preview glightbox" title="Dried Hibiscus Petals">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag spices">Herbs & Spices</div>
-              </div>
-              <div class="compact-content">
-                <h4>Dried Hibiscus Petals</h4>
-                <p>Premium dried hibiscus flowers for beverages and herbal teas.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Antioxidant Rich</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Natural Dried</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dried Mushrooms -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-vegetables">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/dried-mushrooms.jpg" class="img-fluid" alt="Premium Dried Mushrooms">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/dried-mushrooms.jpg" class="quick-preview glightbox" title="Premium Dried Mushrooms">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag vegetables">Vegetables</div>
-              </div>
-              <div class="compact-content">
-                <h4>Premium Dried Mushrooms</h4>
-                <p>High-quality dried mushrooms with enhanced flavor and shelf life.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Natural Process</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Rich Flavor</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cashew Nuts -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-legumes">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/cashew-nuts.jpg" class="img-fluid" alt="Raw Cashew Nuts">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/cashew-nuts.jpg" class="quick-preview glightbox" title="Raw Cashew Nuts">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag grains">Nuts</div>
-              </div>
-              <div class="compact-content">
-                <h4>Raw Cashew Nuts</h4>
-                <p>Premium Nigerian cashew nuts for export and local processing.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Export Grade</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Healthy Fats</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sweet Potatoes -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-tubers">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="Sweet Potatoes">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/branding-1.jpg" class="quick-preview glightbox" title="Sweet Potatoes">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag tubers">Tubers</div>
-              </div>
-              <div class="compact-content">
-                <h4>Sweet Potatoes</h4>
-                <p>Fresh farm-sourced sweet potatoes rich in vitamins and minerals.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Vitamin Rich</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Fresh Harvest</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ginger & Turmeric -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-spices">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="Ginger & Turmeric">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/books-1.jpg" class="quick-preview glightbox" title="Ginger & Turmeric">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag spices">Spices</div>
-              </div>
-              <div class="compact-content">
-                <h4>Ginger & Turmeric</h4>
-                <p>Premium spices and medicinal herbs with exceptional flavor.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Organic</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Medicinal Grade</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Millet & Sorghum -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-grains">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="Millet & Sorghum">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/app-2.jpg" class="quick-preview glightbox" title="Millet & Sorghum">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag grains">Grains</div>
-              </div>
-              <div class="compact-content">
-                <h4>Millet & Sorghum</h4>
-                <p>Ancient grains with modern nutrition benefits. Gluten-free.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Gluten-Free</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Ancient Grains</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Fresh Vegetables -->
-          <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-vegetables">
-            <div class="compact-product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="Fresh Vegetables">
-                <div class="quick-actions">
-                  <a href="assets/img/portfolio/product-2.jpg" class="quick-preview glightbox" title="Fresh Vegetables">
-                    <i class="bi bi-eye"></i>
-                  </a>
-                  <a href="contact.html" class="quick-quote">
-                    <i class="bi bi-chat-quote"></i>
-                  </a>
-                </div>
-                <div class="category-tag vegetables">Vegetables</div>
-              </div>
-              <div class="compact-content">
-                <h4>Fresh Vegetables</h4>
-                <p>Farm-fresh seasonal vegetables harvested at peak ripeness.</p>
-                <div class="product-specs">
-                  <span class="spec-item"><i class="bi bi-check2"></i> Seasonal Fresh</span>
-                  <span class="spec-item"><i class="bi bi-check2"></i> Pesticide-Free</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Groundnuts -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-legumes">
-            <div class="standard-product-card">
-              <div class="product-image-area">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="Groundnuts">
-                <div class="product-hover">
-                  <div class="hover-actions">
-                    <a href="assets/img/portfolio/branding-2.jpg" class="action-btn preview glightbox" title="Groundnuts">
-                      <i class="bi bi-eye"></i>
-                    </a>
-                    <a href="contact.html" class="action-btn quote">
-                      <i class="bi bi-chat-quote"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="standard-content">
-                <div class="product-header">
-                  <span class="category-label legumes">Legumes</span>
-                  <div class="quality-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                  </div>
-                </div>
-                <h4>Groundnuts</h4>
-                <p>High-quality peanuts and groundnut oil production. Rich in healthy fats and protein.</p>
-                <div class="feature-tags">
-                  <span class="tag">Healthy Fats</span>
-                  <span class="tag">Multi-Purpose</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Maize -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-grains">
-            <div class="standard-product-card">
-              <div class="product-image-area">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="Maize">
-                <div class="product-hover">
-                  <div class="hover-actions">
-                    <a href="assets/img/portfolio/books-2.jpg" class="action-btn preview glightbox" title="Maize">
-                      <i class="bi bi-eye"></i>
-                    </a>
-                    <a href="contact.html" class="action-btn quote">
-                      <i class="bi bi-chat-quote"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="standard-content">
-                <div class="product-header">
-                  <span class="category-label grains">Grains</span>
-                  <div class="quality-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-                <h4>Maize</h4>
-                <p>Premium corn varieties for all needs - from human consumption to animal feed.</p>
-                <div class="feature-tags">
-                  <span class="tag">Multi-Grade</span>
-                  <span class="tag">Versatile Use</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional Product - Yam -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-tubers">
-            <div class="standard-product-card">
-              <div class="product-image-area">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="Premium Yam">
-                <div class="product-hover">
-                  <div class="hover-actions">
-                    <a href="assets/img/portfolio/app-3.jpg" class="action-btn preview glightbox" title="Premium Yam">
-                      <i class="bi bi-eye"></i>
-                    </a>
-                    <a href="contact.html" class="action-btn quote">
-                      <i class="bi bi-chat-quote"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="standard-content">
-                <div class="product-header">
-                  <span class="category-label tubers">Tubers</span>
-                  <div class="quality-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                  </div>
-                </div>
-                <h4>Premium Yam</h4>
-                <p>Traditional Nigerian staple providing essential carbohydrates and nutrients.</p>
-                <div class="feature-tags">
-                  <span class="tag">Traditional Staple</span>
-                  <span class="tag">High Quality</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- /Modern Products Showcase Section -->
-
-    <!-- Modern Product Categories Section -->
-    <section id="modern-categories" class="modern-categories-section">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header text-center mb-5" data-aos="fade-up">
-          <h2>Product Categories</h2>
-          <p>Explore our diverse range of agricultural product categories</p>
-        </div>
-
         <div class="row gy-4">
-          <!-- Grains Category -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="modern-category-card">
+          <!-- Category 1: Cash Crops -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-card">
               <div class="category-icon">
                 <i class="bi bi-flower1"></i>
               </div>
-              <div class="category-content">
-                <h4>Grains & Cash Crops</h4>
-                <p>Premium quality grains and cash crops including cocoa, sorghum, maize, and millet from Nigeria's finest farms.</p>
-                <div class="category-products">
-                  <span class="product-tag">Cocoa Beans</span>
-                  <span class="product-tag">Rice</span>
-                  <span class="product-tag">Maize</span>
-                  <span class="product-tag">Millet</span>
-                  <span class="product-tag">Sorghum</span>
-                </div>
-              </div>
-              <div class="category-action">
-                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
-              </div>
+              <h4 class="category-title">Cash Crops</h4>
+              <p class="category-description">Premium cocoa beans and other export-quality cash crops from Nigerian farms.</p>
             </div>
           </div>
-
-          <!-- Tubers Category -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="modern-category-card">
-              <div class="category-icon">
-                <i class="bi bi-tree"></i>
-              </div>
-              <div class="category-content">
-                <h4>Tubers</h4>
-                <p>Fresh tubers including yam, cassava, sweet potatoes, and cocoyam, harvested and processed for quality.</p>
-                <div class="category-products">
-                  <span class="product-tag">Yam</span>
-                  <span class="product-tag">Cassava</span>
-                  <span class="product-tag">Sweet Potato</span>
-                  <span class="product-tag">Cocoyam</span>
-                </div>
-              </div>
-              <div class="category-action">
-                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Legumes Category -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="modern-category-card">
+          
+          <!-- Category 2: Legumes -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="category-card">
               <div class="category-icon">
                 <i class="bi bi-basket"></i>
               </div>
-              <div class="category-content">
-                <h4>Legumes</h4>
-                <p>Protein-rich legumes including beans, groundnuts, and cowpeas, perfect for nutritious meals.</p>
-                <div class="category-products">
-                  <span class="product-tag">Mixed Beans</span>
-                  <span class="product-tag">Black-Eyed Peas</span>
-                  <span class="product-tag">Cashew Nuts</span>
-                  <span class="product-tag">Groundnuts</span>
-                  <span class="product-tag">Soybeans</span>
-                  <span class="product-tag">Cowpeas</span>
-                </div>
-              </div>
-              <div class="category-action">
-                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
-              </div>
+              <h4 class="category-title">Legumes & Nuts</h4>
+              <p class="category-description">Protein-rich pigeon peas, cashew nuts, and other nutritious legumes.</p>
             </div>
           </div>
-
-          <!-- Spices & Vegetables Category -->
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="modern-category-card">
+          
+          <!-- Category 3: Spices -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="category-card">
               <div class="category-icon">
                 <i class="bi bi-flower3"></i>
               </div>
-              <div class="category-content">
-                <h4>Spices & Vegetables</h4>
-                <p>Fresh spices, herbs, and vegetables including ginger, turmeric, hibiscus, and seasonal produce.</p>
-                <div class="category-products">
-                  <span class="product-tag">Dried Hibiscus</span>
-                  <span class="product-tag">Dried Mushrooms</span>
-                  <span class="product-tag">Ginger</span>
-                  <span class="product-tag">Turmeric</span>
-                  <span class="product-tag">Vegetables</span>
-                  <span class="product-tag">Herbs</span>
-                </div>
-              </div>
-              <div class="category-action">
-                <a href="#modern-products" class="category-link">View Products <i class="bi bi-arrow-right"></i></a>
-              </div>
+              <h4 class="category-title">Spices & Herbs</h4>
+              <p class="category-description">Dried hibiscus, split ginger, and other premium spices and herbs.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section><!-- /Modern Product Categories Section -->
-
-    <!-- Product Statistics Section -->
-    <section id="product-stats" class="product-stats-section">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-item">
-              <div class="stat-icon">
-                <i class="bi bi-box-seam"></i>
-              </div>
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="2">0</div>
-              <div class="stat-label">Products Available</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-item">
-              <div class="stat-icon">
-                <i class="bi bi-people"></i>
-              </div>
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="1200" data-purecounter-duration="2">0</div>
-              <div class="stat-label">Satisfied Customers</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-item">
-              <div class="stat-icon">
+          
+          <!-- Category 4: Export Quality -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="category-card">
+              <div class="category-icon">
                 <i class="bi bi-award"></i>
               </div>
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="2">0</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="stat-item">
-              <div class="stat-icon">
-                <i class="bi bi-geo-alt"></i>
-              </div>
-              <div class="stat-number" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2">0</div>
-              <div class="stat-label">Partner Farms</div>
+              <h4 class="category-title">Export Quality</h4>
+              <p class="category-description">All our products meet international standards for global export markets.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section><!-- /Product Statistics Section -->
-
-    <!-- Modern Why Choose Section -->
-    <section id="why-choose-modern" class="why-choose-modern-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Image Column -->
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <div class="why-choose-image">
-              <img src="assets/img/about.jpg" alt="Quality Agricultural Products" class="img-fluid">
-              <div class="why-choose-badge">
-                <div class="badge-content">
-                  <span class="badge-number">15+</span>
-                  <span class="badge-text">Years Experience</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content Column -->
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-            <div class="why-choose-content">
-              <div class="section-badge">Why Choose Us</div>
-              <h2>Premium Quality Agricultural Products</h2>
-              <p class="section-description">
-                Our commitment to quality, sustainability, and customer satisfaction sets our products apart in the agricultural market.
-              </p>
-
-              <div class="why-choose-features">
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
-                  <div class="feature-icon">
-                    <i class="bi bi-shield-check"></i>
-                  </div>
-                  <div class="feature-content">
-                    <h4>Quality Assurance</h4>
-                    <p>Rigorous quality control processes ensure every product meets international standards and customer expectations.</p>
-                  </div>
-                </div>
-
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
-                  <div class="feature-icon">
-                    <i class="bi bi-geo-alt"></i>
-                  </div>
-                  <div class="feature-content">
-                    <h4>Direct from Farm</h4>
-                    <p>Products sourced directly from our network of trusted Nigerian farms, ensuring freshness and traceability.</p>
-                  </div>
-                </div>
-
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
-                  <div class="feature-icon">
-                    <i class="bi bi-truck"></i>
-                  </div>
-                  <div class="feature-content">
-                    <h4>Reliable Supply Chain</h4>
-                    <p>Efficient logistics and storage facilities ensure timely delivery and product integrity throughout the supply chain.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="why-choose-cta" data-aos="fade-up" data-aos-delay="600">
-                <p class="cta-text">
-                  Whether you're looking for bulk orders for export or smaller quantities for local distribution, we provide consistent quality and reliable service.
-                </p>
-                <a href="contact.html" class="btn-modern btn-primary">Get Quote Today <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
+        
+        <div class="text-center mt-5">
+          <a href="contact.html" class="btn-primary-custom">Request Bulk Quote</a>
         </div>
       </div>
-    </section><!-- /Modern Why Choose Section -->
+    </section><!-- /Simple Categories Section -->
 
   </main>
 
