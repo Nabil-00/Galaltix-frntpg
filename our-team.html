@@ -27,6 +27,32 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Modal Custom Styles -->
+  <style>
+    .modal {
+      z-index: 1050;
+    }
+    
+    .modal.show {
+      display: block !important;
+    }
+    
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (max-width: 768px) {
+      .modal-dialog {
+        margin: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body class="team-page">
@@ -107,14 +133,14 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member hover-lift" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="salihu" style="cursor: pointer;">
+            <div class="team-member hover-lift" data-member="salihu" style="cursor: pointer;">
               <div class="member-img">
                 <img src="assets/img/team/team-1.png" class="img-fluid" alt="SALIHU ABDULLAHI">
                 <div class="social">
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-twitter-x"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-facebook"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-instagram"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -128,14 +154,14 @@
           </div><!-- End Team Member -->
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member hover-lift" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="abubakar-jazuli" style="cursor: pointer;">
+            <div class="team-member hover-lift" data-member="abubakar-jazuli" style="cursor: pointer;">
               <div class="member-img">
                 <img src="assets/img/team/team-4.png" class="img-fluid" alt="ABUBAKAR USMAN JAZULI">
                 <div class="social">
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-twitter-x"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-facebook"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-instagram"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -149,14 +175,14 @@
           </div><!-- End Team Member -->
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member hover-lift" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="abdullahi" style="cursor: pointer;">
+            <div class="team-member hover-lift" data-member="abdullahi" style="cursor: pointer;">
               <div class="member-img">
                 <img src="assets/img/team/team-3.png" class="img-fluid" alt="ABDULLAHI SALIHU ABDULLAHI">
                 <div class="social">
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-twitter-x"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-facebook"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-instagram"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -170,14 +196,14 @@
           </div><!-- End Team Member -->
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member hover-lift" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="sulaiman" style="cursor: pointer;">
+            <div class="team-member hover-lift" data-member="sulaiman" style="cursor: pointer;">
               <div class="member-img">
                 <img src="assets/img/team/team-2.png" class="img-fluid" alt="SULAIMAN M SULAIMAN">
                 <div class="social">
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-twitter-x"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-facebook"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-instagram"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -191,14 +217,14 @@
           </div><!-- End Team Member -->
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-            <div class="team-member hover-lift" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="operations" style="cursor: pointer;">
+            <div class="team-member hover-lift" data-member="operations" style="cursor: pointer;">
               <div class="member-img">
                 <img src="assets/img/team/team-6.png" class="img-fluid" alt="Head of Operations">
                 <div class="social">
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-twitter-x"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-facebook"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-instagram"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -212,14 +238,14 @@
           </div><!-- End Team Member -->
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="600">
-            <div class="team-member hover-lift" data-bs-toggle="modal" data-bs-target="#teamModal" data-member="abubakar-sadiq" style="cursor: pointer;">
+            <div class="team-member hover-lift" data-member="abubakar-sadiq" style="cursor: pointer;">
               <div class="member-img">
                 <img src="assets/img/team/team-5.png" class="img-fluid" alt="ABUBAKAR SADIQ">
                 <div class="social">
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-twitter-x"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-facebook"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-instagram"></i></a>
-                  <a href="" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -493,12 +519,9 @@
       }
     };
 
-    // Handle modal show event
-    document.getElementById('teamModal').addEventListener('show.bs.modal', function (event) {
-      const button = event.relatedTarget;
-      const memberKey = button.getAttribute('data-member');
+    // Function to populate modal content
+    function populateModal(memberKey) {
       const member = teamMembers[memberKey];
-
       if (member) {
         // Update modal content
         document.getElementById('modalName').textContent = member.name;
@@ -514,12 +537,12 @@
         strengthsContainer.innerHTML = '';
         member.strengths.forEach(strength => {
           const badge = document.createElement('span');
-          badge.className = 'badge bg-light text-dark border';
+          badge.className = 'badge bg-light text-dark border me-1 mb-1';
           badge.textContent = strength;
           strengthsContainer.appendChild(badge);
         });
         
-        // Update social links (you can customize these per member)
+        // Update social links
         const socialContainer = document.getElementById('modalSocial');
         socialContainer.innerHTML = `
           <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-twitter-x"></i></a>
@@ -528,6 +551,52 @@
           <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-linkedin"></i></a>
         `;
       }
+    }
+
+    // Wait for DOM to be loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, setting up team member modal functionality');
+      
+      // Add click event listeners to all team member cards
+      const teamCards = document.querySelectorAll('.team-member[data-member]');
+      console.log('Found team member cards:', teamCards.length);
+      
+      teamCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          console.log('Team member card clicked');
+          
+          // Don't trigger if clicking on social links
+          if (e.target.closest('.social a')) {
+            console.log('Social link clicked, ignoring');
+            return;
+          }
+          
+          const memberKey = this.getAttribute('data-member');
+          console.log('Opening modal for member:', memberKey);
+          
+          populateModal(memberKey);
+          
+          // Show modal using Bootstrap's modal API
+          try {
+            const modalElement = document.getElementById('teamModal');
+            console.log('Modal element found:', modalElement);
+            
+            if (typeof bootstrap !== 'undefined') {
+              console.log('Bootstrap is available');
+              const modal = new bootstrap.Modal(modalElement);
+              modal.show();
+            } else {
+              console.error('Bootstrap is not available');
+              // Fallback: show modal manually
+              modalElement.style.display = 'block';
+              modalElement.classList.add('show');
+              document.body.classList.add('modal-open');
+            }
+          } catch (error) {
+            console.error('Error showing modal:', error);
+          }
+        });
+      });
     });
   </script>
 
