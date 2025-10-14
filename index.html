@@ -52,6 +52,229 @@
       margin-bottom: 0.75rem;
       font-weight: 600;
     }
+    
+    /* Modern Product Cards Styling */
+    .modern-products {
+      padding: 80px 0;
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .product-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #c87935;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .product-content {
+      padding: 25px;
+    }
+    
+    .product-category {
+      color: #c87935;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    
+    .product-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .product-description {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .btn-primary-custom {
+      background: #c87935;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-primary-custom:hover {
+      background: #b86829;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* Global Reach Section */
+    .global-reach {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      padding: 80px 0;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .global-reach::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" fill="%23ffffff" opacity="0.03"><circle cx="200" cy="100" r="2"/><circle cx="400" cy="150" r="2"/><circle cx="600" cy="200" r="2"/><circle cx="800" cy="100" r="2"/><circle cx="300" cy="300" r="2"/><circle cx="500" cy="350" r="2"/><circle cx="700" cy="250" r="2"/><circle cx="100" cy="200" r="2"/><circle cx="900" cy="300" r="2"/></svg>');
+    }
+    
+    .global-reach .section-title {
+      color: #b5986f;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .world-map {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .world-map svg {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    }
+    
+    .region-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .region {
+      text-align: left;
+    }
+    
+    .region h4 {
+      color: #b5986f;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .region h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #c87935;
+    }
+    
+    .country-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 8px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .country-item:hover {
+      transform: translateX(10px);
+    }
+    
+    .country-flag {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 15px;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .flag-de { background: linear-gradient(to bottom, #000 33%, #dd0000 33%, #dd0000 66%, #ffce00 66%); }
+    .flag-fr { background: linear-gradient(to right, #0055a4 33%, #ffffff 33%, #ffffff 66%, #ef4135 66%); }
+    .flag-uk { background: linear-gradient(45deg, #012169 25%, #ffffff 25%, #ffffff 75%, #c8102e 75%); }
+    .flag-nl { background: linear-gradient(to bottom, #ae1c28 33%, #ffffff 33%, #ffffff 66%, #21468b 66%); }
+    .flag-es { background: linear-gradient(to bottom, #c60b1e 25%, #ffc400 25%, #ffc400 75%, #c60b1e 75%); }
+    .flag-us { background: linear-gradient(to bottom, #b22234 50%, #ffffff 50%); }
+    .flag-ca { background: linear-gradient(to right, #ff0000 33%, #ffffff 33%, #ffffff 66%, #ff0000 66%); }
+    .flag-ae { background: linear-gradient(to bottom, #00732f 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ce1126 75%); }
+    .flag-sa { background: #006c35; }
+    .flag-qa { background: #8b1538; }
+    .flag-za { background: linear-gradient(45deg, #007a4d 30%, #ffffff 30%, #ffffff 70%, #de3831 70%); }
+    .flag-eg { background: linear-gradient(to bottom, #ce1126 33%, #ffffff 33%, #ffffff 66%, #000000 66%); }
+    .flag-gh { background: linear-gradient(to bottom, #ce1126 33%, #fcd116 33%, #fcd116 66%, #006b3f 66%); }
+    .flag-bj { background: linear-gradient(to right, #00853f 40%, #fcd116 40%, #fcd116 60%, #e8112d 60%); }
+    .flag-cn { background: #de2910; }
+    .flag-in { background: linear-gradient(to bottom, #ff9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%); }
+    .flag-jp { background: #ffffff; }
+    .flag-kr { background: #ffffff; }
+    
+    .country-name {
+      color: #ecf0f1;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .region-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+      }
+      
+      .global-reach {
+        padding: 60px 0;
+      }
+      
+      .global-reach .section-title {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 
@@ -420,61 +643,122 @@
 
     </section><!-- /Stats Section -->
 
-    <!-- Clients Section -->
-    <!-- <section id="clients" class="clients section light-background">
-
+    <!-- Products Section -->
+    <section id="products" class="modern-products section light-background">
+      
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Products</h2>
+        <p><span>Discover Our</span> <span class="description-title">Premium Products</span></p>
+      </div><!-- End Section Title -->
+      
       <div class="container">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+        <div class="row gy-4">
+          
+          <!-- Product 1: Premium Pigeon Peas -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/PIGEON PEAS.jpeg" alt="Premium Pigeon Peas" class="img-fluid">
+                <div class="product-badge">Premium</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Legumes</div>
+                <h3 class="product-title">Premium Pigeon Peas</h3>
+                <p class="product-description">High-quality pigeon peas rich in protein and fiber, perfect for traditional Nigerian dishes and international cuisine.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
           </div>
+          
+          <!-- Product 2: Dried Cocoa Beans -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/DRIED FERMENTED COCOA BEANS.jpeg" alt="Dried Fermented Cocoa Beans" class="img-fluid">
+                <div class="product-badge">Export Grade</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Cash Crops</div>
+                <h3 class="product-title">Dried Fermented Cocoa Beans</h3>
+                <p class="product-description">Premium quality cocoa beans, properly fermented and dried to international standards for chocolate production.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 3: Dried Hibiscus Flowers -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/DRIED HIBISCUS FLOWER.jpeg" alt="Dried Hibiscus Flowers" class="img-fluid">
+                <div class="product-badge">Best Seller</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Herbs & Spices</div>
+                <h3 class="product-title">Dried Hibiscus Flowers</h3>
+                <p class="product-description">Premium dried hibiscus petals perfect for herbal teas and beverages, rich in antioxidants and natural flavor.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 4: Raw Cashew Nuts -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/RAW CASHEW NUTS.jpeg" alt="Raw Cashew Nuts" class="img-fluid">
+                <div class="product-badge">Popular</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Nuts</div>
+                <h3 class="product-title">Raw Cashew Nuts</h3>
+                <p class="product-description">Premium raw cashew nuts from Nigerian farms, perfect for processing or direct consumption, rich in healthy fats.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 5: Dried Split Ginger -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/portfolio/DRIED SPLIT GINGER.jpeg" alt="Dried Split Ginger" class="img-fluid">
+                <div class="product-badge">Medicinal</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Spices</div>
+                <h3 class="product-title">Dried Split Ginger</h3>
+                <p class="product-description">Premium dried split ginger with exceptional flavor and medicinal properties, perfect for culinary and therapeutic use.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 6: Natural Sesame Seeds -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="assets/img/services.jpg" alt="Natural Sesame Seeds" class="img-fluid">
+                <div class="product-badge">Export Quality</div>
+              </div>
+              <div class="product-content">
+                <div class="product-category">Seeds & Grains</div>
+                <h3 class="product-title">Natural Sesame Seeds</h3>
+                <p class="product-description">Premium white sesame seeds with excellent oil content, carefully processed for optimal quality and export standards.</p>
+                <a href="contact.html" class="btn-primary-custom">Get Quote</a>
+              </div>
+            </div>
+          </div>
+          
         </div>
-
+        
+        <div class="text-center mt-5">
+          <a href="products.html" class="btn-primary-custom">View All Products</a>
+        </div>
       </div>
-
-    </section> -->
-    <!-- /Clients Section -->
+      
+    </section><!-- /Products Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -566,67 +850,6 @@
       </div>
 
     </section><!-- /Services Section -->
-
-    <!-- Products Section -->
-    <section id="products" class="products section light-background">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Products</h2>
-        <p><span>Discover Our</span> <span class="description-title">Latest Products</span></p>
-      </div>
-
-      <div class="container">
-        <div id="products-grid" class="row gy-4">
-          <!-- Fallback products - will be replaced by API content -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 shadow-sm border-0">
-              <img src="assets/img/portfolio/product-1.jpg" class="card-img-top" alt="Premium Cashew Nuts" style="height: 250px; object-fit: cover;">
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title fs-5">Premium Cashew Nuts</h3>
-                <p class="text-muted mb-2 small">Category: Nuts & Seeds</p>
-                <p class="card-text flex-grow-1">High-quality raw cashew nuts sourced from premium Nigerian farms. Perfect for export and processing.</p>
-                <a href="products.html" class="btn" style="border: 2px solid #c87935; color: #c87935; background: transparent; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">View Details</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100 shadow-sm border-0">
-              <img src="assets/img/services.jpg" class="card-img-top" alt="Natural Sesame Seeds" style="height: 250px; object-fit: cover;">
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title fs-5">Natural Sesame Seeds</h3>
-                <p class="text-muted mb-2 small">Category: Seeds & Grains</p>
-                <p class="card-text flex-grow-1">Premium white sesame seeds with excellent oil content. Carefully processed for optimal quality.</p>
-                <a href="products.html" class="btn" style="border: 2px solid #c87935; color: #c87935; background: transparent; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">View Details</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100 shadow-sm border-0">
-              <img src="assets/img/about.jpg" class="card-img-top" alt="Dried Hibiscus Flowers" style="height: 250px; object-fit: cover;">
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title fs-5">Dried Hibiscus Flowers</h3>
-                <p class="text-muted mb-2 small">Category: Herbs & Spices</p>
-                <p class="card-text flex-grow-1">Premium quality dried hibiscus petals, carefully processed to preserve color and flavor.</p>
-                <a href="products.html" class="btn" style="border: 2px solid #c87935; color: #c87935; background: transparent; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">View Details</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="text-center" id="products-empty" hidden>
-          <p>No additional products are available at the moment. Please check back soon.</p>
-        </div>
-        
-        <div class="text-center mt-4">
-          <a href="products.html" class="btn" style="background-color: #c87935; border-color: #c87935; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">View All Products</a>
-        </div>
-      </div>
-
-    </section><!-- /Products Section -->
-
-
 
     <!-- Team Section -->
     <section id="team" class="team section light-background">
@@ -832,6 +1055,162 @@
       </div>
 
     </section><!-- /Faq Section -->
+
+    <!-- Global Reach Section -->
+    <section id="global-reach" class="global-reach section">
+      
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our Global Reach</h2>
+        
+        <!-- World Map Visual -->
+        <div class="world-map" data-aos="fade-up" data-aos-delay="200">
+          <svg width="800" height="400" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+            <!-- Simplified world map outline -->
+            <g fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1">
+              <!-- North America -->
+              <path d="M150,150 Q180,120 220,140 Q250,130 280,145 L290,180 Q270,200 240,190 Q200,200 180,180 Z" fill="#ecf0f1" />
+              <!-- Europe -->
+              <path d="M450,120 Q480,115 510,125 Q520,140 515,155 Q490,160 470,150 Q455,140 450,120 Z" fill="#ecf0f1" />
+              <!-- Asia -->
+              <path d="M520,130 Q580,120 640,135 Q680,140 720,155 Q730,180 710,200 Q650,190 580,185 Q540,175 520,155 Z" fill="#ecf0f1" />
+              <!-- Africa -->
+              <path d="M420,200 Q450,190 480,205 Q490,240 485,280 Q470,320 450,340 Q430,350 410,340 Q400,300 405,260 Q415,220 420,200 Z" fill="#ecf0f1" />
+              <!-- Australia -->
+              <path d="M650,320 Q680,315 710,325 Q720,340 715,355 Q690,360 670,350 Q655,340 650,320 Z" fill="#ecf0f1" />
+              <!-- South America -->
+              <path d="M280,250 Q310,240 340,255 Q350,290 345,330 Q340,370 320,400 Q300,410 280,400 Q270,360 275,320 Q275,285 280,250 Z" fill="#ecf0f1" />
+            </g>
+            
+            <!-- Green dots for countries we export to -->
+            <!-- Europe -->
+            <circle cx="460" cy="135" r="3" fill="#27ae60" />
+            <circle cx="480" cy="140" r="3" fill="#27ae60" />
+            <circle cx="500" cy="145" r="3" fill="#27ae60" />
+            
+            <!-- North America -->
+            <circle cx="200" cy="160" r="3" fill="#27ae60" />
+            <circle cx="260" cy="155" r="3" fill="#27ae60" />
+            
+            <!-- Asia -->
+            <circle cx="560" cy="150" r="3" fill="#27ae60" />
+            <circle cx="620" cy="160" r="3" fill="#27ae60" />
+            <circle cx="680" cy="170" r="3" fill="#27ae60" />
+            
+            <!-- MEA -->
+            <circle cx="540" cy="190" r="3" fill="#27ae60" />
+            <circle cx="520" cy="210" r="3" fill="#27ae60" />
+            <circle cx="450" cy="220" r="3" fill="#27ae60" />
+            <circle cx="470" cy="280" r="3" fill="#27ae60" />
+            
+            <!-- Connecting lines (subtle) -->
+            <g stroke="#27ae60" stroke-width="1" opacity="0.3" fill="none">
+              <path d="M450,250 Q500,200 560,150" />
+              <path d="M450,250 Q350,200 200,160" />
+              <path d="M450,250 Q550,220 620,160" />
+            </g>
+          </svg>
+        </div>
+        
+        <!-- Countries by Region -->
+        <div class="region-list" data-aos="fade-up" data-aos-delay="400">
+          
+          <!-- Europe -->
+          <div class="region">
+            <h4>EUROPE</h4>
+            <div class="country-item">
+              <span class="country-flag flag-de"></span>
+              <span class="country-name">Germany</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-fr"></span>
+              <span class="country-name">France</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-uk"></span>
+              <span class="country-name">UK</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-nl"></span>
+              <span class="country-name">Netherlands</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-es"></span>
+              <span class="country-name">Spain</span>
+            </div>
+          </div>
+          
+          <!-- North America -->
+          <div class="region">
+            <h4>NORTH AMERICA</h4>
+            <div class="country-item">
+              <span class="country-flag flag-us"></span>
+              <span class="country-name">USA</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-ca"></span>
+              <span class="country-name">Canada</span>
+            </div>
+          </div>
+          
+          <!-- MEA (Middle East & Africa) -->
+          <div class="region">
+            <h4>MEA</h4>
+            <div class="country-item">
+              <span class="country-flag flag-ae"></span>
+              <span class="country-name">UAE</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-sa"></span>
+              <span class="country-name">Saudi Arabia</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-qa"></span>
+              <span class="country-name">Qatar</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-za"></span>
+              <span class="country-name">South Africa</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-eg"></span>
+              <span class="country-name">Egypt</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-gh"></span>
+              <span class="country-name">Ghana</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-bj"></span>
+              <span class="country-name">Benin Republic</span>
+            </div>
+          </div>
+          
+          <!-- Asia -->
+          <div class="region">
+            <h4>ASIA</h4>
+            <div class="country-item">
+              <span class="country-flag flag-cn"></span>
+              <span class="country-name">China</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-in"></span>
+              <span class="country-name">India</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-jp"></span>
+              <span class="country-name">Japan</span>
+            </div>
+            <div class="country-item">
+              <span class="country-flag flag-kr"></span>
+              <span class="country-name">South Korea</span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </section><!-- /Global Reach Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
