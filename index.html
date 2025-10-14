@@ -147,93 +147,150 @@
     
     /* Global Reach Section */
     .global-reach {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      background: #f8f9fa;
       padding: 80px 0;
-      color: white;
       position: relative;
-      overflow: hidden;
     }
     
-    .global-reach::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" fill="%23ffffff" opacity="0.03"><circle cx="200" cy="100" r="2"/><circle cx="400" cy="150" r="2"/><circle cx="600" cy="200" r="2"/><circle cx="800" cy="100" r="2"/><circle cx="300" cy="300" r="2"/><circle cx="500" cy="350" r="2"/><circle cx="700" cy="250" r="2"/><circle cx="100" cy="200" r="2"/><circle cx="900" cy="300" r="2"/></svg>');
+    .global-reach .container {
+      position: relative;
+      z-index: 2;
     }
     
     .global-reach .section-title {
-      color: #b5986f;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .global-reach .section-subtitle {
+      text-align: center;
+      color: #6c757d;
+      font-size: 1.1rem;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .global-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border-top: 4px solid #c87935;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .stat-number {
       font-size: 2.5rem;
       font-weight: 700;
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
+      color: #c87935;
+      margin-bottom: 10px;
+      display: block;
     }
     
-    .world-map {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
+    .stat-label {
+      color: #2c3e50;
+      font-weight: 600;
+      font-size: 1rem;
     }
     
-    .world-map svg {
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-    }
-    
-    .region-list {
+    .regions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
     
-    .region {
-      text-align: left;
+    .region-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid #c87935;
     }
     
-    .region h4 {
-      color: #b5986f;
+    .region-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .region-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .region-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #c87935, #b86829);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    .region-title {
       font-size: 1.3rem;
       font-weight: 600;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
+      color: #2c3e50;
+      margin: 0;
     }
     
-    .region h4::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: #c87935;
+    .countries-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     
     .country-item {
       display: flex;
       align-items: center;
-      margin-bottom: 12px;
-      padding: 8px 0;
+      padding: 12px 0;
+      border-bottom: 1px solid #f8f9fa;
       transition: all 0.3s ease;
     }
     
+    .country-item:last-child {
+      border-bottom: none;
+    }
+    
     .country-item:hover {
-      transform: translateX(10px);
+      background: #f8f9fa;
+      margin: 0 -15px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 8px;
+      border-bottom: 1px solid #f8f9fa;
     }
     
     .country-flag {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       margin-right: 15px;
       display: inline-block;
-      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     
     .flag-de { background: linear-gradient(to bottom, #000 33%, #dd0000 33%, #dd0000 66%, #ffce00 66%); }
@@ -252,27 +309,36 @@
     .flag-bj { background: linear-gradient(to right, #00853f 40%, #fcd116 40%, #fcd116 60%, #e8112d 60%); }
     .flag-cn { background: #de2910; }
     .flag-in { background: linear-gradient(to bottom, #ff9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%); }
-    .flag-jp { background: #ffffff; }
-    .flag-kr { background: #ffffff; }
+    .flag-jp { background: #ffffff; border: 1px solid #ddd; }
+    .flag-kr { background: #ffffff; border: 1px solid #ddd; }
     
     .country-name {
-      color: #ecf0f1;
+      color: #495057;
       font-weight: 500;
       font-size: 0.95rem;
     }
     
     @media (max-width: 768px) {
-      .region-list {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
+      .regions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .global-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .stat-card {
+        padding: 30px 15px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
       }
       
       .global-reach {
         padding: 60px 0;
-      }
-      
-      .global-reach .section-title {
-        font-size: 2rem;
       }
     }
   </style>
@@ -1059,151 +1125,156 @@
     <!-- Global Reach Section -->
     <section id="global-reach" class="global-reach section">
       
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Global Reach</h2>
+        <p><span>Connecting Nigeria to</span> <span class="description-title">The World</span></p>
+      </div><!-- End Section Title -->
+      
       <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Our Global Reach</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We proudly serve clients across four continents, delivering premium Nigerian agricultural products to markets worldwide through our established distribution network.</p>
         
-        <!-- World Map Visual -->
-        <div class="world-map" data-aos="fade-up" data-aos-delay="200">
-          <svg width="800" height="400" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-            <!-- Simplified world map outline -->
-            <g fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1">
-              <!-- North America -->
-              <path d="M150,150 Q180,120 220,140 Q250,130 280,145 L290,180 Q270,200 240,190 Q200,200 180,180 Z" fill="#ecf0f1" />
-              <!-- Europe -->
-              <path d="M450,120 Q480,115 510,125 Q520,140 515,155 Q490,160 470,150 Q455,140 450,120 Z" fill="#ecf0f1" />
-              <!-- Asia -->
-              <path d="M520,130 Q580,120 640,135 Q680,140 720,155 Q730,180 710,200 Q650,190 580,185 Q540,175 520,155 Z" fill="#ecf0f1" />
-              <!-- Africa -->
-              <path d="M420,200 Q450,190 480,205 Q490,240 485,280 Q470,320 450,340 Q430,350 410,340 Q400,300 405,260 Q415,220 420,200 Z" fill="#ecf0f1" />
-              <!-- Australia -->
-              <path d="M650,320 Q680,315 710,325 Q720,340 715,355 Q690,360 670,350 Q655,340 650,320 Z" fill="#ecf0f1" />
-              <!-- South America -->
-              <path d="M280,250 Q310,240 340,255 Q350,290 345,330 Q340,370 320,400 Q300,410 280,400 Q270,360 275,320 Q275,285 280,250 Z" fill="#ecf0f1" />
-            </g>
-            
-            <!-- Green dots for countries we export to -->
-            <!-- Europe -->
-            <circle cx="460" cy="135" r="3" fill="#27ae60" />
-            <circle cx="480" cy="140" r="3" fill="#27ae60" />
-            <circle cx="500" cy="145" r="3" fill="#27ae60" />
-            
-            <!-- North America -->
-            <circle cx="200" cy="160" r="3" fill="#27ae60" />
-            <circle cx="260" cy="155" r="3" fill="#27ae60" />
-            
-            <!-- Asia -->
-            <circle cx="560" cy="150" r="3" fill="#27ae60" />
-            <circle cx="620" cy="160" r="3" fill="#27ae60" />
-            <circle cx="680" cy="170" r="3" fill="#27ae60" />
-            
-            <!-- MEA -->
-            <circle cx="540" cy="190" r="3" fill="#27ae60" />
-            <circle cx="520" cy="210" r="3" fill="#27ae60" />
-            <circle cx="450" cy="220" r="3" fill="#27ae60" />
-            <circle cx="470" cy="280" r="3" fill="#27ae60" />
-            
-            <!-- Connecting lines (subtle) -->
-            <g stroke="#27ae60" stroke-width="1" opacity="0.3" fill="none">
-              <path d="M450,250 Q500,200 560,150" />
-              <path d="M450,250 Q350,200 200,160" />
-              <path d="M450,250 Q550,220 620,160" />
-            </g>
-          </svg>
+        <!-- Global Statistics -->
+        <div class="global-stats" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-card">
+            <span class="stat-number">18+</span>
+            <span class="stat-label">Countries Served</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Continents</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Global Partners</span>
+          </div>
         </div>
         
-        <!-- Countries by Region -->
-        <div class="region-list" data-aos="fade-up" data-aos-delay="400">
+        <!-- Regions Grid -->
+        <div class="regions-grid" data-aos="fade-up" data-aos-delay="400">
           
           <!-- Europe -->
-          <div class="region">
-            <h4>EUROPE</h4>
-            <div class="country-item">
-              <span class="country-flag flag-de"></span>
-              <span class="country-name">Germany</span>
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-globe-europe-africa"></i>
+              </div>
+              <h3 class="region-title">EUROPE</h3>
             </div>
-            <div class="country-item">
-              <span class="country-flag flag-fr"></span>
-              <span class="country-name">France</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-uk"></span>
-              <span class="country-name">UK</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-nl"></span>
-              <span class="country-name">Netherlands</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-es"></span>
-              <span class="country-name">Spain</span>
-            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-de"></span>
+                <span class="country-name">Germany</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-fr"></span>
+                <span class="country-name">France</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-uk"></span>
+                <span class="country-name">United Kingdom</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-nl"></span>
+                <span class="country-name">Netherlands</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-es"></span>
+                <span class="country-name">Spain</span>
+              </li>
+            </ul>
           </div>
           
           <!-- North America -->
-          <div class="region">
-            <h4>NORTH AMERICA</h4>
-            <div class="country-item">
-              <span class="country-flag flag-us"></span>
-              <span class="country-name">USA</span>
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+              <h3 class="region-title">NORTH AMERICA</h3>
             </div>
-            <div class="country-item">
-              <span class="country-flag flag-ca"></span>
-              <span class="country-name">Canada</span>
-            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-us"></span>
+                <span class="country-name">United States</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-ca"></span>
+                <span class="country-name">Canada</span>
+              </li>
+            </ul>
           </div>
           
           <!-- MEA (Middle East & Africa) -->
-          <div class="region">
-            <h4>MEA</h4>
-            <div class="country-item">
-              <span class="country-flag flag-ae"></span>
-              <span class="country-name">UAE</span>
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <h3 class="region-title">MEA</h3>
             </div>
-            <div class="country-item">
-              <span class="country-flag flag-sa"></span>
-              <span class="country-name">Saudi Arabia</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-qa"></span>
-              <span class="country-name">Qatar</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-za"></span>
-              <span class="country-name">South Africa</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-eg"></span>
-              <span class="country-name">Egypt</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-gh"></span>
-              <span class="country-name">Ghana</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-bj"></span>
-              <span class="country-name">Benin Republic</span>
-            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-ae"></span>
+                <span class="country-name">UAE</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-sa"></span>
+                <span class="country-name">Saudi Arabia</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-qa"></span>
+                <span class="country-name">Qatar</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-za"></span>
+                <span class="country-name">South Africa</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-eg"></span>
+                <span class="country-name">Egypt</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-gh"></span>
+                <span class="country-name">Ghana</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-bj"></span>
+                <span class="country-name">Benin Republic</span>
+              </li>
+            </ul>
           </div>
           
           <!-- Asia -->
-          <div class="region">
-            <h4>ASIA</h4>
-            <div class="country-item">
-              <span class="country-flag flag-cn"></span>
-              <span class="country-name">China</span>
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-globe-asia-australia"></i>
+              </div>
+              <h3 class="region-title">ASIA</h3>
             </div>
-            <div class="country-item">
-              <span class="country-flag flag-in"></span>
-              <span class="country-name">India</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-jp"></span>
-              <span class="country-name">Japan</span>
-            </div>
-            <div class="country-item">
-              <span class="country-flag flag-kr"></span>
-              <span class="country-name">South Korea</span>
-            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-cn"></span>
+                <span class="country-name">China</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-in"></span>
+                <span class="country-name">India</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-jp"></span>
+                <span class="country-name">Japan</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-kr"></span>
+                <span class="country-name">South Korea</span>
+              </li>
+            </ul>
           </div>
           
         </div>
