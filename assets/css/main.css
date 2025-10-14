@@ -471,6 +471,22 @@ h6 {
   .navmenu li:last-child a {
     padding-right: 0;
   }
+  
+  /* Request Quote Button */
+  .navmenu .btn-quote {
+    background: #c87935;
+    color: white !important;
+    padding: 10px 25px !important;
+    border-radius: 25px;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .navmenu .btn-quote:hover {
+    background: #b86829;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(200, 121, 53, 0.3);
+  }
 
   .navmenu li:hover>a,
   .navmenu .active,
