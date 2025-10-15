@@ -1390,6 +1390,13 @@ section,
   font-size: 16px;
 }
 
+.stats-item span::after {
+  content: "+";
+  margin-left: 3px;
+  font-weight: bold;
+}
+
+
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
