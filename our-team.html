@@ -419,7 +419,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://www.defendhub.ng">DefendHub Enterprise</a>
       </div>
     </div>
 
@@ -541,6 +541,31 @@
       }
     }
 
+    // Function to close modal
+    function closeModal() {
+      const modalElement = document.getElementById('teamModal');
+      if (modalElement) {
+        // Use Bootstrap modal API to hide
+        if (typeof bootstrap !== 'undefined') {
+          const modal = bootstrap.Modal.getInstance(modalElement);
+          if (modal) {
+            modal.hide();
+          }
+        } else {
+          // Fallback: manually hide modal
+          modalElement.style.display = 'none';
+          modalElement.classList.remove('show');
+          document.body.classList.remove('modal-open');
+          
+          // Remove backdrop
+          const backdrop = document.querySelector('.modal-backdrop');
+          if (backdrop) {
+            backdrop.remove();
+          }
+        }
+      }
+    }
+
     // Wait for DOM to be loaded
     document.addEventListener('DOMContentLoaded', function() {
       console.log('DOM loaded, setting up team member modal functionality');
@@ -571,7 +596,10 @@
             
             if (typeof bootstrap !== 'undefined') {
               console.log('Bootstrap is available');
-              const modal = new bootstrap.Modal(modalElement);
+              const modal = new bootstrap.Modal(modalElement, {
+                backdrop: 'static',
+                keyboard: true
+              });
               modal.show();
             } else {
               console.error('Bootstrap is not available');
@@ -579,11 +607,45 @@
               modalElement.style.display = 'block';
               modalElement.classList.add('show');
               document.body.classList.add('modal-open');
+              
+              // Add backdrop
+              const backdrop = document.createElement('div');
+              backdrop.className = 'modal-backdrop fade show';
+              document.body.appendChild(backdrop);
             }
           } catch (error) {
             console.error('Error showing modal:', error);
           }
         });
+      });
+      
+      // Add event listener for close buttons
+      const closeButtons = document.querySelectorAll('[data-bs-dismiss="modal"]');
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          console.log('Close button clicked');
+          closeModal();
+        });
+      });
+      
+      // Add escape key listener
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const modalElement = document.getElementById('teamModal');
+          if (modalElement && modalElement.classList.contains('show')) {
+            console.log('Escape key pressed, closing modal');
+            closeModal();
+          }
+        }
+      });
+      
+      // Add backdrop click listener
+      document.addEventListener('click', function(e) {
+        const modalElement = document.getElementById('teamModal');
+        if (modalElement && modalElement.classList.contains('show') && e.target.classList.contains('modal-backdrop')) {
+          console.log('Backdrop clicked, closing modal');
+          closeModal();
+        }
       });
     });
   </script>
