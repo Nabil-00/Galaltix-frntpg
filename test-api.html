@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Integration Test - Galaltix</title>
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .info { background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 5px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Galaltix API Integration Test</h1>
+        <p>This page tests the connection between your main website and admin dashboard.</p>
+        
+        <button id="test-btn" class="btn btn-primary">Run API Tests</button>
+        <button id="clear-btn" class="btn btn-secondary">Clear Results</button>
+        
+        <div id="results" class="mt-4"></div>
+    </div>
+
+    <!-- Include our config and API files -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/products-api.js"></script>
+    
+    <script>
+        class APITester {
+            constructor() {
+                this.results = document.getElementById('results');
+                this.api = new GalaltixProductsAPI();
+            }
+            
+            log(message, type = 'info') {
+                const div = document.createElement('div');
+                div.className = `test-result ${type}`;
+                div.innerHTML = message;
+                this.results.appendChild(div);
+                console.log(`[${type.toUpperCase()}] ${message}`);
+            }
+            
+            async testAPIConnection() {
+                this.log('🔄 Testing API connection...', 'info');
+                
+                try {
+                    const response = await fetch(`${this.api.API_BASE_URL}/products`);
+                    
+                    if (response.ok) {
+                        const products = await response.json();
+                        this.log(`✅ API Connection Successful! Found ${products.length} products`, 'success');
+                        
+                        if (products.length > 0) {
+                            this.log(`📦 Sample Product: "${products[0].title}"`, 'success');
+                            this.log(`<pre>${JSON.stringify(products[0], null, 2)}</pre>`, 'info');
+                        } else {
+                            this.log('⚠️ No products found in database. Add some products via admin dashboard.', 'error');
+                        }
+                        
+                        return products;
+                    } else {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                } catch (error) {
+                    this.log(`❌ API Connection Failed: ${error.message}`, 'error');
+                    this.log('🔄 Testing fallback products...', 'info');
+                    
+                    const fallbackProducts = this.api.getFallbackProducts();
+                    this.log(`✅ Fallback products available: ${fallbackProducts.length} products`, 'success');
+                    
+                    return null;
+                }
+            }
+            
+            async testSingleProduct(products) {
+                if (!products || products.length === 0) {
+                    this.log('⏭️ Skipping single product test (no products available)', 'info');
+                    return;
+                }
+                
+                this.log('🔄 Testing single product endpoint...', 'info');
+                
+                try {
+                    const productId = products[0].id;
+                    const response = await fetch(`${this.api.API_BASE_URL}/products/${productId}`);
+                    
+                    if (response.ok) {
+                        const product = await response.json();
+                        this.log(`✅ Single product fetch successful: "${product.title}"`, 'success');
+                    } else {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                } catch (error) {
+                    this.log(`❌ Single product fetch failed: ${error.message}`, 'error');
+                }
+            }
+            
+            testConfiguration() {
+                this.log('🔄 Testing configuration...', 'info');
+                
+                if (window.GalaltixConfig) {
+                    this.log('✅ Configuration loaded successfully', 'success');
+                    this.log(`📡 API URL: ${window.GalaltixConfig.API_BASE_URL}`, 'info');
+                    this.log(`🐛 Debug Mode: ${window.GalaltixConfig.DEBUG}`, 'info');
+                } else {
+                    this.log('❌ Configuration not loaded', 'error');
+                }
+                
+                if (this.api) {
+                    this.log('✅ Products API class initialized', 'success');
+                } else {
+                    this.log('❌ Products API class failed to initialize', 'error');
+                }
+            }
+            
+            async testImageAccess(products) {
+                if (!products || products.length === 0) {
+                    this.log('⏭️ Skipping image test (no products available)', 'info');
+                    return;
+                }
+                
+                this.log('🔄 Testing product image access...', 'info');
+                
+                const productWithImage = products.find(p => p.image_url);
+                
+                if (productWithImage) {
+                    try {
+                        const response = await fetch(productWithImage.image_url, { method: 'HEAD' });
+                        if (response.ok) {
+                            this.log(`✅ Product image accessible: ${productWithImage.image_url}`, 'success');
+                        } else {
+                            throw new Error(`HTTP ${response.status}`);
+                        }
+                    } catch (error) {
+                        this.log(`⚠️ Product image not accessible: ${error.message}`, 'error');
+                        this.log('💡 This might be due to CORS policy, but images should still work in the website', 'info');
+                    }
+                } else {
+                    this.log('⚠️ No products with images found', 'error');
+                }
+            }
+            
+            async runAllTests() {
+                this.results.innerHTML = '';
+                this.log('🚀 Starting Galaltix API Integration Tests...', 'info');
+                this.log(`⏰ Test started at: ${new Date().toLocaleString()}`, 'info');
+                
+                // Test 1: Configuration
+                this.testConfiguration();
+                
+                // Test 2: API Connection
+                const products = await this.testAPIConnection();
+                
+                // Test 3: Single Product
+                await this.testSingleProduct(products);
+                
+                // Test 4: Image Access
+                await this.testImageAccess(products);
+                
+                this.log('🏁 All tests completed!', 'info');
+                
+                if (products && products.length > 0) {
+                    this.log('🎉 Your API integration is working! Products will load dynamically on your website.', 'success');
+                } else {
+                    this.log('📝 Add some products via your admin dashboard to see them on the website.', 'info');
+                }
+            }
+        }
+        
+        // Initialize tester
+        const tester = new APITester();
+        
+        // Event listeners
+        document.getElementById('test-btn').addEventListener('click', () => {
+            tester.runAllTests();
+        });
+        
+        document.getElementById('clear-btn').addEventListener('click', () => {
+            document.getElementById('results').innerHTML = '';
+        });
+        
+        // Auto-run tests on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => tester.runAllTests(), 1000);
+        });
+    </script>
+</body>
+</html>

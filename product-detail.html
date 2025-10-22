@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title id="page-title">Product Details | Galaltix Nigeria Limited</title>
+  <meta name="description" content="Detailed information about our premium agricultural products from Galaltix Nigeria Limited.">
+  <meta name="keywords" content="Galaltix, Agricultural Products, Nigeria, Premium Quality, Export">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Configuration -->
+  <script src="assets/js/config.js"></script>
+  
+  <!-- Products API Integration -->
+  <script src="assets/js/products-api.js" defer></script>
+  
+  <style>
+    .product-detail-hero {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 120px 0 80px 0;
+    }
+    
+    .product-detail-content {
+      padding: 80px 0;
+    }
+    
+    .product-image-container {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .product-image-container img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #c87935;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .product-info h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    
+    .product-category {
+      color: #c87935;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    
+    .product-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #6c757d;
+      margin-bottom: 30px;
+    }
+    
+    .product-actions {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary-custom {
+      background: #c87935;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-primary-custom:hover {
+      background: #b86829;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(200, 121, 53, 0.3);
+    }
+    
+    .btn-secondary-custom {
+      background: transparent;
+      border: 2px solid #c87935;
+      color: #c87935;
+      padding: 10px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-secondary-custom:hover {
+      background: #c87935;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .loading-container {
+      text-align: center;
+      padding: 100px 0;
+    }
+    
+    .error-container {
+      text-align: center;
+      padding: 100px 0;
+    }
+    
+    .breadcrumb {
+      background: transparent;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    
+    .breadcrumb-item a {
+      color: #c87935;
+      text-decoration: none;
+    }
+    
+    .breadcrumb-item.active {
+      color: #6c757d;
+    }
+  </style>
+</head>
+
+<body class="product-detail-page">
+
+  <!-- Price Ticker Bar -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <span class="price-ticker-item">Soya beans (NON-GMO) – ₦650,000 per metric ton</span>
+      <span class="price-ticker-item">Hibiscus Flowers – ₦1,600,000 per metric ton</span>
+      <span class="price-ticker-item">Natural Sesame Seeds – ₦2,050,000 per metric ton</span>
+      <span class="price-ticker-item">Raw Cashew Nuts – ₦1,850,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Ginger – ₦2,200,000 per metric ton</span>
+      <span class="price-ticker-item">Shea Butter (Raw) – ₦950,000 per metric ton</span>
+      <span class="price-ticker-item">Tiger Nuts – ₦1,200,000 per metric ton</span>
+      <span class="price-ticker-item">Palm Kernel Oil – ₦780,000 per metric ton</span>
+      <span class="price-ticker-item">Moringa Seeds – ₦3,500,000 per metric ton</span>
+      <span class="price-ticker-item">White Maize – ₦420,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Cocoa Beans – ₦2,800,000 per metric ton</span>
+      <span class="price-ticker-item">Black Pepper – ₦4,200,000 per metric ton</span>
+    </div>
+  </div>
+  <!-- End Price Ticker Bar -->
+
+  <header id="header" class="header sticky-top">
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown"><a href="about.html"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Product Detail Hero -->
+    <section class="product-detail-hero">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+            <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-product">Product Details</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Product Detail Content -->
+    <section class="product-detail-content">
+      <div class="container">
+        
+        <!-- Loading State -->
+        <div id="loading-container" class="loading-container">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading product details...</span>
+          </div>
+          <p class="mt-3 text-muted">Loading product information...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-container" class="error-container d-none">
+          <div class="alert alert-warning">
+            <h4>Product Not Found</h4>
+            <p>The product you're looking for could not be found. It may have been removed or the link is incorrect.</p>
+            <a href="products.html" class="btn-primary-custom">View All Products</a>
+          </div>
+        </div>
+
+        <!-- Product Content -->
+        <div id="product-content" class="d-none">
+          <div class="row gy-5">
+            <div class="col-lg-6">
+              <div class="product-image-container" data-aos="fade-right">
+                <img id="product-image" src="" alt="" class="img-fluid">
+                <div class="product-badge" id="product-badge">Category</div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6">
+              <div class="product-info" data-aos="fade-left">
+                <div class="product-category" id="product-category">Category</div>
+                <h1 id="product-title">Product Title</h1>
+                <div class="product-description" id="product-description">
+                  Product description will be loaded here...
+                </div>
+                
+                <div class="product-actions">
+                  <a href="request-quote.html" class="btn-primary-custom" id="quote-btn">
+                    <i class="bi bi-envelope"></i> Request Quote
+                  </a>
+                  <a href="products.html" class="btn-secondary-custom">
+                    <i class="bi bi-arrow-left"></i> Back to Products
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form id="newsletter-form" action="#" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galatix Nigeria Limited" style="max-height: 50px;">
+          </a>
+          <p class="mt-3">Leading supplier of premium Nigerian agricultural products to global markets.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="service-agricultural-sourcing.html">Agricultural Sourcing</a></li>
+            <li><a href="service-export-trade.html">Export & Trade</a></li>
+            <li><a href="service-quality-inspection.html">Quality Inspection</a></li>
+            <li><a href="service-warehousing.html">Warehousing</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>No. 15 Ahmadu Bello Way</p>
+          <p>Kaduna, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+234 803 123 4567</span></p>
+          <p><strong>Email:</strong> <span>info@galaltixnigeria.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nigeria Limited</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Product Detail Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      
+      const loadingContainer = document.getElementById('loading-container');
+      const errorContainer = document.getElementById('error-container');
+      const productContent = document.getElementById('product-content');
+      
+      if (!productId) {
+        loadingContainer.classList.add('d-none');
+        errorContainer.classList.remove('d-none');
+        return;
+      }
+      
+      try {
+        // Initialize the API
+        const api = new GalaltixProductsAPI();
+        
+        // Fetch single product
+        const response = await fetch(`${api.API_BASE_URL}/products/${productId}`);
+        
+        if (!response.ok) {
+          throw new Error('Product not found');
+        }
+        
+        const product = await response.json();
+        
+        // Update page content
+        document.getElementById('page-title').textContent = `${product.title} | Galaltix Nigeria Limited`;
+        document.getElementById('breadcrumb-product').textContent = product.title;
+        document.getElementById('product-title').textContent = product.title;
+        document.getElementById('product-category').textContent = product.category || 'Agricultural Products';
+        document.getElementById('product-badge').textContent = product.category || 'Agricultural Products';
+        document.getElementById('product-description').innerHTML = product.content;
+        
+        const productImage = document.getElementById('product-image');
+        productImage.src = product.image_url || 'assets/img/portfolio/default-product.jpg';
+        productImage.alt = product.title;
+        
+        // Update quote button
+        const quoteBtn = document.getElementById('quote-btn');
+        quoteBtn.href = `request-quote.html?product=${encodeURIComponent(product.title)}`;
+        
+        // Show content, hide loading
+        loadingContainer.classList.add('d-none');
+        productContent.classList.remove('d-none');
+        
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+        
+      } catch (error) {
+        console.error('Error loading product:', error);
+        loadingContainer.classList.add('d-none');
+        errorContainer.classList.remove('d-none');
+      }
+    });
+  </script>
+
+</body>
+</html>

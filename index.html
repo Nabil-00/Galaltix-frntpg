@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Galaltix Nig Ltd</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Configuration -->
+  <script src="assets/js/config.js"></script>
+  
+  <!-- Products API Integration -->
+  <script src="assets/js/products-api.js" defer></script>
+  
+  <!-- Product Cards Text Control -->
+  <style>
+    .products .card-text {
+      max-height: 4.5em; /* Limit to ~3 lines of text */
+      overflow: hidden;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    
+    .products .card {
+      min-height: 350px;
+      max-height: 450px;
+    }
+    
+    .products .card-body {
+      padding: 1.5rem;
+    }
+    
+    .products .card-title {
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    
+    /* Modern Product Cards Styling */
+    .modern-products {
+      padding: 80px 0;
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .product-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #c87935;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .product-content {
+      padding: 25px;
+    }
+    
+    .product-category {
+      color: #c87935;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    
+    .product-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+    
+    .product-description {
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .btn-primary-custom {
+      background: #c87935;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    
+    .btn-primary-custom:hover {
+      background: #b86829;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(200, 121, 53, 0.3);
+    }
+    
+    .btn-secondary-custom {
+      background: transparent;
+      border: 2px solid #c87935;
+      color: #c87935;
+      padding: 8px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+    
+    .btn-secondary-custom:hover {
+      background: #c87935;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .product-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    /* Service Cards with Images */
+    .service-card-img {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-card-img:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .service-img-wrapper {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .service-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card-img:hover .service-img-wrapper img {
+      transform: scale(1.1);
+    }
+    
+    .service-icon-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      background: #FDB913;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .service-card-img:hover .service-icon-badge {
+      transform: scale(1.1);
+      background: #c87935;
+    }
+    
+    .service-icon-badge i {
+      font-size: 28px;
+      color: #2c3e50;
+    }
+    
+    .service-card-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-card-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    
+    .service-card-content h3 a {
+      color: #2c3e50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .service-card-content h3 a:hover {
+      color: #c87935;
+    }
+    
+    .service-card-content p {
+      color: #6c757d;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+    
+    /* Global Reach Section */
+    .global-reach {
+      background: #f8f9fa;
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    .global-reach .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .global-reach .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .global-reach .section-subtitle {
+      text-align: center;
+      color: #6c757d;
+      font-size: 1.1rem;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .global-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border-top: 4px solid #c87935;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c87935;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .stat-label {
+      color: #2c3e50;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .region-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid #c87935;
+    }
+    
+    .region-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(200, 121, 53, 0.2);
+    }
+    
+    .region-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .region-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #c87935, #b86829);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    .region-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 0;
+    }
+    
+    .countries-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .country-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f8f9fa;
+      transition: all 0.3s ease;
+    }
+    
+    .country-item:last-child {
+      border-bottom: none;
+    }
+    
+    .country-item:hover {
+      background: #f8f9fa;
+      margin: 0 -15px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 8px;
+      border-bottom: 1px solid #f8f9fa;
+    }
+    
+    .country-flag {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      margin-right: 15px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .flag-de { background: linear-gradient(to bottom, #000 33%, #dd0000 33%, #dd0000 66%, #ffce00 66%); }
+    .flag-fr { background: linear-gradient(to right, #0055a4 33%, #ffffff 33%, #ffffff 66%, #ef4135 66%); }
+    .flag-uk { background: linear-gradient(45deg, #012169 25%, #ffffff 25%, #ffffff 75%, #c8102e 75%); }
+    .flag-nl { background: linear-gradient(to bottom, #ae1c28 33%, #ffffff 33%, #ffffff 66%, #21468b 66%); }
+    .flag-es { background: linear-gradient(to bottom, #c60b1e 25%, #ffc400 25%, #ffc400 75%, #c60b1e 75%); }
+    .flag-us { background: linear-gradient(to bottom, #b22234 50%, #ffffff 50%); }
+    .flag-ca { background: linear-gradient(to right, #ff0000 33%, #ffffff 33%, #ffffff 66%, #ff0000 66%); }
+    .flag-ae { background: linear-gradient(to bottom, #00732f 25%, #ffffff 25%, #ffffff 50%, #000000 50%, #000000 75%, #ce1126 75%); }
+    .flag-sa { background: #006c35; }
+    .flag-qa { background: #8b1538; }
+    .flag-za { background: linear-gradient(45deg, #007a4d 30%, #ffffff 30%, #ffffff 70%, #de3831 70%); }
+    .flag-eg { background: linear-gradient(to bottom, #ce1126 33%, #ffffff 33%, #ffffff 66%, #000000 66%); }
+    .flag-gh { background: linear-gradient(to bottom, #ce1126 33%, #fcd116 33%, #fcd116 66%, #006b3f 66%); }
+    .flag-bj { background: linear-gradient(to right, #00853f 40%, #fcd116 40%, #fcd116 60%, #e8112d 60%); }
+    .flag-cn { background: #de2910; }
+    .flag-in { background: linear-gradient(to bottom, #ff9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%); }
+    .flag-jp { background: #ffffff; border: 1px solid #ddd; }
+    .flag-kr { background: #ffffff; border: 1px solid #ddd; }
+    
+    .country-name {
+      color: #495057;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .regions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .global-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .stat-card {
+        padding: 30px 15px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .global-reach {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Price Ticker Bar -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <span class="price-ticker-item">Soya beans (NON-GMO) – ₦650,000 per metric ton</span>
+      <span class="price-ticker-item">Hibiscus Flowers – ₦1,600,000 per metric ton</span>
+      <span class="price-ticker-item">Natural Sesame Seeds – ₦2,050,000 per metric ton</span>
+      <span class="price-ticker-item">Raw Cashew Nuts – ₦1,850,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Ginger – ₦2,200,000 per metric ton</span>
+      <span class="price-ticker-item">Shea Butter (Raw) – ₦950,000 per metric ton</span>
+      <span class="price-ticker-item">Tiger Nuts – ₦1,200,000 per metric ton</span>
+      <span class="price-ticker-item">Palm Kernel Oil – ₦780,000 per metric ton</span>
+      <span class="price-ticker-item">Moringa Seeds – ₦3,500,000 per metric ton</span>
+      <span class="price-ticker-item">White Maize – ₦420,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Cocoa Beans – ₦2,800,000 per metric ton</span>
+      <span class="price-ticker-item">Black Pepper – ₦4,200,000 per metric ton</span>
+    </div>
+  </div>
+  <!-- End Price Ticker Bar -->
+
+  <header id="header" class="header sticky-top">
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/galaltixlogo.png" alt="">
+          <!-- <h1 class="sitename">GalaltixNIG</h1> -->
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li class="dropdown"><a href="about.html"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "navigation": {
+              "nextEl": ".swiper-button-next",
+              "prevEl": ".swiper-button-prev"
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url(assets/img/1.jpeg);">
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+                  <h1>Welcome to <span>Galatix Nigeria Limited</span></h1>
+                  <p>Nigerians Leading Agricultural Goods Suppliers</p>
+                  <div class="d-flex">
+                    <a href="#about" class="btn-get-started">Get Started</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End a slide -->
+
+          <div class="swiper-slide" style="background-image: url(assets/img/hero-3.jpeg);">
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+                  <h1>High-Quality Agricultural Products</h1>
+                  <p>We provide the best agricultural products for your needs.</p>
+                  <div class="d-flex">
+                    <a href="#about" class="btn-get-started">Get Started</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End a slide -->
+
+          <div class="swiper-slide" style="background-image: url(assets/img/hero-4.jpeg);">
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+                  <h1>Our Expert Services</h1>
+                  <p>Delivering excellence and innovation in every service we offer.</p>
+                  <div class="d-flex">
+                    <a href="#services" class="btn-get-started">Our Services</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End a slide -->
+
+          <div class="swiper-slide" style="background-image: url(assets/img/hibiscus.jpeg);">
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+                  <h1>Premium Hibiscus Flowers</h1>
+                  <p>Experience the finest quality dried hibiscus flowers, rich in antioxidants and perfect for beverages.</p>
+                  <div class="d-flex">
+                    <a href="products.html" class="btn-get-started">View Products</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End a slide -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-truck icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Sourcing &amp; Supply</a></h4>
+              <p>We source and supply a wide range of premium agricultural goods, ensuring you get the best products.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-patch-check icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Quality Assurance</a></h4>
+              <p>Our rigorous quality control processes guarantee that every product meets international standards.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-globe-americas icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Logistics &amp; Distribution</a></h4>
+              <p>With a robust logistics network, we ensure timely and efficient delivery of goods across Nigeria and beyond.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-box-seam icon"></i></div>
+              <h4><a href="#services" class="stretched-link">Export Services</a></h4>
+              <p>We manage all aspects of agricultural export, from packaging to documentation, for seamless global trade.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p><span>Who </span> <span class="description-title">We Are</span></p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-content ps-0 ps-lg-3">
+              <h3>Your Trusted Partner in Agricultural Sourcing and Supply.</h3>
+              <p class="fst-italic">
+                At Galaltix Nigeria Limited, we are dedicated to bridging the gap between local farmers and the global market, ensuring a steady supply of high-quality agricultural products.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-award"></i>
+                  <div>
+                    <h4>Commitment to Quality</h4>
+                    <p>We adhere to the strictest quality standards, from sourcing to delivery, guaranteeing products that you can trust.</p>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <div>
+                    <h4>Sustainable Growth &amp; Partnerships</h4>
+                    <p>We believe in fostering long-term partnerships with farmers and clients, promoting sustainable practices for a prosperous agricultural future.</p>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                Our mission is to be the cornerstone of the Nigerian agricultural sector, providing reliable, efficient, and transparent services that empower local communities and meet the demands of a dynamic global market. We are committed to excellence in every step of the supply chain.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/about.png" alt="" class="img-fluid" style="border-radius: 30px;">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Crop Sourcing</span> <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Quality Control</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Logistics &amp; Distribution</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Supply Chain Management</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Customer Satisfaction</span> <i class="val">98%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Market Growth</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter">+</span>
+              <p>Satisfied Clients</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-boxes"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="25000" data-purecounter-duration="1" class="purecounter">+</span>
+              <p>Tons of Goods Supplied</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-flower1"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter">+</span>
+              <p>Partner Farms</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-map"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter">+</span>
+              <p>Countries Exported To</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="modern-products section light-background">
+      
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Products</h2>
+        <p><span>Discover Our</span> <span class="description-title">Premium Products</span></p>
+      </div><!-- End Section Title -->
+      
+      <div class="container">
+        <!-- Dynamic Products Container -->
+        <div class="row gy-4" id="products-container">
+          <!-- Products will be loaded here dynamically from admin dashboard -->
+          <!-- Loading placeholder -->
+          <div class="col-12 text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading products...</span>
+            </div>
+            <p class="mt-2 text-muted">Loading our premium products...</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="products.html" class="btn-primary-custom">View All Products</a>
+        </div>
+      </div>
+      
+    </section><!-- /Products Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p><span>Check Our</span> <span class="description-title">Services</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card-img">
+              <div class="service-img-wrapper">
+                <img src="assets/img/portfolio/PIGEON PEAS.jpeg" alt="Agricultural Sourcing" class="img-fluid">
+                <div class="service-icon-badge">
+                  <i class="bi bi-tree"></i>
+                </div>
+              </div>
+              <div class="service-card-content">
+                <h3><a href="service-agricultural-sourcing.html">Agricultural Sourcing</a></h3>
+                <p>We work directly with Nigerian farmers to source fresh, high-quality produce that meets export standards.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card-img">
+              <div class="service-img-wrapper">
+                <img src="assets/img/export.jpg" alt="Export & International Trade" class="img-fluid">
+                <div class="service-icon-badge">
+                  <i class="bi bi-globe2"></i>
+                </div>
+              </div>
+              <div class="service-card-content">
+                <h3><a href="service-export-trade.html">Export &amp; International Trade</a></h3>
+                <p>Our export division manages the entire process, from documentation to delivery, ensuring compliance and efficiency.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card-img">
+              <div class="service-img-wrapper">
+                <img src="assets/img/warehousing.jpg" alt="Warehousing & Storage" class="img-fluid">
+                <div class="service-icon-badge">
+                  <i class="bi bi-archive"></i>
+                </div>
+              </div>
+              <div class="service-card-content">
+                <h3><a href="service-warehousing.html">Warehousing &amp; Storage</a></h3>
+                <p>Our modern storage facilities maintain optimal conditions to preserve product freshness and quality.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card-img">
+              <div class="service-img-wrapper">
+                <img src="assets/img/quality.jpeg" alt="Quality Inspection & Grading" class="img-fluid">
+                <div class="service-icon-badge">
+                  <i class="bi bi-clipboard-check"></i>
+                </div>
+              </div>
+              <div class="service-card-content">
+                <h3><a href="service-quality-inspection.html">Quality Inspection &amp; Grading</a></h3>
+                <p>Each product undergoes rigorous inspection and grading to meet both local and international standards.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-card-img">
+              <div class="service-img-wrapper">
+                <img src="assets/img/supply.png" alt="Supply Chain Consulting" class="img-fluid">
+                <div class="service-icon-badge">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+              </div>
+              <div class="service-card-content">
+                <h3><a href="service-supply-chain.html">Supply Chain Consulting</a></h3>
+                <p>We provide expert advisory on optimising supply chains for efficiency, profitability, and compliance.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-card-img">
+              <div class="service-img-wrapper">
+                <img src="assets/img/custom_package.jpeg" alt="Custom Packaging & Processing" class="img-fluid">
+                <div class="service-icon-badge">
+                  <i class="bi bi-gear"></i>
+                </div>
+              </div>
+              <div class="service-card-content">
+                <h3><a href="service-custom-packaging.html">Custom Packaging &amp; Processing</a></h3>
+                <p>We offer bespoke packaging and processing solutions tailored to the needs of different markets.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Global Reach Section -->
+    <section id="global-reach" class="global-reach section">
+      
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Global Reach</h2>
+        <p><span>Connecting Nigeria to</span> <span class="description-title">The World</span></p>
+      </div><!-- End Section Title -->
+      
+      <div class="container">
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We proudly serve clients across four continents, delivering premium Nigerian agricultural products to markets worldwide through our established distribution network.</p>
+        
+        <!-- Global Statistics -->
+        <div class="global-stats" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-card">
+            <span class="stat-number">18+</span>
+            <span class="stat-label">Countries Served</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Continents</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">25000+</span>
+            <span class="stat-label">Tons Exported</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Global Partners</span>
+          </div>
+        </div>
+        
+        <!-- Regions Grid -->
+        <div class="regions-grid" data-aos="fade-up" data-aos-delay="400">
+          
+          <!-- Europe -->
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-globe-europe-africa"></i>
+              </div>
+              <h3 class="region-title">EUROPE</h3>
+            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-de"></span>
+                <span class="country-name">Germany</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-fr"></span>
+                <span class="country-name">France</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-uk"></span>
+                <span class="country-name">United Kingdom</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-nl"></span>
+                <span class="country-name">Netherlands</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-es"></span>
+                <span class="country-name">Spain</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- North America -->
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+              <h3 class="region-title">NORTH AMERICA</h3>
+            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-us"></span>
+                <span class="country-name">United States</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-ca"></span>
+                <span class="country-name">Canada</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- MEA (Middle East & Africa) -->
+          <div class="region-card">
+
+            <style>
+              .country-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              }
+              .country-flag,
+              .fi {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;     /* makes the flags perfectly circular */
+                object-fit: cover;      /* ensures the flag fits well in the circle */
+                flex-shrink: 0;
+              }
+            </style>
+
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <h3 class="region-title">Middle East and Africa</h3>
+            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="fi fi-ae"></span>
+                <span class="country-name">UAE</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-sa"></span>
+                <span class="country-name">Saudi Arabia</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-gh"></span>
+                <span class="country-name"> Ghana</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-bj"></span>
+                <span class="country-name"> Benin Republic</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-gw"></span>
+                <span class="country-name"> Guinea-Bissau</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-id"></span>
+                <span class="country-name"> Indonesia</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-pk"></span>
+                <span class="country-name">Pakistan</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-np"></span>
+                <span class="country-name">Nepal</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-tr"></span>
+                <span class="country-name"> Turkey</span>
+              </li>
+              <li class="country-item">
+                <span class="fi fi-jo"></span>
+                <span class="country-name"> Jordan</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Asia -->
+          <div class="region-card">
+            <div class="region-header">
+              <div class="region-icon">
+                <i class="bi bi-globe-asia-australia"></i>
+              </div>
+              <h3 class="region-title">ASIA</h3>
+            </div>
+            <ul class="countries-list">
+              <li class="country-item">
+                <span class="country-flag flag-cn"></span>
+                <span class="country-name">China</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-in"></span>
+                <span class="country-name">India</span>
+              </li>
+              <li class="country-item">
+                <span class="country-flag flag-jp"></span>
+                <span class="country-name">Japan</span>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </section><!-- /Global Reach Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>NO 19 Fandriana close, wuse 2, Abuja, Nigeria</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>(234) 813 536 4759</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@galaltixnig.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.9951481459!2d7.476899974237426!3d9.086456889091128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba1a9b3f8e9%3A0x5e61b9f2b1b3f8e9!2sWuse%202%2C%20Abuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1729000000000!5m2!1sen!2sng" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form id="contact-form" action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form id="newsletter-form" action="#" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galatix Nigeria Limited" style="max-height: 50px;">
+          </a>
+          <p class="mt-3">Agro commodities export..</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-agricultural-sourcing.html">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-export-trade.html">Export &amp; Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-quality-inspection.html">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-warehousing.html">Warehousing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-custom-packaging.html">Custom Packaging</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>NO 19 Fandriana close</p>
+          <p>wuse 2, Abuja, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 813 536 4759</span></p>
+          <p><strong>Email:</strong> <span>info@galaltixnig.com</span></p>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galatix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        Designed by <a href="https://www.defendhub.ng">DefendHub Enterprise</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/supabase-integration.js"></script>
+  
+  <!-- EmailJS SDK and Integration -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="assets/js/emailjs-integration.js"></script>
+
+</body>
+
+</html>

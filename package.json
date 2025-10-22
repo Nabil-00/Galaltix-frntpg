@@ -1,0 +1,28 @@
+{
+  "name": "galaltix-website",
+  "version": "1.0.0",
+  "description": "Galaltix Nigeria Limited - Agricultural Goods Supplier Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build process required'",
+    "deploy": "./deploy.sh",
+    "deploy:prod": "./deploy.sh --prod"
+  },
+  "keywords": [
+    "agriculture",
+    "nigeria",
+    "supply",
+    "farming",
+    "export"
+  ],
+  "author": "Galaltix Nigeria Limited",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nabil-00/Galaltix-frntpg.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

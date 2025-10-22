@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Request a Quote | Galaltix Nigeria Limited</title>
+  <meta name="description" content="Request a quote for premium agricultural products from Galaltix Nigeria Limited. Get competitive pricing for bulk orders.">
+  <meta name="keywords" content="Request Quote, Agricultural Products Quote, Bulk Order, Nigeria Export, Product Pricing">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <style>
+    .quote-page {
+      background: #f8f9fa;
+      min-height: 100vh;
+      padding: 120px 0 80px 0;
+    }
+    
+    .quote-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .quote-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 600px;
+      width: 100%;
+      flex: 1;
+    }
+    
+    .quote-header {
+      background: linear-gradient(135deg, #c87935 0%, #b86829 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .quote-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    .quote-header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      margin: 0;
+      color: white;
+    }
+    
+    .quote-form-section,
+    .quote-images-section {
+      display: flex;
+      flex-direction: column;
+      height: 450px;
+      min-height: 450px;
+      width: 100%;
+      box-sizing: border-box;
+      flex: 1;
+      align-self: stretch;
+    }
+    
+    .quote-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 35px; /* Reduced from 50px */
+      height: 100%;
+      box-sizing: border-box;
+    }
+    
+    .privacy-notice {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #c87935;
+    }
+    
+    .privacy-notice p {
+      margin: 0;
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #c87935;
+      box-shadow: 0 0 0 3px rgba(200, 121, 53, 0.1);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .phone-input-group {
+      display: flex;
+      flex-direction: column; /* Stack vertically */
+      gap: 15px; /* Space between inputs */
+      align-items: stretch;
+    }
+    
+    .country-code {
+      width: 100%; /* Full width when stacked */
+      flex-shrink: 0;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .phone-number {
+      width: 100%; /* Full width when stacked */
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: white;
+    }
+    
+    .phone-input-group:focus-within .country-code,
+    .phone-input-group:focus-within .phone-number {
+      border-color: #c87935;
+      box-shadow: 0 0 0 3px rgba(200, 121, 53, 0.1);
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: #c87935;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      background: #b86829;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(200, 121, 53, 0.3);
+    }
+    
+    .quote-images-section {
+      background: #f8f9fa;
+      padding: 45px 30px; /* Reduced from 60px 40px */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px; /* Reduced from 40px */
+      min-height: 100%;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .product-image-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      width: 100%;
+      height: calc(50% - 15px); /* Half the container height minus gap */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .product-image-card img {
+      width: 100%;
+      height: auto; /* Let image scale naturally */
+      max-height: 100%; /* But don't exceed container */
+      object-fit: contain; /* Show full image without cropping */
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-image-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 992px) {
+      .quote-content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        width: 100%;
+        gap: 0;
+        height: auto;
+      }
+      
+      .quote-form-section,
+      .quote-images-section {
+        min-height: auto;
+        height: auto;
+        width: 100%;
+      }
+      
+      .quote-images-section {
+        display: none;
+      }
+      
+      .quote-form-section {
+        padding: 40px 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .quote-page {
+        padding: 100px 15px 60px 15px;
+      }
+      
+      .quote-header h1 {
+        font-size: 2rem;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .quote-form-section {
+        padding: 30px 20px;
+      }
+      
+      .quote-images-section {
+        padding: 40px 20px;
+        gap: 30px;
+      }
+      
+      .product-image-card {
+        height: calc(50% - 15px); /* Half the container height minus gap */
+      }
+      
+      .product-image-card img {
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      
+      .phone-input-group {
+        gap: 15px; /* Keep consistent spacing */
+      }
+      
+      .quote-container {
+        margin: 20px auto;
+        width: calc(100% - 40px);
+      }
+    }
+    
+    @media (min-width: 1400px) {
+      .quote-container {
+        max-width: 1400px;
+      }
+    }
+    
+    @media (max-width: 1200px) {
+      .quote-container {
+        max-width: 100%;
+        margin: 20px;
+      }
+      
+      .quote-content {
+        min-height: 400px;
+        height: 400px;
+      }
+      
+      .quote-form-section,
+      .quote-images-section {
+        min-height: 400px;
+        height: 400px;
+      }
+      
+      .quote-form {
+        padding: 30px; /* Reduced from 40px */
+      }
+      
+      .quote-images-section {
+        padding: 35px 20px; /* Reduced from 50px 30px */
+      }
+      
+      .product-image-card {
+        height: calc(50% - 15px); /* Half the container height minus gap */
+      }
+      
+      .product-image-card img {
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+    
+    /* Loading State */
+    .submit-btn.loading::after {
+      content: "...";
+      animation: dots 1.5s infinite;
+    }
+    
+    @keyframes dots {
+      0%, 20% { content: "."; }
+      40% { content: ".."; }
+      60%, 100% { content: "..."; }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- Price Ticker Bar -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <span class="price-ticker-item">Soya beans (NON-GMO) – ₦650,000 per metric ton</span>
+      <span class="price-ticker-item">Hibiscus Flowers – ₦1,600,000 per metric ton</span>
+      <span class="price-ticker-item">Natural Sesame Seeds – ₦2,050,000 per metric ton</span>
+      <span class="price-ticker-item">Raw Cashew Nuts – ₦1,850,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Ginger – ₦2,200,000 per metric ton</span>
+      <span class="price-ticker-item">Shea Butter (Raw) – ₦950,000 per metric ton</span>
+      <span class="price-ticker-item">Tiger Nuts – ₦1,200,000 per metric ton</span>
+      <span class="price-ticker-item">Palm Kernel Oil – ₦780,000 per metric ton</span>
+      <span class="price-ticker-item">Moringa Seeds – ₦3,500,000 per metric ton</span>
+      <span class="price-ticker-item">White Maize – ₦420,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Cocoa Beans – ₦2,800,000 per metric ton</span>
+      <span class="price-ticker-item">Black Pepper – ₦4,200,000 per metric ton</span>
+    </div>
+  </div>
+  <!-- End Price Ticker Bar -->
+
+  <header id="header" class="header sticky-top">
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="Galaltix Nigeria Limited">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown"><a href="about.html"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main quote-page">
+
+    <div class="container">
+      <div class="quote-container" data-aos="fade-up">
+        
+        <!-- Header -->
+        <div class="quote-header">
+          <h1>Request a Quote</h1>
+          <p>Get competitive pricing for premium agricultural products</p>
+        </div>
+        
+        <!-- Content Grid -->
+        <div class="quote-content">
+          
+          <!-- Form Section -->
+          <div class="quote-form-section">
+            
+            <!-- Privacy Notice -->
+            <div class="privacy-notice">
+              <p><i class="bi bi-shield-check me-2"></i>Your privacy is our priority. We only use your information to provide your quote.</p>
+            </div>
+            
+            <!-- Quote Form -->
+            <form id="quoteForm" class="quote-form">
+              
+              <!-- Name Fields -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                </div>
+              </div>
+              
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+              </div>
+              
+              <!-- Company Name -->
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Enter your company name" required>
+              </div>
+              
+              <!-- Phone Number -->
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <div class="phone-input-group">
+                  <select id="countryCode" name="countryCode" class="country-code">
+                    <option value="+234">🇳🇬 +234</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+86">🇨🇳 +86</option>
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+81">🇯🇵 +81</option>
+                  </select>
+                  <input type="tel" id="phone" name="phone" class="phone-number" placeholder="+234 201-555-0123" required>
+                </div>
+              </div>
+              
+              <!-- Product and Quantity -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="product">Product</label>
+                  <select id="product" name="product" required>
+                    <option value="">Select product</option>
+                    <option value="Dried Hibiscus Flowers">Dried Hibiscus Flowers</option>
+                    <option value="Premium Pigeon Peas">Premium Pigeon Peas</option>
+                    <option value="Dried Fermented Cocoa Beans">Dried Fermented Cocoa Beans</option>
+                    <option value="Raw Cashew Nuts">Raw Cashew Nuts</option>
+                    <option value="Dried Split Ginger">Dried Split Ginger</option>
+                    <option value="Natural Sesame Seeds">Natural Sesame Seeds</option>
+                    <option value="Other">Other (Specify in requirements)</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="quantity">Quantity (112MT Minimum)</label>
+                  <input type="text" id="quantity" name="quantity" placeholder="1200 Metric Tonnes" required>
+                </div>
+              </div>
+              
+              <!-- Destination -->
+              <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+              </div>
+              
+              <!-- Shipping Method -->
+              <div class="form-group">
+                <label for="shipping">Shipping Method</label>
+                <select id="shipping" name="shipping" required>
+                  <option value="">Select method</option>
+                  <option value="Sea Freight">Sea Freight</option>
+                  <option value="Air Freight">Air Freight</option>
+                  <option value="Land Transport">Land Transport</option>
+                  <option value="Mixed/Multimodal">Mixed/Multimodal</option>
+                </select>
+              </div>
+              
+              <!-- Special Requirements -->
+              <div class="form-group">
+                <label for="requirements">Any Special Requirements?</label>
+                <textarea id="requirements" name="requirements" placeholder="Your message"></textarea>
+              </div>
+              
+              <!-- Submit Button -->
+              <button type="submit" class="submit-btn">Request a Quote</button>
+              
+            </form>
+            
+          </div>
+          
+          <!-- Images Section -->
+          <div class="quote-images-section">
+            <div class="product-image-card" data-aos="fade-left" data-aos-delay="100">
+              <img src="assets/img/portfolio/PIGEON PEAS.jpeg" alt="Premium Agricultural Products">
+            </div>
+            <div class="product-image-card" data-aos="fade-left" data-aos-delay="200">
+              <img src="assets/img/portfolio/RAW CASHEW NUTS.jpeg" alt="Quality Cashew Nuts">
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form id="newsletter-form" action="#" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galatix Nigeria Limited" style="max-height: 50px;">
+          </a>
+          <p class="mt-3">Agro commodities export..</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="products.html">Products</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-agricultural-sourcing.html">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-export-trade.html">Export & Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-quality-inspection.html">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-warehousing.html">Warehousing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-custom-packaging.html">Custom Packaging</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>NO 19 Fandriana close</p>
+          <p>wuse 2, Abuja, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 801 234 5678</span></p>
+          <p><strong>Email:</strong> <span>contact@galaltixnig.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://www.defendhub.ng">DefendHub Enterprise</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Quote Form Handler -->
+  <script>
+    // Phone number formatting and validation
+    document.addEventListener('DOMContentLoaded', function() {
+      const phoneInput = document.getElementById('phone');
+      const countryCodeSelect = document.getElementById('countryCode');
+      
+      // Format phone number as user types
+      phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+        
+        // Format Nigerian numbers
+        if (countryCodeSelect.value === '+234') {
+          if (value.length >= 10) {
+            value = value.substring(0, 10); // Limit to 10 digits for Nigerian numbers
+          }
+          // Format as: 201-555-0123
+          if (value.length >= 6) {
+            value = value.substring(0, 3) + '-' + value.substring(3, 6) + '-' + value.substring(6);
+          } else if (value.length >= 3) {
+            value = value.substring(0, 3) + '-' + value.substring(3);
+          }
+        } else {
+          // For other countries, just limit length
+          if (value.length > 15) {
+            value = value.substring(0, 15);
+          }
+        }
+        
+        e.target.value = value;
+      });
+      
+      // Update placeholder when country changes
+      countryCodeSelect.addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex];
+        const flag = selectedOption.textContent.split(' ')[0];
+        const code = selectedOption.value;
+        
+        if (code === '+234') {
+          phoneInput.placeholder = '201-555-0123';
+        } else if (code === '+1') {
+          phoneInput.placeholder = '201-555-0123';
+        } else if (code === '+44') {
+          phoneInput.placeholder = '20 1234 5678';
+        } else {
+          phoneInput.placeholder = 'Phone number';
+        }
+      });
+    });
+
+    document.getElementById('quoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      
+      // Show loading state
+      submitBtn.classList.add('loading');
+      submitBtn.textContent = 'Sending';
+      submitBtn.disabled = true;
+      
+      // Collect form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Validate phone number
+      const phoneRegex = /^[\d\-\s\(\)\+]+$/;
+      if (data.phone && !phoneRegex.test(data.phone)) {
+        alert('Please enter a valid phone number');
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        return;
+      }
+      
+      // Add full phone number
+      data.fullPhone = data.countryCode + ' ' + data.phone;
+      
+      // Simulate API call (replace with actual endpoint)
+      setTimeout(() => {
+        console.log('Quote Request:', data);
+        
+        // Show success message
+        alert('Thank you! Your quote request has been received. We will contact you within 24 hours.');
+        
+        // Reset form
+        this.reset();
+        
+        // Reset button
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        // TODO: Replace with actual API call
+        // fetch('/api/quote', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(data)
+        // })
+        // .then(response => response.json())
+        // .then(result => {
+        //   // Handle success
+        // })
+        // .catch(error => {
+        //   // Handle error
+        // });
+        
+      }, 2000);
+    });
+  </script>
+
+</body>
+
+</html>

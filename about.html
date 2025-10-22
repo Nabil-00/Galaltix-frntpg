@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About Us - Galaltix Nigeria Limited | Agricultural Export & Trading</title>
+  <meta name="description" content="Empowering Growth, One Innovation at a Time: Galaltix's Global Impact. Learn about our mission to connect Africa's agricultural resources with global markets.">
+  <meta name="keywords" content="Galaltix, Agriculture, Nigeria, Export, Trading, Sesame Seeds, Cashew Nuts, Agricultural Commodities">
+  <meta name="supabase-api-base" content="https://supabase-blog-k5c7v8mbr-nabeel-007s-projects.vercel.app/api">
+
+  <!-- Favicons -->
+  <link href="assets/img/galaltixicon.png" rel="icon">
+  <link href="assets/img/galaltixicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Custom About Page Styles -->
+  <style>
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #c87935;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #c87935;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px #c87935;
+    }
+    
+    .timeline-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .timeline-content h4 {
+      color: #c87935;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .timeline-content p {
+      margin-bottom: 0;
+      color: #444444;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline {
+        padding-left: 20px;
+      }
+      
+      .timeline-item::before {
+        left: -27px;
+      }
+      
+      .timeline::before {
+        left: 10px;
+      }
+    }
+    
+    /* Custom button hover effects */
+    .btn[style*="background-color: #c87935"]:hover {
+      background-color: #b86829 !important;
+      border-color: #b86829 !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(200, 121, 53, 0.3);
+    }
+    
+    .btn[style*="border: 2px solid #c87935"]:hover {
+      background-color: #c87935 !important;
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(200, 121, 53, 0.3);
+    }
+    
+    /* Core Values cards consistency */
+    #values .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    
+    #values .col-xl-4 {
+      display: flex !important;
+    }
+    
+    #values .service-item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--surface-color) !important;
+    }
+    
+    #values .service-item::before {
+      inset: 100% 0 0 0 !important;
+    }
+    
+    #values .service-item .icon {
+      flex-shrink: 0;
+    }
+    
+    #values .service-item h4 {
+      flex-shrink: 0;
+    }
+    
+    #values .service-item p {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Completely disable hover effects for consistency */
+    #values .service-item:hover::before {
+      inset: 100% 0 0 0 !important;
+      background: transparent !important;
+    }
+    
+    #values .service-item:hover h4 a {
+      color: var(--heading-color) !important;
+    }
+    
+    #values .service-item:hover .icon i {
+      color: var(--accent-color) !important;
+    }
+    
+    #values .service-item:hover p {
+      color: var(--default-color) !important;
+    }
+    
+    /* Force consistent background */
+    #values .service-item,
+    #values .service-item:hover {
+      background-color: var(--surface-color) !important;
+      transform: none !important;
+    }
+  </style>
+</head>
+
+<body class="about-page">
+
+  <!-- Price Ticker Bar -->
+  <div class="price-ticker">
+    <div class="price-ticker-content">
+      <span class="price-ticker-item">Soya beans (NON-GMO) – ₦650,000 per metric ton</span>
+      <span class="price-ticker-item">Hibiscus Flowers – ₦1,600,000 per metric ton</span>
+      <span class="price-ticker-item">Natural Sesame Seeds – ₦2,050,000 per metric ton</span>
+      <span class="price-ticker-item">Raw Cashew Nuts – ₦1,850,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Ginger – ₦2,200,000 per metric ton</span>
+      <span class="price-ticker-item">Shea Butter (Raw) – ₦950,000 per metric ton</span>
+      <span class="price-ticker-item">Tiger Nuts – ₦1,200,000 per metric ton</span>
+      <span class="price-ticker-item">Palm Kernel Oil – ₦780,000 per metric ton</span>
+      <span class="price-ticker-item">Moringa Seeds – ₦3,500,000 per metric ton</span>
+      <span class="price-ticker-item">White Maize – ₦420,000 per metric ton</span>
+      <span class="price-ticker-item">Dried Cocoa Beans – ₦2,800,000 per metric ton</span>
+      <span class="price-ticker-item">Black Pepper – ₦4,200,000 per metric ton</span>
+    </div>
+  </div>
+  <!-- End Price Ticker Bar -->
+
+  <header id="header" class="header sticky-top">
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/galaltixlogo.png" alt="">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown"><a href="about.html" class="active"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="mb-2 mb-lg-0">About Us</h1>
+          <p class="mb-0" style="color: #666; font-size: 16px; margin-top: 8px;">Empowering Growth, One Innovation at a Time: Galaltix's Global Impact</p>
+        </div>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">About Us</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Who We Are Section -->
+    <section id="about" class="about section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Who We Are</h2>
+        <p><span>Driving Progress,</span> <span class="description-title">Delivering Excellence</span></p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/about.png" alt="Galaltix Nigeria Limited Agricultural Operations" class="img-fluid" style="border-radius: 30px;">
+          </div>
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-content ps-0 ps-lg-3">
+              <p>
+                Galaltix Nigeria Limited is a diversified export and trading company dedicated to connecting Africa's rich agricultural and natural resources with global markets. We specialize in the sourcing, processing, and exportation of premium agricultural commodities such as sesame seeds, raw cashew nuts, dried hibiscus flowers, cocoa, and non-GMO soybeans.
+              </p>
+              <p>
+                Since our establishment in 2010, Galaltix has built a strong reputation for reliability, integrity, and quality. Our operations span across major international trade corridors — exporting to leading industrial nations such as Vietnam, India, Turkey, and China. With every shipment, we reaffirm our commitment to delivering excellence and empowering sustainable trade relationships.
+              </p>
+              <p>
+                At Galaltix, our mission is simple yet profound — to transform opportunities into lasting value for farmers, partners, and clients alike. Headquartered in Nigeria, we combine innovation, professionalism, and sustainability to drive progress in the agro-commodity export sector.
+              </p>
+              <div class="d-flex align-items-center mt-4">
+                <div class="me-4">
+                  <h4 class="mb-1" style="color: #c87935;">10+</h4>
+                  <p class="mb-0">Years of Experience</p>
+                </div>
+                <div>
+                  <a href="contact.html" class="btn" style="background-color: #c87935; border-color: #c87935; color: white; padding: 10px 24px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">Partner with Us Today</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Who We Are Section -->
+
+    <!-- What Sets Us Apart Section -->
+    <section id="what-sets-us-apart" class="section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="content">
+              <h2>What Sets Us Apart</h2>
+              <p>
+                Galaltix Nigeria Limited brings a results-driven and forward-thinking approach to international trade. Backed by deep expertise, transparent operations, and a passion for excellence, we stand as a trusted name in the exportation of high-quality agricultural commodities.
+              </p>
+              <a href="services.html" class="btn mt-3" style="background-color: transparent; border: 2px solid #c87935; color: #c87935; padding: 10px 24px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">Discover More</a>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/growth.jpg" alt="What Sets Galaltix Apart" class="img-fluid" style="border-radius: 30px">
+          </div>
+        </div>
+      </div>
+    </section><!-- /What Sets Us Apart Section -->
+
+    <!-- Core Values Section -->
+    <section id="values" class="featured-services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Core Values</h2>
+        <p><span>Our values define who we are and how we operate.</span> <span class="description-title">They are the foundation of our success and the compass guiding our decisions, partnerships, and long-term vision.</span></p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-award icon"></i></div>
+              <h4><a href="#" class="stretched-link">Quality Assurance</a></h4>
+              <p>We maintain strict standards to ensure every product meets international specifications.</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-shield-check icon"></i></div>
+              <h4><a href="#" class="stretched-link">Integrity & Transparency</a></h4>
+              <p>We believe in honest business and ethical trade practices that build lasting trust.</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-leaf icon"></i></div>
+              <h4><a href="#" class="stretched-link">Sustainability</a></h4>
+              <p>We support environmentally friendly and community-driven agricultural practices.</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-heart icon"></i></div>
+              <h4><a href="#" class="stretched-link">Customer Satisfaction</a></h4>
+              <p>We put our clients first, delivering exceptional value that exceeds expectations.</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-lightbulb icon"></i></div>
+              <h4><a href="#" class="stretched-link">Innovation</a></h4>
+              <p>We continuously explore better ways to source, trade, and serve our global markets.</p>
+            </div>
+          </div><!-- End Service Item -->
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-arrow-up-right icon"></i></div>
+              <h4><a href="services.html" class="stretched-link">Discover More</a></h4>
+              <p>Learn about our comprehensive services and capabilities.</p>
+            </div>
+          </div><!-- End Service Item -->
+        </div>
+      </div>
+    </section><!-- /Core Values Section -->
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Story</h2>
+        <p><span>GALALTIX</span> <span class="description-title">JOURNEY</span></p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="timeline">
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-content">
+                  <h4>Laying the Foundation</h4>
+                  <p>In our formative years, Galaltix established solid partnerships with local farmers, cooperatives, and aggregators across Nigeria's agricultural belt. These relationships form the backbone of our reliable supply chain and quality assurance process.</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-content">
+                  <h4>Expanding Horizons</h4>
+                  <p>By 2022, we achieved a major breakthrough — successfully exporting thousands of metric tons of raw cashew nuts and sesame seeds to Asian and Middle Eastern markets. This expansion highlighted our growing influence in international trade and our ability to meet global demand consistently.</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="timeline-content">
+                  <h4>Consistent Growth and Performance</h4>
+                  <p>Galaltix recorded steady growth year after year, with export volumes and client portfolios increasing exponentially. Our turnover rose from modest beginnings to multi-million-dollar performance, demonstrating our focus on efficiency and customer trust.</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="timeline-content">
+                  <h4>Building the Future</h4>
+                  <p>With an ambitious outlook for 2025 and beyond, we are projecting sustained growth, targeting over USD 10 million in export value. This milestone underscores our dedication to scaling responsibly while maintaining the high standards that define our brand.</p>
+                </div>
+              </div>
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="timeline-content">
+                  <h4>Empowering Local Communities</h4>
+                  <p>We believe that true success is shared success. Galaltix invests in capacity-building initiatives for smallholder farmers, promotes fair trade, and supports inclusive growth through local sourcing and employment generation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="600">
+            <h3>Join Our Journey</h3>
+            <p class="mb-4">At Galaltix Nigeria Limited, we are more than exporters — we are partners in progress. Join us as we continue to open new markets, empower communities, and redefine excellence in agricultural commodity trading.</p>
+            <p class="mb-4"><strong>Together, let's cultivate growth and build a sustainable future.</strong></p>
+            <a href="contact.html" class="btn" style="background-color: #c87935; border-color: #c87935; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: 500; transition: all 0.3s ease;">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Our Story Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Satisfied Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-boxes"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="25000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Tons of Goods Supplied</p>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-flower1"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Partner Farms</p>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-map"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Countries Exported To</p>
+            </div>
+          </div><!-- End Stats Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Stats Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form id="newsletter-form" action="#" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/galaltixlogo.png" alt="Galatix Nigeria Limited" style="max-height: 50px;">
+          </a>
+          <p class="mt-3">Agro commodities export..</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Agricultural Sourcing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Export & Trade</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Quality Inspection</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Logistics</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Custom Packaging</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>NO 19 Fandriana close</p>
+          <p>wuse 2, Abuja, Nigeria</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(234) 813 536 4759</span></p>
+          <p><strong>Email:</strong> <span>info@galaltixnig.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Galaltix Nig Ltd</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://www.defendhub.ng">DefendHub Enterprise</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/supabase-integration.js"></script>
+
+</body>
+
+</html>
