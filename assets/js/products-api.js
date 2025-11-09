@@ -6,9 +6,13 @@
 class GalaltixProductsAPI {
   constructor() {
     // Use config if available, otherwise fallback to default
-    this.API_BASE_URL = window.GalaltixConfig?.API_BASE_URL || 'https://modular-blog-portfolio.vercel.app/api';
+    this.API_BASE_URL = window.GalaltixConfig?.API_BASE_URL || 'https://supabase-blog.vercel.app/api';
     this.DEBUG = window.GalaltixConfig?.DEBUG || false;
     this.fallbackProducts = this.getFallbackProducts();
+    
+    if (this.DEBUG) {
+      console.log('📋 GalaltixProductsAPI initialized with URL:', this.API_BASE_URL);
+    }
   }
 
   /**

@@ -6,7 +6,7 @@
 window.GalaltixConfig = {
   // Your admin dashboard API URL
   // Update this with your actual Vercel deployment URL
-  API_BASE_URL: 'https://modular-blog-portfolio.vercel.app/api',
+  API_BASE_URL: 'https://supabase-blog.vercel.app/api',
   
   // Fallback settings
   ENABLE_FALLBACK: true,
